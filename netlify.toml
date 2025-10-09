@@ -1,19 +1,19 @@
 # Netlify configuration for OptixDigitalAI
 
 [build]
-  # The command to build your project
-  command = "npm run build"
-  # The folder to deploy (Vite outputs here)
-  publish = "dist"
-  # Optional: Install command if using pnpm or yarn
-  # install = "npm install"
+  command = "npm run build"   # Build command for Vite
+  publish = "dist"            # Folder to deploy (Vite output)
+  environment = { 
+    NODE_ENV = "production" 
+  }
 
-# Redirect all requests to index.html (for SPA / React Router)
+# SPA redirect for React Router
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = true  # ensure all routes redirect to index.html
 
-# Optional: Environment variables
+# Optional: Environment variables for production
 #[context.production.environment]
 #  REACT_APP_API_URL = "https://api.optixdigitalai.com"
