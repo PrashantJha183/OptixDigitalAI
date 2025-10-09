@@ -3,9 +3,7 @@
 [build]
   command = "npm run build"   # Build command for Vite
   publish = "dist"            # Folder to deploy (Vite output)
-  environment = { 
-    NODE_ENV = "production" 
-  }
+
 
 # SPA redirect for React Router
 [[redirects]]
@@ -14,6 +12,4 @@
   status = 200
   force = true  # ensure all routes redirect to index.html
 
-# Optional: Environment variables for production
-#[context.production.environment]
-#  REACT_APP_API_URL = "https://api.optixdigitalai.com"
+
