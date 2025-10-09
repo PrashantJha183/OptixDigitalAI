@@ -7,6 +7,5 @@ describe("Homepage Under Development", () => {
       "contain.text",
       "Our website is currently under development"
     );
-    
   });
 });
