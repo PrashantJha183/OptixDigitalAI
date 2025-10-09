@@ -1,15 +1,11 @@
-# Netlify configuration for OptixDigitalAI
-
 [build]
-  command = "npm run build"   # Build command for Vite
-  publish = "dist"            # Folder to deploy (Vite output)
+  command = "npm run build"
+  publish = "dist"
+ 
 
-
-# SPA redirect for React Router
+# Redirect all requests to index.html (SPA support)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  force = true  # ensure all routes redirect to index.html
-
-
+  force = true
