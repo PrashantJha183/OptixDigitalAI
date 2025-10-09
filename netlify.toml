@@ -1,14 +1,7 @@
-# Netlify configuration for OptixDigitalAI frontend only
-
 [build]
-  # Build command for Vite
   command = "npm run build"
-  # Folder to deploy (Vite outputs here)
   publish = "dist"
-  # Ensure production environment
-  environment = { NODE_ENV = "production" }
 
-# SPA routing for React Router
 [[redirects]]
   from = "/*"
   to = "/index.html"
