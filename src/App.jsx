@@ -1,27 +1,68 @@
+// App.jsx
+import React, { memo, Suspense, lazy } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ErrorBoundary from "./components/base/ErrorBoundary";
+import Header from "./components/base/Header";
+import SkeletonLoader from "./components/base/SkeletonLoader";
+
+// Lazy-load page components
+const Home = lazy(() => import("./components/views/HomepageView"));
+
+// const About = lazy(() => import("./pages/About"));
+// const Services = lazy(() => import("./pages/Services"));
+// const Contact = lazy(() => import("./pages/Contact"));
+
+const AppContent = () => {
+  return (
+    <Router>
+      <Header />
+      <Suspense fallback={<SkeletonLoader />}>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <ErrorBoundary>
+                <Home />
+              </ErrorBoundary>
+            }
+          />
+          {/* <Route
+            path="/about"
+            element={
+              <ErrorBoundary>
+                <About />
+              </ErrorBoundary>
+            }
+          />
+          <Route
+            path="/services"
+            element={
+              <ErrorBoundary>
+                <Services />
+              </ErrorBoundary>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <ErrorBoundary>
+                <Contact />
+              </ErrorBoundary>
+            }
+          /> */}
+        </Routes>
+      </Suspense>
+    </Router>
+  );
+};
+
+const MemoizedAppContent = memo(AppContent);
+
 function App() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 text-gray-900 p-4">
-      {/* Main Heading */}
-      <h1
-        data-cy="main-heading"
-        className="text-4xl md:text-5xl font-bold text-center mb-4 text-indigo-600"
-      >
-        OptixDigitalAI
-      </h1>
-
-      {/* Subheading / Message */}
-      <p
-        data-cy="under-development-message"
-        className="text-lg md:text-xl text-center text-gray-700 mb-6"
-      >
-        Our website is currently under development. Thank you for visiting!
-      </p>
-
-      {/* Call to action / contact */}
-      <p data-cy="contact-message" className="text-center text-gray-600">
-        Stay tuned for our launch
-      </p>
-    </div>
+    <ErrorBoundary>
+      <MemoizedAppContent />
+    </ErrorBoundary>
   );
 }
 
