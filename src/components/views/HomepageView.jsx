@@ -3,6 +3,7 @@ import Hero from "../homepage/Hero";
 import About from "../homepage/About";
 import Choose from "../homepage/Choose";
 import Services from "../homepage/Services";
+import Reviews from "../homepage/Reviews";
 const HomepageView = () => {
   return (
     <div>
@@ -10,6 +11,7 @@ const HomepageView = () => {
       <About />
       <Choose />
       <Services />
+      <Reviews />
     </div>
   );
 };

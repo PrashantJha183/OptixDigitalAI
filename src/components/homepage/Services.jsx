@@ -50,7 +50,7 @@ const Services = () => {
         if (entry.isIntersecting) controls.start("visible");
         else controls.start("hidden");
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
     observer.observe(sectionRef.current);
@@ -74,7 +74,7 @@ const Services = () => {
   return (
     <section
       ref={sectionRef}
-      className="new-font py-16 md:py-20 px-6 md:px-20 bg-white m-4 rounded-md shadow-sm relative overflow-visible"
+      className="new-font py-16 md:py-20 px-4 sm:px-6 md:px-20 bg-white m-4 rounded-2xl shadow-md relative overflow-hidden sm:overflow-visible"
       role="region"
       aria-labelledby="services-title"
     >
@@ -106,7 +106,7 @@ const Services = () => {
         {services.map((service, i) => (
           <motion.div
             key={service.title}
-            className="bg-gray-50 pt-14 mt-4 md:mt-8 pb-8 px-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center relative group overflow-visible"
+            className="bg-gray-50 pt-14 mt-4 md:mt-8 pb-8 px-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center relative group overflow-visible border-[2px] border-[#5d00c3]"
             initial="hidden"
             animate={controls}
             variants={fadeUp}

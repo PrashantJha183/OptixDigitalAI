@@ -167,7 +167,7 @@ const Choose = () => {
               viewport={{ once: false, amount: 0.3 }}
               variants={getItemVariants(i)}
               whileHover="hover"
-              className="flex flex-col items-center md:items-start p-5 transition-all duration-300 md:bg-white text-[#5d00c3] md:rounded-xl md:shadow-lg hover:shadow-xl"
+              className="flex flex-col items-center md:items-start p-5 transition-all duration-300 md:bg-white text-[#5d00c3] md:rounded-xl md:shadow-lg md:hover:shadow-xl"
             >
               {point.icon}
               <h3 className="text-lg md:text-xl font-semibold mb-1">

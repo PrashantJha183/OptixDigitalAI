@@ -18,6 +18,16 @@ body::-webkit-scrollbar {
   font-family: "Montserrat";
 }
 
+.testimonial-slider .slick-dots li button:before {
+  color: black;
+  opacity: 1;
+}
+
+.testimonial-slider .slick-dots li.slick-active button:before {
+  color: white;
+  opacity: 1;
+}
+
 @keyframes shimmer {
   0% {
     transform: translateX(-100%);
@@ -30,4 +40,23 @@ body::-webkit-scrollbar {
 .animate-shimmer {
   animation: shimmer 1.5s infinite;
   background-size: 200% 100%;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .review-main {
+    height: 65vh;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+/* reviews.css or global styles */
+@media (min-width: 1024px) {
+  .testimonial-slider .slick-slide {
+    padding: 0 12px;
+  }
+
+  .testimonial-slider .slick-list {
+    margin: 0 -12px;
+  }
 }
