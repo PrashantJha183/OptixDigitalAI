@@ -62,7 +62,9 @@ const Choose = () => {
     );
 
     observer.observe(buttonRef.current);
-    return () => observer.unobserve(buttonRef.current);
+    return () => {
+      if (buttonRef.current) observer.unobserve(buttonRef.current);
+    };
   }, [buttonControls]);
 
   const getItemVariants = (index) => {
@@ -117,20 +119,13 @@ const Choose = () => {
   return (
     <section className="pb-10 new-font m-4 md:mt-0 md:pt-20 md:pb-12 rounded-md flex flex-col md:flex-row justify-center items-center md:gap-6 lg:gap-8 text-center md:text-left px-4 md:px-12 bg-[#5d00c3] text-white overflow-hidden relative">
       {/* Optix Watermark Top Left */}
-      <motion.img
+      <img
         src={Optix}
         alt="Optix Logo"
         className="absolute top-10 left-4 md:w-96 pointer-events-none select-none hidden md:block"
       />
 
-      {/* Optix Watermark Bottom Left */}
-      {/* <motion.img
-        src={Optix}
-        alt="Optix Logo"
-        className="absolute bottom-0 right-[-40px] w-32 md:w-64  pointer-events-none select-none"
-      /> */}
-
-      {/* Left Image */}
+      {/* Left Image (Wrapped in motion.div for proper animation) */}
       <motion.div
         className="flex-1 flex justify-center items-center"
         initial={{ x: -80, opacity: 0 }}
@@ -138,7 +133,7 @@ const Choose = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: false, amount: 0.3 }}
       >
-        <motion.img
+        <img
           src={chooseImg}
           alt="Why Choose Us"
           className="w-90 pt-10 md:pt-0 md:w-[500px] lg:w-[500px] duration-500"
@@ -208,4 +203,4 @@ const Choose = () => {
   );
 };
 
-export default Choose;
+export default React.memo(Choose);

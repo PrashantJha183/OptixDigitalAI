@@ -22,10 +22,35 @@ const Home = lazy(() =>
   }))
 );
 
-// Optional: Lazy load other pages
-// const About = lazy(() =>
-//   import("./pages/About").catch(() => ({ default: () => null }))
-// );
+const About = lazy(() =>
+  import("./components/views/AboutpageView").catch(() => ({
+    default: () => null,
+  }))
+);
+
+const Contact = lazy(() =>
+  import("./components/views/ContactpageView").catch(() => ({
+    default: () => null,
+  }))
+);
+
+const Pricing = lazy(() =>
+  import("./components/views/PricingpageView").catch(() => ({
+    default: () => null,
+  }))
+);
+
+const Service = lazy(() =>
+  import("./components/views/ServicepageView").catch(() => ({
+    default: () => null,
+  }))
+);
+
+const CaseStudy = lazy(() =>
+  import("./components/views/CaseStudypageView").catch(() => ({
+    default: () => null,
+  }))
+);
 
 //////////////////////////
 // ScrollToTop Component
@@ -33,7 +58,7 @@ const Home = lazy(() =>
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   React.useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0 });
   }, [pathname]);
   return null;
 };
@@ -63,7 +88,7 @@ const AppContent = () => {
                 </ErrorBoundary>
               }
             />
-            {/* Uncomment when needed
+
             <Route
               path="/about"
               element={
@@ -72,7 +97,42 @@ const AppContent = () => {
                 </ErrorBoundary>
               }
             />
-            */}
+
+            <Route
+              path="/services"
+              element={
+                <ErrorBoundary>
+                  <Service />
+                </ErrorBoundary>
+              }
+            />
+
+            <Route
+              path="/contact"
+              element={
+                <ErrorBoundary>
+                  <Contact />
+                </ErrorBoundary>
+              }
+            />
+
+            <Route
+              path="/case-study"
+              element={
+                <ErrorBoundary>
+                  <CaseStudy />
+                </ErrorBoundary>
+              }
+            />
+
+            <Route
+              path="/pricing"
+              element={
+                <ErrorBoundary>
+                  <Pricing />
+                </ErrorBoundary>
+              }
+            />
           </Routes>
         </Suspense>
 

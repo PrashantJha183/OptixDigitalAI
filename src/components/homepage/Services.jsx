@@ -15,25 +15,25 @@ const services = [
     icon: <FaLaptopCode className="text-[#5d00c3] text-5xl" />,
     title: "Web Development",
     desc: "High-performance, responsive websites built with the latest technologies to elevate your digital presence.",
-    link: "/services/web-development",
+    link: "/services",
   },
   {
     icon: <FaMobileAlt className="text-[#5d00c3] text-5xl" />,
     title: "App Development",
     desc: "Beautifully crafted Android and iOS applications designed for seamless performance and user delight.",
-    link: "/services/app-development",
+    link: "/services",
   },
   {
     icon: <FaPalette className="text-[#5d00c3] text-5xl" />,
     title: "Graphic Design",
     desc: "Visually stunning and brand-driven designs that communicate, engage, and inspire your audience effectively.",
-    link: "/services/graphic-design",
+    link: "/services",
   },
   {
     icon: <FaBullhorn className="text-[#5d00c3] text-5xl" />,
     title: "Digital Marketing",
     desc: "Data-driven marketing strategies that amplify reach, boost conversions, and deliver measurable ROI.",
-    link: "/services/digital-marketing",
+    link: "/services",
   },
 ];
 
@@ -43,18 +43,28 @@ const Services = () => {
 
   // Animate section whenever it enters the viewport
   useEffect(() => {
-    if (!sectionRef.current) return;
+    const sectionEl = sectionRef.current;
+    if (!sectionEl) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) controls.start("visible");
-        else controls.start("hidden");
+        if (entry.isIntersecting) {
+          // Ensure animation only starts after mount
+          requestAnimationFrame(() => controls.start("visible"));
+        } else {
+          controls.start("hidden");
+        }
       },
       { threshold: 0.1 }
     );
 
-    observer.observe(sectionRef.current);
-    return () => observer.unobserve(sectionRef.current);
+    observer.observe(sectionEl);
+
+    // ✅ Safe cleanup check
+    return () => {
+      if (sectionEl) observer.unobserve(sectionEl);
+      observer.disconnect();
+    };
   }, [controls]);
 
   const fadeUp = {
@@ -113,7 +123,7 @@ const Services = () => {
             custom={i + 3}
             whileHover={{ scale: 1.03 }}
           >
-            {/* Icon Circle - Fully Visible and Fixed */}
+            {/* Icon Circle */}
             <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-white p-5 rounded-full border-[3px] border-[#5d00c3] shadow-md z-10">
               {service.icon}
             </div>

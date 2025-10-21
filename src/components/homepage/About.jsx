@@ -101,7 +101,7 @@ const About = () => {
           custom={4}
         >
           <Link
-            to="/contact"
+            to="/about"
             className="inline-flex items-center bg-yellow-400 text-black font-semibold px-6 py-3 rounded-md hover:bg-yellow-300 transition-transform transform hover:scale-105 space-x-2"
             aria-label="Contact OptixDigitalAI"
           >

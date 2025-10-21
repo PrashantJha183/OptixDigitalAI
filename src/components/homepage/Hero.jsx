@@ -1,38 +1,48 @@
-// Hero.jsx
 import React, { useState, useEffect, useRef } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import ErrorBoundary from "../base/ErrorBoundary";
 import { FiArrowRight } from "react-icons/fi";
 import hook from "../../assets/Optix Hero Section.svg";
-
+import { Link } from "react-router-dom";
 const Hero = () => {
   const [loaded, setLoaded] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
   const controls = useAnimation();
   const sectionRef = useRef(null);
 
-  // Simulate small loading delay for skeleton
+  // Mark component mounted
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  // Small loading delay (skeleton)
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 300);
     return () => clearTimeout(timer);
   }, []);
 
-  // Scroll-based animation trigger
+  // Safe scroll-based animation trigger
   useEffect(() => {
-    if (!loaded || !sectionRef.current) return;
+    if (!loaded || !sectionRef.current || !hasMounted) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) controls.start("visible");
-        else controls.start("hidden");
+        if (!hasMounted) return;
+
+        if (entry.isIntersecting) {
+          controls.start("visible");
+        } else {
+          controls.start("hidden");
+        }
       },
       { threshold: 0.3 }
     );
 
     observer.observe(sectionRef.current);
     return () => observer.disconnect();
-  }, [loaded, controls]);
+  }, [loaded, hasMounted, controls]);
 
-  // Smooth fade & motion variants
+  // Animation variants
   const fadeVariant = {
     hidden: { opacity: 0, y: 60, scale: 0.98 },
     visible: (i = 1) => ({
@@ -59,7 +69,7 @@ const Hero = () => {
         className="bg-[#5d00c3] text-white md:pt-52 md:pb-24 flex flex-col md:flex-row justify-center md:justify-between items-center px-6 md:px-40 py-32 md:py-10 rounded-md m-4 overflow-hidden new-font relative"
         role="banner"
       >
-        {/* Decorative floating gradient orbs */}
+        {/* Floating gradient orbs */}
         <motion.div
           className="absolute top-10 left-10 w-40 h-40 bg-purple-500/30 rounded-full blur-3xl"
           animate={{ y: [0, -15, 0], opacity: [0.8, 1, 0.8] }}
@@ -108,28 +118,29 @@ const Hero = () => {
             dynamic websites that define your digital identity. Empowering
             brands with intelligent, future-ready solutions.
           </motion.p>
-
-          <motion.button
-            className="mt-4 bg-transparent text-white font-semibold px-6 py-3 rounded-md border-2 border-white hover:bg-white hover:text-[#5d00c3] transition-all duration-300 inline-flex items-center space-x-3"
-            aria-label="Get Started with OptixDigitalAI"
-            variants={fadeVariant}
-            custom={3}
-            whileHover={{
-              scale: 1.08,
-              x: 6,
-              boxShadow: "0px 0px 20px rgba(255,255,255,0.4)",
-            }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span>Get Started</span>
-            <FiArrowRight className="w-6 h-6 md:w-7 md:h-7 transition-transform group-hover:translate-x-2" />
-          </motion.button>
+          <Link to="/services">
+            <motion.button
+              className="mt-4 bg-transparent text-white font-semibold px-6 py-3 rounded-md border-2 border-white hover:bg-white hover:text-[#5d00c3] transition-all duration-300 inline-flex items-center space-x-3"
+              aria-label="Get Started with OptixDigitalAI"
+              variants={fadeVariant}
+              custom={3}
+              whileHover={{
+                scale: 1.08,
+                x: 6,
+                boxShadow: "0px 0px 20px rgba(255,255,255,0.4)",
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span>Get Started</span>
+              <FiArrowRight className="w-6 h-6 md:w-7 md:h-7 transition-transform group-hover:translate-x-2" />
+            </motion.button>
+          </Link>
         </motion.div>
 
         {/* RIGHT IMAGE */}
         <motion.div
           className="mt-10 md:mt-0 md:w-1/2 flex justify-center items-center z-10"
-          initial={{ opacity: 0, x: 0 }}
+          initial="hidden"
           animate={controls}
           variants={fadeVariant}
           custom={4}
