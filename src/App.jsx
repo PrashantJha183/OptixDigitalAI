@@ -46,10 +46,27 @@ const Service = lazy(() =>
   }))
 );
 
-const CaseStudy = lazy(() =>
-  import("./components/views/CaseStudypageView").catch(() => ({
+const Terms = lazy(() =>
+  import("./components/base/TermsAndCondition").catch(() => ({
     default: () => null,
   }))
+);
+
+const Privacy = lazy(() =>
+  import("./components/base/PrivacyPolicy").catch(() => ({
+    default: () => null,
+  }))
+);
+
+const Career = lazy(() =>
+  import("./components/views/CareerpageView").catch(() => ({
+    default: () => null,
+  }))
+);
+
+// Chatbot (global)
+const Chatbot = lazy(() =>
+  import("./components/base/Chatbot").catch(() => ({ default: () => null }))
 );
 
 //////////////////////////
@@ -65,7 +82,6 @@ const ScrollToTop = () => {
 
 const AppContent = () => {
   return (
-    // Outer wrapper sets grab cursor everywhere
     <div className="cursor-grab">
       <Router>
         <ScrollToTop />
@@ -117,19 +133,37 @@ const AppContent = () => {
             />
 
             <Route
-              path="/case-study"
+              path="/pricing"
               element={
                 <ErrorBoundary>
-                  <CaseStudy />
+                  <Pricing />
                 </ErrorBoundary>
               }
             />
 
             <Route
-              path="/pricing"
+              path="/terms-and-conditions"
               element={
                 <ErrorBoundary>
-                  <Pricing />
+                  <Terms />
+                </ErrorBoundary>
+              }
+            />
+
+            <Route
+              path="/privacy-policy"
+              element={
+                <ErrorBoundary>
+                  <Privacy />
+                </ErrorBoundary>
+              }
+            />
+
+            <Route
+              path="/career"
+              element={
+                <ErrorBoundary>
+                  <Career />
                 </ErrorBoundary>
               }
             />
@@ -140,6 +174,13 @@ const AppContent = () => {
         <Suspense fallback={<SkeletonLoader />}>
           <ErrorBoundary>
             <Footer />
+          </ErrorBoundary>
+        </Suspense>
+
+        {/* Global Chatbot */}
+        <Suspense fallback={null}>
+          <ErrorBoundary>
+            <Chatbot />
           </ErrorBoundary>
         </Suspense>
       </Router>

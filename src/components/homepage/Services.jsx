@@ -60,7 +60,7 @@ const Services = () => {
 
     observer.observe(sectionEl);
 
-    // ✅ Safe cleanup check
+    // Safe cleanup check
     return () => {
       if (sectionEl) observer.unobserve(sectionEl);
       observer.disconnect();

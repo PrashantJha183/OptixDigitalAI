@@ -186,7 +186,7 @@ const Choose = () => {
             className="flex items-center gap-2 bg-yellow-400 text-black font-semibold px-6 py-3 rounded-md mt-10 md:mt-6 shadow-lg hover:shadow-xl transition-all duration-300"
           >
             <FiPhone className="text-xl" />
-            Request a Call
+            Get in Touch
           </motion.button>
         </Link>
       </div>

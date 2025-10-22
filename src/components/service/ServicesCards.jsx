@@ -109,7 +109,7 @@ const ServicesCards = () => {
     },
     {
       icon: Edit3,
-      title: "Graphic Redesign",
+      title: "Graphic Redesign & Revamp",
       description:
         "Refreshing and redesigning existing graphics to modernize your visual identity and maintain brand consistency.",
     },

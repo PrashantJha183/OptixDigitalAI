@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import { PhoneCall } from "lucide-react";
 import Optix from "../../assets/Optix Low Opacity Logo.svg";
 
-// Motion-enabled Link
-const MotionLink = motion(Link);
+// Updated line — use motion.create() instead of deprecated motion()
+const MotionLink = motion.create(Link);
 
 const ServiceContact = () => {
   const buttonControls = useAnimation();
@@ -15,8 +15,6 @@ const ServiceContact = () => {
   useEffect(() => {
     const sequence = async () => {
       await buttonControls.start({
-        // rotate: [0, -10, 10, -6, 6, -3, 3, 0],
-        // x: [0, -3, 3, -2, 2, -1, 1, 0],
         transition: {
           type: "spring",
           stiffness: 400,
@@ -56,7 +54,12 @@ const ServiceContact = () => {
           whileTap={{ scale: 0.95 }}
           className="mt-4 inline-flex items-center bg-[#5d00c3] text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-[#4a00a8] transition-colors duration-300"
         >
-          <PhoneCall className="w-5 h-5 mr-2 animate-pulse" strokeWidth={2} />
+          <motion.span
+            animate={{ color: ["#ffffff", "#facc15", "#ffffff"] }}
+            transition={{ duration: 1.2, repeat: Infinity, repeatType: "loop" }}
+          >
+            <PhoneCall className="w-5 h-5 mr-3" strokeWidth={2} />
+          </motion.span>
           Request a Demo
         </MotionLink>
       </div>

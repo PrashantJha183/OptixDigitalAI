@@ -8,11 +8,10 @@ import logoSrc from "../../assets/logo.svg";
 import lowQualityLogo from "../../assets/logo.svg";
 
 const menuItems = [
-  { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Services", path: "/services" },
   { name: "Pricing", path: "/pricing" },
-  { name: "Case Study", path: "/case-study" },
+  // { name: "Case Study", path: "/case-study" },
 ];
 
 const LogoSkeleton = () => (
@@ -25,6 +24,7 @@ const Header = () => {
   const location = useLocation();
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
+  const closeMenu = () => setIsOpen(false);
 
   // Preload logo
   useEffect(() => {
@@ -39,7 +39,7 @@ const Header = () => {
         {/* Header Container */}
         <div className="max-w-5xl mx-auto flex items-center justify-between md:justify-center px-6 py-4 md:py-0 bg-white border border-white rounded-t-md md:rounded-md shadow-md">
           {/* Logo */}
-          <Link to="/">
+          <Link to="/" onClick={closeMenu}>
             <div className="flex-shrink-0 mr-auto md:mr-0">
               {logoLoaded ? (
                 <img
@@ -82,7 +82,7 @@ const Header = () => {
             <Link to="/contact">
               <button className="bg-yellow-400 text-black font-semibold px-4 py-2 rounded-md hover:bg-yellow-300 transition inline-flex items-center space-x-2">
                 <FiPhone className="w-5 h-5" />
-                <span>Request a Call</span>
+                <span>Get in Touch</span>
               </button>
             </Link>
           </div>
@@ -139,7 +139,7 @@ const Header = () => {
                     <Link
                       key={item.path}
                       to={item.path}
-                      onClick={toggleMenu}
+                      onClick={closeMenu} // Close menu on click
                       className={`text-lg transition-colors ${
                         location.pathname === item.path
                           ? "text-[#5d00c3] font-semibold"
@@ -150,11 +150,11 @@ const Header = () => {
                     </Link>
                   ))}
 
-                  {/* FIXED: Mobile Request a Call closes menu */}
-                  <Link to="/contact" onClick={toggleMenu}>
+                  {/* Mobile Request a Call closes menu */}
+                  <Link to="/contact" onClick={closeMenu}>
                     <button className="bg-yellow-400 text-black font-semibold px-4 py-3 rounded-md hover:bg-yellow-300 transition inline-flex items-center space-x-2 w-max">
                       <FiPhone className="w-5 h-5" />
-                      <span>Request a Call</span>
+                      <span>Get in Touch</span>
                     </button>
                   </Link>
                 </div>

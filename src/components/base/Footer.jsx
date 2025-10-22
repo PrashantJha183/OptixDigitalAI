@@ -46,7 +46,7 @@ const Footer = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const phoneNumber = "+917420807072";
+  const phoneNumber = "+91 7420807072";
   const email = "support@optixdigitalai.com";
   const address =
     "Office #1306 (13th floor), Ambrosia Galaxy, Pan Card Club Road, Baner High St, Hill Road, Baner, Pune, Maharashtra 411069";
@@ -66,35 +66,41 @@ const Footer = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Handle email copy on desktop
+  // Handle email click on desktop
   const handleEmailClick = (e) => {
     if (!isMobile) {
       navigator.clipboard.writeText(email);
       setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
+      setTimeout(() => setCopied(false), 3500);
       e.preventDefault(); // prevent mailto on desktop
     }
   };
 
   const menuLinks = [
-    { name: "Home", to: "/" },
-    { name: "About Us", to: "/about" },
+    { name: "About", to: "/about" },
     { name: "Services", to: "/services" },
     { name: "Pricing", to: "/pricing" },
-    { name: "Contact", to: "/contact" },
+    { name: "Career", to: "/career" },
   ];
 
   const serviceLinks = [
-    { name: "Web Devlopent", to: "/ai-solutions" },
-    { name: "App Development", to: "/chatbots" },
-    { name: "Digital Marketing", to: "/automation" },
-    { name: "Graphic Designing", to: "/analytics" },
+    { name: "Web Devlopment", to: "/services" },
+    { name: "App Development", to: "/services" },
+    { name: "Digital Marketing", to: "/services" },
+    { name: "Graphic Designing", to: "/services" },
   ];
 
   return (
     <FooterErrorBoundary>
-      <footer className="bg-black text-white pt-10 m-4 new-font rounded-md">
-        {/* Top Footer Grid with extra gap on desktop */}
+      <footer className="bg-black text-white pt-10 m-4 new-font rounded-md relative">
+        {/* Clipboard popup for desktop */}
+        {copied && !isMobile && (
+          <div className="fixed top-6 right-6 bg-green-500 text-white px-4 py-2 rounded shadow-lg z-50 animate-fadeInOut">
+            Email copied to clipboard!
+          </div>
+        )}
+
+        {/* Top Footer Grid */}
         <div className="max-w-7xl mx-auto px-6 md:px-4 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 md:justify-items-center">
           {/* Column 1: Logo + Contact Info */}
           <div className="flex flex-col space-y-5">
@@ -111,7 +117,7 @@ const Footer = () => {
               )}
             </Link>
 
-            {/* Contact Information with Icons */}
+            {/* Contact Information */}
             <div className="space-y-3">
               {/* Phone */}
               <div className="flex items-center gap-3 text-gray-400">
@@ -138,9 +144,6 @@ const Footer = () => {
                 >
                   {email}
                 </a>
-                {!isMobile && copied && (
-                  <span className="ml-2 text-green-400 text-sm">Copied!</span>
-                )}
               </div>
 
               {/* Address */}
@@ -166,8 +169,8 @@ const Footer = () => {
               Quick Links
             </h3>
             <ul className="space-y-2 text-gray-400">
-              {menuLinks.map((link) => (
-                <li key={link.to}>
+              {menuLinks.map((link, index) => (
+                <li key={`menu-${index}`}>
                   <Link
                     to={link.to}
                     className="hover:text-yellow-400 transition"
@@ -185,8 +188,8 @@ const Footer = () => {
               Our Services
             </h3>
             <ul className="space-y-2 text-gray-400">
-              {serviceLinks.map((link) => (
-                <li key={link.to}>
+              {serviceLinks.map((link, index) => (
+                <li key={`service-${index}`}>
                   <Link
                     to={link.to}
                     className="hover:text-yellow-400 transition"
@@ -205,11 +208,11 @@ const Footer = () => {
             </h3>
 
             <Link
-              to="/request-demo"
+              to="/contact"
               className="bg-yellow-400 text-black font-semibold px-4 py-2 rounded-md hover:bg-yellow-300 transition inline-flex items-center gap-2 w-max shadow-md"
             >
               <FiPhone className="w-5 h-5" />
-              <span>Request a Call</span>
+              <span>Get in Touch</span>
             </Link>
 
             {/* Social Icons */}
@@ -272,14 +275,33 @@ const Footer = () => {
           </a>
 
           <div className="flex space-x-4">
-            <Link to="/terms" className="hover:text-yellow-400 transition">
+            <Link
+              to="/terms-and-conditions"
+              className="hover:text-yellow-400 transition"
+            >
               Terms & Conditions
             </Link>
-            <Link to="/privacy" className="hover:text-yellow-400 transition">
+            <Link
+              to="/privacy-policy"
+              className="hover:text-yellow-400 transition"
+            >
               Privacy Policy
             </Link>
           </div>
         </div>
+
+        {/* Animation for popup */}
+        <style>{`
+          @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(-10px); }
+            10% { opacity: 1; transform: translateY(0); }
+            90% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-10px); }
+          }
+          .animate-fadeInOut {
+            animation: fadeInOut 3.5s ease-in-out forwards;
+          }
+        `}</style>
       </footer>
     </FooterErrorBoundary>
   );
