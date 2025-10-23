@@ -62,56 +62,56 @@ const ServicesCards = () => {
       icon: PenTool,
       title: "Graphic Design",
       description:
-        "Transforming ideas into visually stunning designs that communicate your brand’s message effectively.",
+        "We turn your ideas into striking visuals that speak for your brand—clean, clever, and impossible to ignore.",
     },
-
     {
       icon: Image,
       title: "Logo Design",
       description:
-        "Crafting unique and memorable logos that represent your brand identity and values.",
+        "Crafting logos that are more than symbols—they’re memorable brand stories in a single glance.",
     },
     {
       icon: Users,
       title: "Consultation",
       description:
-        "Providing expert guidance and strategic advice to help you make informed digital and design decisions.",
+        "Strategic guidance that cuts through noise—helping you make confident, smart digital and design decisions.",
     },
     {
       icon: Monitor,
       title: "Web Development",
       description:
-        "Building responsive, fast, and SEO-friendly websites tailored to your business goals.",
+        "We build websites that aren’t just responsive—they perform, rank, and convert. WordPress, Shopify, or custom solutions, tailored for your goals.",
     },
     {
       icon: Smartphone,
       title: "App Development",
       description:
-        "Creating high-performance mobile applications for iOS and Android that enhance user engagement.",
+        "We build mobile apps that don’t just function they perform, engage, and delight users. From iOS to Android, each app features intuitive interfaces, seamless performance, and scalable.",
     },
+
     {
       icon: Megaphone,
-      title: "Digital Marketing",
+      title: "Digital Marketing & Social Media Management",
       description:
-        "Boost your brand’s reach and engagement with data-driven marketing strategies and campaigns.",
+        "Data-driven marketing and smart social media management to grow your reach, engagement, and brand impact effortlessly.",
     },
     {
       icon: RefreshCw,
       title: "Website Redesign & Revamp",
       description:
-        "Revamping existing websites with modern designs, improved UX, and optimized performance to elevate your brand online.",
+        "Modernize your website with sleek designs, faster performance, and user-focused UX—making your brand shine online.",
     },
     {
       icon: AppIcon,
       title: "App Redesign & Optimization",
       description:
-        "Enhancing your mobile applications with intuitive interfaces, better performance, and updated features for maximum engagement.",
+        "Upgrade your app with smoother interfaces, faster performance, and smarter features that keep users coming back.",
     },
     {
       icon: Edit3,
       title: "Graphic Redesign & Revamp",
       description:
-        "Refreshing and redesigning existing graphics to modernize your visual identity and maintain brand consistency.",
+        "Refresh visuals with modern, polished designs that maintain brand consistency while making a strong statement.",
     },
   ];
 

@@ -1,10 +1,10 @@
 // App.test.jsx
-import React from "react";
+import React, { Suspense } from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import App from "./App";
+import AppContent from "./App";
 
-// Mock all lazy-loaded components using Vitest
+// Mock all lazy-loaded components
 vi.mock("./components/base/Header", () => ({
   default: () => <div>Header</div>,
 }));
@@ -23,44 +23,47 @@ vi.mock("./components/views/ServicepageView", () => ({
 vi.mock("./components/views/ContactpageView", () => ({
   default: () => <div>Contact</div>,
 }));
-
 vi.mock("./components/views/PricingpageView", () => ({
   default: () => <div>Pricing</div>,
 }));
 vi.mock("./components/views/CareerpageView", () => ({
   default: () => <div>Career</div>,
 }));
-vi.mock("./components/base/TermsAndCondition", () => ({
+vi.mock("./components/views/TermsAndConditionpageView", () => ({
   default: () => <div>Terms</div>,
 }));
-vi.mock("./components/base/PrivacyPolicy", () => ({
+vi.mock("./components/views/PrivacyPolicypageView", () => ({
   default: () => <div>Privacy</div>,
 }));
-vi.mock("./components/base/Chatbot", () => ({
+vi.mock("./components/views/ChatbotpageView", () => ({
   default: () => <div>Chatbot</div>,
 }));
 
-describe("App", () => {
+// Helper: wrap App in Suspense
+const renderWithSuspense = (ui) =>
+  render(<Suspense fallback={<div>Loading...</div>}>{ui}</Suspense>);
+
+describe("AppContent", () => {
   it("renders Header and Footer", async () => {
-    render(<App />);
+    renderWithSuspense(<AppContent />);
     await waitFor(() => expect(screen.getByText("Header")).toBeInTheDocument());
     await waitFor(() => expect(screen.getByText("Footer")).toBeInTheDocument());
   });
 
   it("renders Home route by default", async () => {
-    render(<App />);
+    renderWithSuspense(<AppContent />);
     await waitFor(() => expect(screen.getByText("Home")).toBeInTheDocument());
   });
 
   it("renders About page", async () => {
     window.history.pushState({}, "", "/about");
-    render(<App />);
+    renderWithSuspense(<AppContent />);
     await waitFor(() => expect(screen.getByText("About")).toBeInTheDocument());
   });
 
   it("renders Services page", async () => {
     window.history.pushState({}, "", "/services");
-    render(<App />);
+    renderWithSuspense(<AppContent />);
     await waitFor(() =>
       expect(screen.getByText("Services")).toBeInTheDocument()
     );
@@ -68,7 +71,7 @@ describe("App", () => {
 
   it("renders Contact page", async () => {
     window.history.pushState({}, "", "/contact");
-    render(<App />);
+    renderWithSuspense(<AppContent />);
     await waitFor(() =>
       expect(screen.getByText("Contact")).toBeInTheDocument()
     );
@@ -76,7 +79,7 @@ describe("App", () => {
 
   it("renders Pricing page", async () => {
     window.history.pushState({}, "", "/pricing");
-    render(<App />);
+    renderWithSuspense(<AppContent />);
     await waitFor(() =>
       expect(screen.getByText("Pricing")).toBeInTheDocument()
     );
@@ -84,13 +87,13 @@ describe("App", () => {
 
   it("renders Terms page", async () => {
     window.history.pushState({}, "", "/terms-and-conditions");
-    render(<App />);
+    renderWithSuspense(<AppContent />);
     await waitFor(() => expect(screen.getByText("Terms")).toBeInTheDocument());
   });
 
   it("renders Privacy page", async () => {
     window.history.pushState({}, "", "/privacy-policy");
-    render(<App />);
+    renderWithSuspense(<AppContent />);
     await waitFor(() =>
       expect(screen.getByText("Privacy")).toBeInTheDocument()
     );
@@ -98,12 +101,12 @@ describe("App", () => {
 
   it("renders Career page", async () => {
     window.history.pushState({}, "", "/career");
-    render(<App />);
+    renderWithSuspense(<AppContent />);
     await waitFor(() => expect(screen.getByText("Career")).toBeInTheDocument());
   });
 
   it("renders Chatbot globally", async () => {
-    render(<App />);
+    renderWithSuspense(<AppContent />);
     await waitFor(() =>
       expect(screen.getByText("Chatbot")).toBeInTheDocument()
     );
@@ -114,7 +117,7 @@ describe("App", () => {
       .spyOn(window, "scrollTo")
       .mockImplementation(() => {});
     window.history.pushState({}, "", "/about");
-    render(<App />);
+    renderWithSuspense(<AppContent />);
     await waitFor(() => expect(scrollToSpy).toHaveBeenCalledWith({ top: 0 }));
     scrollToSpy.mockRestore();
   });
