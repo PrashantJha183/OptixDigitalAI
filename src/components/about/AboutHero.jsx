@@ -78,17 +78,17 @@ const AboutContent = () => {
     {
       icon: <FiUsers className="w-8 h-8 text-yellow-400" />,
       title: "Happy Clients",
-      count: "20+",
+      count: "40+",
     },
     {
       icon: <FiBriefcase className="w-8 h-8 text-yellow-400" />,
       title: "Projects Completed",
-      count: "50+",
+      count: "100+",
     },
     {
       icon: <FiClock className="w-8 h-8 text-yellow-400" />,
       title: "Years of Experience",
-      count: "5+",
+      count: "3+",
     },
   ];
 

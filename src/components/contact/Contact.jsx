@@ -27,17 +27,25 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
 
-  // Scroll-trigger animation
+  // Scroll-trigger animation (fixed)
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) =>
-        entry.isIntersecting
-          ? controls.start("visible")
-          : controls.start("hidden"),
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start("visible");
+        } else {
+          controls.start("hidden");
+        }
+      },
       { threshold: 0.3 }
     );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
+
+    const currentSection = sectionRef.current;
+    if (currentSection) observer.observe(currentSection);
+
+    return () => {
+      if (currentSection) observer.unobserve(currentSection);
+    };
   }, [controls]);
 
   // Validation logic
@@ -68,7 +76,7 @@ const Contact = () => {
     []
   );
 
-  // Real-time validation when user types
+  // Real-time validation
   useEffect(() => {
     validate();
   }, [formData, validate]);

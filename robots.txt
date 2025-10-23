@@ -1,0 +1,39 @@
+# ===============================
+# OptixDigitalAI Robots.txt
+# Last updated: 2025-10-23
+# ===============================
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /build/
+Disallow: /scripts/
+Disallow: /*.json$
+Disallow: /*.md$
+
+# Sitemap
+Sitemap: https://optixdigitalai.com/sitemap.xml
+
+# Optional: Crawl-delay for heavy bots
+Crawl-delay: 5
+
+# Specific bot handling
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# ===============================
+# Notes:
+# - This allows full crawl of all public routes.
+# - Only internal/dev folders are disallowed.
+# - Update sitemap URL if your domain changes.
+# ===============================

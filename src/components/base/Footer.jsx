@@ -1,6 +1,6 @@
 // Footer.jsx
 import React, { useState, useEffect, memo } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   FiFacebook,
   FiTwitter,
@@ -41,7 +41,17 @@ const LogoSkeleton = () => (
   <div className="w-28 md:w-40 h-10 bg-gray-700 animate-pulse rounded" />
 );
 
+// ScrollToTop hook
+const useScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [pathname]);
+};
+
 const Footer = () => {
+  useScrollToTop();
+
   const [logoLoaded, setLogoLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -104,7 +114,10 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-4 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 md:justify-items-center">
           {/* Column 1: Logo + Contact Info */}
           <div className="flex flex-col space-y-5">
-            <Link to="/">
+            <Link
+              to="/"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               {logoLoaded ? (
                 <img
                   src={logoSrc}
@@ -173,6 +186,9 @@ const Footer = () => {
                 <li key={`menu-${index}`}>
                   <Link
                     to={link.to}
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
                     className="hover:text-yellow-400 transition"
                   >
                     {link.name}
@@ -192,6 +208,9 @@ const Footer = () => {
                 <li key={`service-${index}`}>
                   <Link
                     to={link.to}
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
                     className="hover:text-yellow-400 transition"
                   >
                     {link.name}
@@ -209,6 +228,7 @@ const Footer = () => {
 
             <Link
               to="/contact"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="bg-yellow-400 text-black font-semibold px-4 py-2 rounded-md hover:bg-yellow-300 transition inline-flex items-center gap-2 w-max shadow-md"
             >
               <FiPhone className="w-5 h-5" />
@@ -226,7 +246,7 @@ const Footer = () => {
               >
                 <FiFacebook className="w-6 h-6" />
               </a>
-              <a
+              {/* <a
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -234,8 +254,8 @@ const Footer = () => {
                 className="text-gray-400 hover:text-blue-400 transition"
               >
                 <FiTwitter className="w-6 h-6" />
-              </a>
-              <a
+              </a> */}
+              {/* <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -243,7 +263,7 @@ const Footer = () => {
                 className="text-gray-400 hover:text-blue-700 transition"
               >
                 <FiLinkedin className="w-6 h-6" />
-              </a>
+              </a> */}
               <a
                 href="https://www.instagram.com/optixdigitalai/"
                 target="_blank"
@@ -277,12 +297,14 @@ const Footer = () => {
           <div className="flex space-x-4">
             <Link
               to="/terms-and-conditions"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="hover:text-yellow-400 transition"
             >
               Terms & Conditions
             </Link>
             <Link
               to="/privacy-policy"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="hover:text-yellow-400 transition"
             >
               Privacy Policy

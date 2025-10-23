@@ -47,13 +47,13 @@ const Service = lazy(() =>
 );
 
 const Terms = lazy(() =>
-  import("./components/base/TermsAndCondition").catch(() => ({
+  import("./components/views/TermsAndConditionpageView").catch(() => ({
     default: () => null,
   }))
 );
 
 const Privacy = lazy(() =>
-  import("./components/base/PrivacyPolicy").catch(() => ({
+  import("./components/views/PrivacyPolicypageView").catch(() => ({
     default: () => null,
   }))
 );
@@ -66,7 +66,9 @@ const Career = lazy(() =>
 
 // Chatbot (global)
 const Chatbot = lazy(() =>
-  import("./components/base/Chatbot").catch(() => ({ default: () => null }))
+  import("./components/views/ChatbotpageView").catch(() => ({
+    default: () => null,
+  }))
 );
 
 //////////////////////////

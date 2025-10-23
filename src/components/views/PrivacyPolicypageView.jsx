@@ -1,17 +1,17 @@
+// PrivacyPolicypageView.jsx
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import Pricing from "../pricing/Pricing";
+import PrivacyPolicy from "../base/PrivacyPolicy";
 import ErrorBoundary from "../base/ErrorBoundary";
 
-const PricingpageView = () => {
+const PrivacyPolicypageView = () => {
   const siteUrl = "https://optixdigitalai.com";
-  const pagePath = "/pricing";
+  const pagePath = "/privacy-policy";
   const canonicalUrl = `${siteUrl}${pagePath}`;
 
-  const title =
-    "Pricing Plans | OptixDigitalAI – Affordable Web, App, and Digital Marketing Solutions";
+  const title = "Privacy Policy | OptixDigitalAI";
   const description =
-    "Discover OptixDigitalAI’s flexible pricing plans for web development, mobile apps, branding, SEO, and AI-powered digital marketing solutions. Choose a plan that fits your business growth.";
+    "Read the Privacy Policy of OptixDigitalAI — a global creative technology agency providing web development, mobile apps, branding, SEO, and AI-powered digital marketing solutions.";
   const keywords = `
     OptixDigitalAI, about OptixDigitalAI, digital agency India, creative tech agency,
     AI marketing agency, web development company, mobile app development, UI UX design,
@@ -57,7 +57,7 @@ const PricingpageView = () => {
         <meta name="coverage" content="Worldwide" />
         <meta name="target" content="all" />
 
-        {/* --- Open Graph (Facebook, LinkedIn, WhatsApp) --- */}
+        {/* --- Open Graph --- */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={title} />
@@ -65,8 +65,6 @@ const PricingpageView = () => {
         <meta property="og:image" content={image} />
         <meta property="og:site_name" content="OptixDigitalAI" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:locale:alternate" content="en_GB" />
-        <meta property="og:locale:alternate" content="en_IN" />
 
         {/* --- Twitter Card --- */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -76,60 +74,64 @@ const PricingpageView = () => {
         <meta name="twitter:creator" content="@optixdigitalai" />
         <meta name="twitter:site" content="@optixdigitalai" />
 
-        {/* --- Schema.org Structured Data with ContactPoint & Breadcrumbs --- */}
+        {/* --- Schema.org Structured Data --- */}
         <script type="application/ld+json">{`
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "OptixDigitalAI Pricing Plans",
-    "url": "${canonicalUrl}",
-    "inLanguage": "en",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "OptixDigitalAI",
-      "url": "${siteUrl}",
-      "logo": "${siteUrl}/logo.png",
-      "description": "${description}",
-      "foundingDate": "2025",
-      "founders": [
-        { "@type": "Person", "name": "OptixDigitalAI Team" }
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91 7420807072",
-        "contactType": "customer support",
-        "availableLanguage": ["English","Hindi"]
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/optixdigitalai",
-        "https://www.instagram.com/optixdigitalai",
-        "https://x.com/optixdigitalai",
-        "https://www.facebook.com/optixdigitalai"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "IN"
-      }
-    },
-    "breadcrumb": {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "${siteUrl}" },
-        { "@type": "ListItem", "position": 2, "name": "About", "item": "${siteUrl}/about" },
-        { "@type": "ListItem", "position": 3, "name": "Services", "item": "${siteUrl}/services" },
-        { "@type": "ListItem", "position": 4, "name": "Pricing", "item": "${canonicalUrl}" }
-      ]
-    }
-  }
-`}</script>
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "OptixDigitalAI Privacy Policy",
+            "url": "${canonicalUrl}",
+            "inLanguage": "en",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "OptixDigitalAI",
+              "url": "${siteUrl}",
+              "logo": "${siteUrl}/logo.png",
+              "description": "${description}",
+              "foundingDate": "2025",
+              "founders": [
+                { "@type": "Person", "name": "OptixDigitalAI Team" }
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91 7420807072",
+                "contactType": "Customer Support",
+                "availableLanguage": ["English","Hindi"]
+              },
+              "sameAs": [
+                "https://www.linkedin.com/company/optixdigitalai",
+                "https://www.instagram.com/optixdigitalai",
+                "https://x.com/optixdigitalai",
+                "https://www.facebook.com/optixdigitalai"
+              ],
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "IN"
+              }
+            },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                 { "@type": "ListItem", "position": 1, "name": "Home", "item": "${siteUrl}" },
+                 { "@type": "ListItem", "position": 2, "name": "About", "item": "${siteUrl}/about" },
+                 { "@type": "ListItem", "position": 3, "name": "Services", "item": "${siteUrl}/services" },
+                 { "@type": "ListItem", "position": 4, "name": "Pricing", "item": "${siteUrl}/pricing" },
+                 { "@type": "ListItem", "position": 5, "name": "Contact", "item": "${siteUrl}/contact" },
+                 { "@type": "ListItem", "position": 6, "name": "Career", "item": "${siteUrl}/career" },
+                 { "@type": "ListItem", "position": 7, "name": "Terms & Conditions", "item": "${siteUrl}/terms-and-conditions" },
+                 { "@type": "ListItem", "position": 8, "name": "Privacy Policy", "item": "${canonicalUrl}" }
+              ]
+            }
+          }
+        `}</script>
       </Helmet>
 
-      {/* --- Page Content --- */}
+      {/* --- Actual Page Content --- */}
       <ErrorBoundary>
-        <Pricing />
+        <PrivacyPolicy />
       </ErrorBoundary>
     </>
   );
 };
 
-export default PricingpageView;
+export default PrivacyPolicypageView;

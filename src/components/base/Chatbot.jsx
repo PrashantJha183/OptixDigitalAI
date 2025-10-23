@@ -8,77 +8,567 @@ const faqData = [
   {
     question: "hello",
     answer:
-      "Hello! 👋 Zayra here. How can I help you today? Feel free to ask about our services, pricing, or projects.",
+      "Hello! 👋 Zayra here. How can I help you today? Ask me about our services, pricing, delivery, or any project-related questions.",
   },
   {
     question: "hi",
     answer:
-      "Hi there! Zayra here. I'm happy to assist you. Ask me anything about our web, mobile, or design services.",
+      "Hi! Zayra here. I can help you with web development, app development, design, pricing, delivery timelines, and more. Just ask!",
   },
   {
     question: "hey",
     answer:
-      "Hey! Welcome to OptixDigitalAI. Zayra here to guide you. You can ask about our services, pricing, or how to get started.",
+      "Hey there! Zayra is ready to assist you. Ask me about services, timelines, working hours, terms, or privacy policies.",
   },
   {
-    question: "what services do you offer",
+    question: "web development",
     answer:
-      "Zayra here! We provide Web Development, Mobile App Development, UI/UX Design, Logo & Graphic Design, Website & Mobile Redesign, and Digital Consulting services.",
+      "We provide full-stack web development using React, Next.js, Node.js, and modern technologies. Typical delivery time ranges from 3–12 weeks depending on project complexity.",
   },
   {
-    question: "logo",
+    question: "website development",
     answer:
-      "Absolutely! Zayra says: We create professional logos tailored to your brand identity and vision.",
+      "Zayra here! We build responsive websites, e-commerce platforms, and portals. Delivery timelines depend on the scope, usually 2–12 weeks with revisions included.",
   },
   {
-    question: "redesign",
+    question: "mobile app development",
     answer:
-      "Yes! Zayra can help revamp your website to improve usability, aesthetics, and performance.",
+      "We build iOS and Android apps using Flutter and React Native. Small apps take 3–6 weeks, complex apps up to 3 months. Post-launch support is included.",
   },
   {
-    question: "app",
+    question: "app development",
     answer:
-      "Yes, Zayra confirms: We build iOS and Android apps with modern UI/UX practices and smooth functionality.",
+      "Zayra confirms: We develop modern mobile apps with smooth UI/UX, scalable architecture, and timely delivery. We provide expected delivery date and ongoing support.",
   },
   {
-    question: "ui",
+    question: "ui/ux design",
     answer:
-      "Zayra here! We craft intuitive and visually appealing UI/UX designs for web and mobile platforms.",
+      "We craft intuitive UI/UX for web and mobile apps. Design timelines range from 1–3 weeks. Zayra ensures your interface is user-friendly and brand-aligned.",
   },
   {
-    question: "graphic",
+    question: "graphic design",
     answer:
-      "Yes! Zayra says: We design creative visuals including banners, social media graphics, brochures, and more.",
+      "We create banners, brochures, social media graphics, and other visuals. Delivery takes 2–5 business days depending on revisions required.",
   },
+  {
+    question: "logo design",
+    answer:
+      "Zayra says: We create professional logos tailored to your brand identity. Delivery typically takes 3–7 days with 2–3 revisions included.",
+  },
+  {
+    question: "website redesign",
+    answer:
+      "Yes! We redesign websites to improve usability, aesthetics, and performance. Small sites take 2–4 weeks, large sites 2–3 months.",
+  },
+  {
+    question: "app redesign",
+    answer:
+      "We revamp mobile apps for better user experience and performance. Delivery time depends on complexity, usually 3–8 weeks.",
+  },
+  {
+    question: "digital marketing",
+    answer:
+      "Zayra here! We provide SEO, social media marketing, and paid campaigns. Projects are planned based on duration, goals, and budget.",
+  },
+  {
+    question: "seo",
+    answer:
+      "We optimize websites for search engines, improving ranking and visibility. SEO campaigns are continuous and tracked for progress.",
+  },
+  {
+    question: "social media marketing",
+    answer:
+      "Zayra says: We manage social media platforms, create content, and run campaigns to boost engagement and conversions.",
+  },
+  {
+    question: "pricing",
+    answer:
+      "Our pricing depends on project type, complexity, and timeline. Small projects start at reasonable rates, larger projects vary. Contact support@optixdigitalai.com for a detailed quote.",
+  },
+
+  {
+    question: "prices",
+    answer:
+      "Our pricing depends on project type, complexity, and timeline. Small projects start at reasonable rates, larger projects vary. Contact support@optixdigitalai.com for a detailed quote.",
+  },
+
   {
     question: "price",
     answer:
-      "Zayra here! Our prices depend on project scope. Please contact us at support@optixdigitalai.com for a detailed quote.",
+      "Our pricing depends on project type, complexity, and timeline. Small projects start at reasonable rates, larger projects vary. Contact support@optixdigitalai.com for a detailed quote.",
+  },
+
+  {
+    question: "amounts",
+    answer:
+      "Our pricing depends on project type, complexity, and timeline. Small projects start at reasonable rates, larger projects vary. Contact support@optixdigitalai.com for a detailed quote.",
+  },
+
+  {
+    question: "amount",
+    answer:
+      "Our pricing depends on project type, complexity, and timeline. Small projects start at reasonable rates, larger projects vary. Contact support@optixdigitalai.com for a detailed quote.",
+  },
+
+  {
+    question: "costs",
+    answer:
+      "Our pricing depends on project type, complexity, and timeline. Small projects start at reasonable rates, larger projects vary. Contact support@optixdigitalai.com for a detailed quote.",
+  },
+
+  {
+    question: "money",
+    answer:
+      "Our pricing depends on project type, complexity, and timeline. Small projects start at reasonable rates, larger projects vary. Contact support@optixdigitalai.com for a detailed quote.",
+  },
+
+  {
+    question: "charge",
+    answer:
+      "Our pricing depends on project type, complexity, and timeline. Small projects start at reasonable rates, larger projects vary. Contact support@optixdigitalai.com for a detailed quote.",
+  },
+
+  {
+    question: "charges",
+    answer:
+      "Our pricing depends on project type, complexity, and timeline. Small projects start at reasonable rates, larger projects vary. Contact support@optixdigitalai.com for a detailed quote.",
   },
   {
-    question: "delivery",
+    question: "cost",
     answer:
-      "Yes! Zayra confirms: We deliver completed projects digitally and provide post-launch support.",
+      "Zayra confirms: Project cost varies based on scope, technology, and deliverables. We provide a detailed estimate after reviewing your requirements.",
   },
   {
-    question: "how long",
+    question: "quote",
     answer:
-      "Zayra here! Small projects usually take 2–4 weeks, while larger projects may take 2–3 months, depending on complexity.",
+      "Request a quote via our contact form or email. We'll respond with estimated cost, delivery date, and project scope within 24–48 hours.",
+  },
+
+  {
+    question: "quotes",
+    answer:
+      "Request a quote via our contact form or email. We'll respond with estimated cost, delivery date, and project scope within 24–48 hours.",
   },
   {
-    question: "custom",
+    question: "expected delivery",
     answer:
-      "Absolutely! Zayra says: Contact us at support@optixdigitalai.com to discuss your custom project requirements.",
+      "Small projects: 2–7 days, medium: 2–6 weeks, large projects: 2–3 months. Zayra provides updates and ensures timely delivery.",
+  },
+  {
+    question: "delivery time",
+    answer:
+      "Delivery time depends on project size and complexity. We'll share the estimated timeline when you submit your project details.",
+  },
+  {
+    question: "timeline",
+    answer:
+      "Zayra here! We provide a detailed project timeline with milestones and expected delivery dates for each stage.",
+  },
+  {
+    question: "working hours",
+    answer:
+      "Our working hours are Monday–Friday, 10 AM–7 PM IST. Messages outside these hours are answered the next business day.",
+  },
+  {
+    question: "working days",
+    answer:
+      "We work Monday through Friday. Weekends are off, but we can accommodate urgent requests if needed.",
+  },
+  {
+    question: "revision",
+    answer:
+      "Zayra says: We provide 2–3 rounds of revisions for designs or websites to ensure your satisfaction.",
   },
   {
     question: "support",
     answer:
-      "Yes! Zayra provides ongoing maintenance and support. Reach out to support@optixdigitalai.com for more details.",
+      "Yes! We provide post-launch support, bug fixes, and maintenance. Contact support@optixdigitalai.com for assistance.",
+  },
+  {
+    question: "maintenance",
+    answer:
+      "We offer ongoing website and app maintenance to ensure smooth operation, updates, and security.",
+  },
+  {
+    question: "custom project",
+    answer:
+      "We handle custom projects tailored to your needs. Contact us for requirements, delivery date, and timeline.",
+  },
+  {
+    question: "consultation",
+    answer:
+      "Zayra here! Schedule a free consultation to discuss project requirements, delivery, and expected costs.",
   },
   {
     question: "get started",
     answer:
-      "Zayra here! Click on the 'Get in Touch' button in the header to contact us and start your project.",
+      "Click 'Get in Touch' in the header or email support@optixdigitalai.com. We'll provide roadmap, timeline, and quotation.",
+  },
+  {
+    question: "terms",
+    answer:
+      "Zayra says: You can view our Terms & Conditions on our website. It includes project terms, payment policies, and user responsibilities.",
+  },
+  {
+    question: "terms and conditions",
+    answer:
+      "Our Terms & Conditions cover pricing, delivery, revisions, intellectual property, and project policies. Please read them before starting a project.",
+  },
+  {
+    question: "privacy",
+    answer:
+      "Zayra confirms: Our Privacy Policy explains how we handle your data, including contact info and project details.",
+  },
+  {
+    question: "privacy policy",
+    answer:
+      "We respect your privacy. Data collected is used only for project communication, delivery, and support. Read our Privacy Policy for details.",
+  },
+  {
+    question: "contact",
+    answer:
+      "You can reach us via email support@optixdigitalai.com, phone +91 7420807072, or the 'Get in Touch' form.",
+  },
+  {
+    question: "email",
+    answer:
+      "Zayra here! Email us at support@optixdigitalai.com for project inquiries, quotes, or support.",
+  },
+  {
+    question: "phone",
+    answer:
+      "Call or WhatsApp us at +91 7420807072. Working hours: Monday–Friday, 10 AM–7 PM IST.",
+  },
+  {
+    question: "address",
+    answer:
+      "Our office is at #1306, Ambrosia Galaxy, Pan Card Club Road, Baner, Pune, Maharashtra 411069. Visit by appointment only.",
+  },
+  {
+    question: "logo revision",
+    answer:
+      "We provide 2–3 rounds of logo revisions. Each iteration is shared for your feedback to ensure final approval.",
+  },
+  {
+    question: "website revision",
+    answer:
+      "Zayra here! Website revisions are included in the project plan. Small tweaks usually done within 24–48 hours.",
+  },
+  {
+    question: "app revision",
+    answer:
+      "We provide revisions for mobile apps based on user feedback and testing. Each iteration is scheduled in the project timeline.",
+  },
+  {
+    question: "delivery method",
+    answer:
+      "Projects are delivered digitally via email, cloud storage, or deployment to your server/app store as per agreement.",
+  },
+  {
+    question: "payment terms",
+    answer:
+      "Payment is typically 50% upfront and 50% after delivery, unless agreed otherwise. Terms are explained in our Terms & Conditions.",
+  },
+  {
+    question: "refund policy",
+    answer:
+      "Refunds are managed per project scope and Terms & Conditions. Contact support for specific queries.",
+  },
+  {
+    question: "project updates",
+    answer:
+      "Zayra here! We provide regular updates via email or calls. You will know the project status, milestones, and any issues.",
+  },
+  {
+    question: "technologies",
+    answer:
+      "We use React, Next.js, Node.js, Flutter, Figma, Adobe Suite, and more depending on project requirements.",
+  },
+  {
+    question: "platforms",
+    answer:
+      "Web, iOS, Android, cross-platform solutions using Flutter and responsive web frameworks.",
+  },
+  {
+    question: "social media graphics",
+    answer:
+      "Zayra says: We design posts, stories, banners, and advertisements. Typical delivery: 2–5 business days with revisions included.",
+  },
+  {
+    question: "banner design",
+    answer:
+      "Banners are delivered in 2–4 days depending on complexity and client feedback.",
+  },
+  {
+    question: "brochure design",
+    answer:
+      "Brochures take 3–7 days for initial drafts. Revisions included based on your feedback.",
+  },
+  {
+    question: "startup package",
+    answer:
+      "We offer startup packages including web, logo, and basic marketing. Timeline: 2–6 weeks depending on services included.",
+  },
+  {
+    question: "enterprise solutions",
+    answer:
+      "Enterprise web and mobile solutions are customized. Delivery 8–12 weeks typically. Consult us for details.",
+  },
+  {
+    question: "support hours",
+    answer:
+      "Support is available Monday–Friday, 10 AM–7 PM IST. Queries received after hours are addressed next working day.",
+  },
+  {
+    question: "project proposal",
+    answer:
+      "Zayra can provide a detailed proposal including scope, timeline, cost, revisions, and expected delivery date.",
+  },
+  {
+    question: "project scope",
+    answer:
+      "We define the scope clearly before starting. It includes deliverables, timelines, revisions, and technologies to be used.",
+  },
+  {
+    question: "project milestones",
+    answer:
+      "Milestones are shared for each project stage, including design, development, review, testing, and delivery.",
+  },
+  {
+    question: "workflow",
+    answer:
+      "Our workflow includes consultation, requirement gathering, design, development, testing, delivery, and post-launch support.",
+  },
+  {
+    question: "project management",
+    answer:
+      "We use professional project management practices with regular updates, milestone tracking, and clear communication.",
+  },
+  {
+    question: "communication",
+    answer:
+      "Zayra ensures transparent communication via email, calls, and project management tools.",
+  },
+  {
+    question: "timeline extension",
+    answer:
+      "If the project requires extra time, we notify you in advance and provide updated expected delivery dates.",
+  },
+  {
+    question: "urgent project",
+    answer:
+      "Zayra can accommodate urgent projects. Delivery time depends on scope and availability, and extra charges may apply.",
+  },
+  {
+    question: "free consultation",
+    answer:
+      "We offer free consultation to discuss your project, expected delivery, pricing, and solutions before starting.",
+  },
+  {
+    question: "project initiation",
+    answer:
+      "After agreement and initial payment, we start the project immediately and share the timeline and milestones.",
+  },
+  {
+    question: "project tracking",
+    answer:
+      "Zayra ensures you can track project progress via updates, milestone reports, and meetings as needed.",
+  },
+  {
+    question: "feedback process",
+    answer:
+      "We incorporate client feedback at every stage for designs, websites, and apps to ensure satisfaction.",
+  },
+  {
+    question: "revision policy",
+    answer:
+      "2–3 revisions are included per project stage. Additional revisions may be quoted separately.",
+  },
+  {
+    question: "delivery confirmation",
+    answer:
+      "Once delivered, we confirm with the client via email and ensure all files and access are correctly provided.",
+  },
+  {
+    question: "post-launch support",
+    answer:
+      "We provide ongoing support, bug fixes, and updates post-launch. Support duration depends on project scope.",
+  },
+  {
+    question: "contact hours",
+    answer:
+      "You can contact us Monday–Friday, 10 AM–7 PM IST for all project or support-related queries.",
+  },
+  {
+    question: "pricing packages",
+    answer:
+      "We offer standard and custom pricing packages based on services. Contact Zayra for detailed breakdown.",
+  },
+  {
+    question: "discounts",
+    answer:
+      "Occasionally, we provide discounts for startups, bulk projects, or referrals. Contact us for current offers.",
+  },
+  {
+    question: "project consultation",
+    answer:
+      "Free consultation available to discuss project requirements, expected delivery, pricing, and support.",
+  },
+  {
+    question: "agreement",
+    answer:
+      "All projects are governed by a mutual agreement, covering scope, payment, delivery, revisions, and IP rights.",
+  },
+  {
+    question: "intellectual property",
+    answer:
+      "Clients own all intellectual property of delivered work after payment. IP clauses are in Terms & Conditions.",
+  },
+  {
+    question: "nda",
+    answer:
+      "We can sign an NDA to ensure confidentiality for sensitive projects before starting.",
+  },
+  {
+    question: "billing",
+    answer:
+      "Invoices are sent per milestone or per payment terms agreed in the project agreement.",
+  },
+  {
+    question: "payment methods",
+    answer:
+      "We accept bank transfer, UPI, and other online payment methods as agreed per project.",
+  },
+  {
+    question: "refund",
+    answer:
+      "Refunds are handled according to Terms & Conditions and project scope. Contact support for clarification.",
+  },
+  {
+    question: "project status",
+    answer:
+      "Zayra provides updates about current project status, milestones achieved, and next steps.",
+  },
+  {
+    question: "client portal",
+    answer:
+      "We can provide a project tracking portal for clients to view progress, deliverables, and communicate directly.",
+  },
+  {
+    question: "project handover",
+    answer:
+      "After final delivery, all files, credentials, and documentation are handed over digitally.",
+  },
+  {
+    question: "documentation",
+    answer:
+      "We provide detailed documentation for websites, apps, and designs to assist clients post-delivery.",
+  },
+  {
+    question: "training",
+    answer:
+      "Training for using your website or app can be provided on request during or after delivery.",
+  },
+  {
+    question: "technical support",
+    answer:
+      "Technical support is provided post-launch. Contact support@optixdigitalai.com for any issues.",
+  },
+  {
+    question: "project review",
+    answer:
+      "We conduct review sessions for designs, apps, or websites to ensure quality and meet client expectations.",
+  },
+
+  {
+    question: "services",
+    answer:
+      "Zayra here! We provide a wide range of services including Web Development, Mobile App Development, UI/UX Design, Graphic & Logo Design, Website & Mobile Redesign, and Digital Consulting services.",
+  },
+  {
+    question: "service",
+    answer:
+      "Zayra confirms: Our services include Web Development, App Development, UI/UX Design, Graphic Designing, Logo Creation, Website & App Redesign, and Digital Strategy Consulting.",
+  },
+  {
+    question: "services offered",
+    answer:
+      "We offer a variety of services to help businesses grow digitally: Web Development, App Development, UI/UX Design, Logo & Graphic Design, Website & App Redesign, Digital Marketing, and Consulting.",
+  },
+  {
+    question: "service offered",
+    answer:
+      "Zayra says: Our services include full-stack Web Development, Mobile App Development, UI/UX Design, Logo & Graphic Design, Website & App Redesign, and Digital Consulting.",
+  },
+  {
+    question: "type of services",
+    answer:
+      "Zayra here! We provide multiple types of services: Web & Mobile Development, UI/UX Design, Logo & Graphic Design, Redesign Projects, Digital Marketing, and Business Consulting.",
+  },
+  {
+    question: "types of services",
+    answer:
+      "Our services range from Web Development, Mobile App Development, UI/UX Design, Graphic & Logo Design, Website & Mobile Redesign, to Digital Strategy and Consulting services.",
+  },
+  {
+    question: "what services do you offer",
+    answer:
+      "We offer Web Development, Mobile App Development, UI/UX Design, Logo & Graphic Design, Website & App Redesign, Digital Marketing, and Consulting services tailored to your business needs.",
+  },
+  {
+    question: "what service do you provide",
+    answer:
+      "Zayra says: We provide Web Development, App Development, UI/UX Design, Graphic & Logo Design, Website & App Redesign, and Digital Consulting services.",
+  },
+  {
+    question: "list of services",
+    answer:
+      "Our services include: 1) Web Development, 2) Mobile App Development, 3) UI/UX Design, 4) Graphic & Logo Design, 5) Website & Mobile Redesign, 6) Digital Marketing, 7) Digital Consulting.",
+  },
+  {
+    question: "all services",
+    answer:
+      "Zayra confirms: We offer all essential digital services for businesses including Web & App Development, Design, Logo & Graphic Design, Redesign, Marketing, and Consulting services.",
+  },
+  {
+    question: "full service list",
+    answer:
+      "Our full service list includes Web Development, Mobile App Development, UI/UX Design, Graphic & Logo Design, Website & App Redesign, Digital Marketing, and Consulting services.",
+  },
+  {
+    question: "service list",
+    answer:
+      "Zayra here! You can explore our services: Web Development, App Development, UI/UX Design, Graphic & Logo Design, Website & App Redesign, Digital Marketing, and Consulting.",
+  },
+  {
+    question: "service packages",
+    answer:
+      "We offer service packages tailored to different business needs, combining Web Development, App Development, Design, Marketing, and Consulting. Contact us for details.",
+  },
+  {
+    question: "which services do you offer",
+    answer:
+      "Zayra says: We offer Web Development, App Development, UI/UX Design, Logo & Graphic Design, Website & Mobile Redesign, Digital Marketing, and Consulting services for businesses.",
+  },
+  {
+    question: "digital services",
+    answer:
+      "Our digital services include Website & App Development, UI/UX Design, Graphic & Logo Design, Redesign Projects, Digital Marketing, and Consulting for business growth.",
+  },
+  {
+    question: "creative services",
+    answer:
+      "We provide creative services such as UI/UX Design, Graphic & Logo Design, Website & App Redesign, and branding solutions for businesses.",
+  },
+  {
+    question: "consulting services",
+    answer:
+      "Zayra here! Our consulting services help businesses plan and execute digital strategies, marketing campaigns, and technology solutions for growth.",
+  },
+  {
+    question: "design services",
+    answer:
+      "We offer design services including Logo Design, Graphic Design, UI/UX Design for web and mobile applications, and marketing materials.",
   },
 ];
 
