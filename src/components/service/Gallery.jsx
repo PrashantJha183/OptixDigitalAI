@@ -3,11 +3,12 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-// Local assets (replace with your actual paths)
+// Local assets
 import Social_1 from "../../assets/Digital Marketing.jpeg";
 import Social_2 from "../../assets/Digital Marketing Social Media Post Design.jpeg";
 import Social_3 from "../../assets/DM.jpeg";
 import Social_4 from "../../assets/social_media_4.png";
+import Social_5 from "../../assets/social_media_6.jpeg";
 import Logo_1 from "../../assets/logo_1.png";
 import Logo_2 from "../../assets/logo_2.png";
 import Logo_3 from "../../assets/logo_3.png";
@@ -21,26 +22,38 @@ import Graphics_5 from "../../assets/graphics_5.jpeg";
 
 // Gallery Data
 const galleryData = {
-  social: [Social_1, Social_2, Social_3, Social_4],
+  social: [Social_1, Social_2, Social_3, Social_4, Social_5],
   graphics: [Graphics_1, Graphics_2, Graphics_3, Graphics_4, Graphics_5],
   logo: [Logo_1, Logo_2, Logo_3, Logo_4, Logo_5],
 };
 
-// Reusable BlurImage Component
+// BlurImage with Skeleton + LQIP + fully loaded image
 const BlurImage = React.memo(({ src, alt }) => {
   const [loaded, setLoaded] = useState(false);
+  const [showLqip, setShowLqip] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowLqip(true), 200);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <div className="relative w-full h-full md:h-full overflow-hidden rounded-xl bg-gray-100">
-      {/* Low-quality blur fallback */}
-      <img
-        src={src}
-        alt={`${alt} - blurred preview`}
-        className={`absolute w-full h-full object-cover filter blur-2xl scale-110 transition-all duration-700 ${
-          loaded ? "opacity-0" : "opacity-100"
-        }`}
-      />
-      {/* Main Image */}
+    <div className="relative w-full h-full overflow-hidden rounded-xl bg-gray-100">
+      {/* Skeleton shimmer always visible until main image loads */}
+      {!loaded && (
+        <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-[shimmer_1.5s_infinite]" />
+      )}
+
+      {/* LQIP (blur) appears after skeleton */}
+      {showLqip && !loaded && (
+        <img
+          src={src}
+          alt={`${alt} - LQIP`}
+          className="absolute w-full h-full object-cover filter blur-2xl scale-110 opacity-70 transition-all duration-500"
+        />
+      )}
+
+      {/* Fully loaded image */}
       <img
         src={src}
         alt={alt}
@@ -48,11 +61,17 @@ const BlurImage = React.memo(({ src, alt }) => {
         decoding="async"
         onLoad={() => setLoaded(true)}
         className={`relative w-full h-full object-cover transition-all duration-700 ${
-          loaded
-            ? "opacity-100 scale-100 blur-0"
-            : "opacity-0 scale-105 blur-lg"
+          loaded ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-105"
         }`}
       />
+
+      {/* Shimmer keyframes */}
+      <style>{`
+        @keyframes shimmer {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
+      `}</style>
     </div>
   );
 });
@@ -61,7 +80,7 @@ const BlurImage = React.memo(({ src, alt }) => {
 const Gallery = () => {
   const [selected, setSelected] = useState("social");
 
-  // Entrance + Scroll animation setup
+  // Entrance + Scroll animation
   const controls = useAnimation();
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
 
@@ -87,6 +106,7 @@ const Gallery = () => {
       <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 text-[#5d00c3]">
         Our Works
       </h2>
+
       {/* Category Buttons */}
       <div className="flex flex-wrap justify-center gap-4 mb-10">
         {["social", "graphics", "logo"].map((cat) => (
@@ -107,8 +127,7 @@ const Gallery = () => {
         ))}
       </div>
 
-      {/* Image Grid with smooth transition */}
-      {/* Image Grid with smooth transition */}
+      {/* Image Grid with Skeleton + LQIP + smooth transition */}
       <AnimatePresence mode="wait">
         <motion.div
           key={selected}
