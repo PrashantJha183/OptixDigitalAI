@@ -62,25 +62,25 @@ const ServicesCards = () => {
       icon: PenTool,
       title: "Graphic Design",
       description:
-        "We turn your ideas into striking visuals that speak for your brand—clean, clever, and impossible to ignore.",
+        "We turn your ideas into striking visuals that speak for your brand clean, clever, and impossible to ignore.",
     },
     {
       icon: Image,
       title: "Logo Design",
       description:
-        "Crafting logos that are more than symbols—they’re memorable brand stories in a single glance.",
+        "Crafting logos that are more than symbols they’re memorable brand stories in a single glance.",
     },
     {
       icon: Users,
       title: "Consultation",
       description:
-        "Strategic guidance that cuts through noise—helping you make confident, smart digital and design decisions.",
+        "Strategic guidance that cuts through noise helping you make confident, smart digital and design decisions.",
     },
     {
       icon: Monitor,
       title: "Web Development",
       description:
-        "We build websites that aren’t just responsive—they perform, rank, and convert. WordPress, Shopify, or custom solutions, tailored for your goals.",
+        "We build websites that aren’t just responsive they perform, rank, and convert. WordPress, Shopify, or custom solutions, tailored for your goals.",
     },
     {
       icon: Smartphone,

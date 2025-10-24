@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import ServiceHero from "../service/ServiceHero";
 import ServicesCards from "../service/ServicesCards";
 import ServiceContact from "../service/ServiceContact";
+import Gallery from "../service/Gallery";
 import ErrorBoundary from "../base/ErrorBoundary";
 
 const ServicepageView = () => {
@@ -146,6 +147,10 @@ const ServicepageView = () => {
       </ErrorBoundary>
       <ErrorBoundary>
         <ServicesCards />
+      </ErrorBoundary>
+
+      <ErrorBoundary>
+        <Gallery />
       </ErrorBoundary>
       <ErrorBoundary>
         <ServiceContact />

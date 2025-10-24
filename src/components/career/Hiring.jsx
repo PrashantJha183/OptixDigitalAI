@@ -21,6 +21,16 @@ const Hiring = () => {
 
   // Toast state
   const [showToast, setShowToast] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const email = "support@optixdigitalai.com";
+
+  // Detect mobile for responsive behavior
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Animate header when it comes into view
   useEffect(() => {
@@ -60,11 +70,15 @@ const Hiring = () => {
     }
   }, [contactInView, contactControls]);
 
-  // Copy email function
-  const copyEmail = () => {
-    navigator.clipboard.writeText("support@optixdigitalai.com");
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 3000);
+  // Email click handler
+  const handleEmailClick = (e) => {
+    if (!isMobile) {
+      navigator.clipboard.writeText(email);
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 3000);
+      e.preventDefault(); // prevent mailto on desktop
+    }
+    // on mobile, default mailto will open
   };
 
   return (
@@ -112,11 +126,10 @@ const Hiring = () => {
         initial={{ opacity: 0, y: 50, scale: 0.95 }}
         animate={contactControls}
         whileHover={{
-          //   scale: 1.05,
           transition: { type: "spring", stiffness: 150, damping: 10 },
         }}
-        className="max-w-xl mx-auto  p-6 md:p-12 flex items-center gap-4 md:gap-6 cursor-pointer"
-        onClick={copyEmail}
+        className="max-w-xl mx-auto p-6 md:p-12 flex items-center gap-4 md:gap-6 cursor-pointer"
+        onClick={handleEmailClick}
       >
         <Mail className="w-8 h-8 text-gray-900 flex-shrink-0" />
         <motion.div
@@ -131,9 +144,12 @@ const Hiring = () => {
         >
           <p className="text-gray-900 text-base md:text-lg">
             Contact us at:{" "}
-            <span className="underline font-medium hover:text-gray-800">
-              support@optixdigitalai.com
-            </span>
+            <a
+              href={`mailto:${email}`}
+              className="underline font-medium hover:text-gray-800"
+            >
+              {email}
+            </a>
           </p>
           <p className="text-gray-900 text-sm md:text-base mt-2">
             We will notify you about any available openings.

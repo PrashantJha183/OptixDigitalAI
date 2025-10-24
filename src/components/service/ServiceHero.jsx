@@ -194,7 +194,7 @@ const ServiceHero = () => {
             }}
           >
             We empower brands with transformative technology and creative
-            strategy — delivering innovation that drives measurable success in
+            strategy delivering innovation that drives measurable success in
             every digital experience.
           </motion.p>
         </motion.div>

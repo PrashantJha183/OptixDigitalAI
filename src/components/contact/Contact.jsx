@@ -18,6 +18,7 @@ const Contact = () => {
     name: "",
     email: "",
     phone: "",
+    countryCode: "+91",
     message: "",
   });
 
@@ -26,8 +27,8 @@ const Contact = () => {
   const [status, setStatus] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
-  // Scroll-trigger animation (fixed)
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -48,35 +49,59 @@ const Contact = () => {
     };
   }, [controls]);
 
-  // Validation logic
   const validate = useCallback(() => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Name is required.";
-    if (!formData.email.trim()) newErrors.email = "Email is required.";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
+
+    const nameTrimmed = formData.name.replace(/\s/g, ""); // remove all spaces
+    const emailTrimmed = formData.email.trim();
+    const phoneTrimmed = formData.phone.replace(/\s/g, "");
+    const countryCodeTrimmed = formData.countryCode.trim();
+    const messageTrimmed = formData.message.replace(/\s/g, "");
+
+    // Name validation
+    if (!nameTrimmed) newErrors.name = "Name is required.";
+    else if (nameTrimmed.length < 3)
+      newErrors.name = "Name must be at least 3 characters.";
+    else if (nameTrimmed.length > 50)
+      newErrors.name = "Name cannot exceed 50 characters.";
+
+    // Email validation
+    if (!emailTrimmed) newErrors.email = "Email is required.";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailTrimmed))
       newErrors.email = "Enter a valid email address.";
 
-    if (!formData.phone.trim()) newErrors.phone = "Phone number is required.";
-    else if (!/^\+?\d{10,15}$/.test(formData.phone))
-      newErrors.phone = "Enter a valid phone number (10-15 digits).";
+    // Phone validation
+    if (!phoneTrimmed) newErrors.phone = "Phone number is required.";
+    else if (!/^\d+$/.test(phoneTrimmed))
+      newErrors.phone = "Phone number must contain digits only.";
+    else if (phoneTrimmed.length < 6 || phoneTrimmed.length > 15)
+      newErrors.phone = "Phone number must be between 6 and 15 digits.";
 
-    if (!formData.message.trim())
-      newErrors.message = "Message cannot be empty.";
+    // Country code validation
+    if (!countryCodeTrimmed)
+      newErrors.countryCode = "Country code is required.";
+    else if (!/^\+?\d{1,4}$/.test(countryCodeTrimmed))
+      newErrors.countryCode = "Enter a valid country code (e.g., +91).";
+
+    // Message validation
+    if (!messageTrimmed) newErrors.message = "Message cannot be empty.";
+    else if (messageTrimmed.length < 10)
+      newErrors.message = "Message must be at least 10 characters.";
+    else if (messageTrimmed.length > 500)
+      newErrors.message = "Message cannot exceed 500 characters.";
 
     setErrors(newErrors);
     setIsFormValid(Object.keys(newErrors).length === 0);
     return Object.keys(newErrors).length === 0;
   }, [formData]);
 
-  // Debounced input update
   const handleInputChange = useCallback(
     debounce((field, value) => {
       setFormData((prev) => ({ ...prev, [field]: value }));
-    }, 250),
+    }, 10),
     []
   );
 
-  // Real-time validation
   useEffect(() => {
     validate();
   }, [formData, validate]);
@@ -85,9 +110,15 @@ const Contact = () => {
     setTouched((prev) => ({ ...prev, [field]: true }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setTouched({ name: true, email: true, phone: true, message: true });
+    setTouched({
+      name: true,
+      email: true,
+      phone: true,
+      countryCode: true,
+      message: true,
+    });
 
     if (!validate()) {
       setStatus("error");
@@ -101,13 +132,36 @@ const Contact = () => {
     setIsSubmitting(true);
     setStatus(null);
 
-    setTimeout(() => {
+    try {
+      const response = await fetch("https://formspree.io/f/myznrloy", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: new FormData(e.target),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setShowPopup(true);
+        setTimeout(() => setShowPopup(false), 5000);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          countryCode: "+91",
+          message: "",
+        });
+        setTouched({});
+        setIsFormValid(false);
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    } finally {
       setIsSubmitting(false);
-      setStatus("success");
-      setFormData({ name: "", email: "", phone: "", message: "" });
-      setTouched({});
-      setIsFormValid(false);
-    }, 1500);
+    }
   };
 
   const fadeVariant = {
@@ -121,12 +175,23 @@ const Contact = () => {
 
   return (
     <ErrorBoundary>
+      {showPopup && (
+        <motion.div
+          initial={{ opacity: 0, x: 100 }} // starts off to the right
+          animate={{ opacity: 1, x: 0 }} // slides in to center
+          exit={{ opacity: 0, x: 100 }} // slides out to the right (reverse of entrance)
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="fixed top-6 right-6 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50"
+        >
+          Message sent successfully!
+        </motion.div>
+      )}
+
       <section
         ref={sectionRef}
         id="contact"
         className="bg-[#5d00c3] new-font text-white min-h-[85vh] flex flex-col md:flex-row justify-center items-center px-6 md:px-20 py-24 rounded-md m-4 overflow-hidden relative"
       >
-        {/* Decorative gradients */}
         <motion.div
           className="absolute top-10 left-10 w-40 h-40 bg-purple-400/30 rounded-full blur-3xl"
           animate={{ y: [0, -15, 0], opacity: [0.8, 1, 0.8] }}
@@ -138,7 +203,6 @@ const Contact = () => {
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         />
 
-        {/* LEFT SIDE - TEXT */}
         <motion.div
           className="md:w-1/2 z-10 text-center md:text-left mb-10 md:mb-0"
           initial="hidden"
@@ -155,7 +219,6 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        {/* RIGHT SIDE - FORM */}
         <motion.div
           className="md:w-1/2 z-10 w-full max-w-lg"
           initial="hidden"
@@ -167,11 +230,12 @@ const Contact = () => {
             className="space-y-5 bg-white p-8 rounded-2xl shadow-xl border border-gray-200"
             noValidate
           >
-            {/* Name */}
             <div className="relative">
               <FiUser className="absolute left-4 top-4 text-gray-500" />
               <input
                 type="text"
+                autoComplete="off"
+                name="name"
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={(e) => handleInputChange("name", e.target.value)}
@@ -187,11 +251,12 @@ const Contact = () => {
               )}
             </div>
 
-            {/* Email */}
             <div className="relative">
               <FiMail className="absolute left-4 top-4 text-gray-500" />
               <input
                 type="email"
+                name="email"
+                autoComplete="off"
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
@@ -207,32 +272,69 @@ const Contact = () => {
               )}
             </div>
 
-            {/* Phone */}
-            <div className="relative">
-              <FiPhone className="absolute left-4 top-4 text-gray-500" />
-              <input
-                type="tel"
-                placeholder="Your Phone Number"
-                value={formData.phone}
-                onChange={(e) => handleInputChange("phone", e.target.value)}
-                onBlur={() => handleBlur("phone")}
-                className={`w-full pl-12 pr-4 py-3 border-2 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none ${
-                  touched.phone && errors.phone
-                    ? "border-red-400"
-                    : "border-gray-300 focus:border-[#5d00c3]"
-                } transition-all`}
-              />
-              {touched.phone && errors.phone && (
-                <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
-              )}
+            <div className="relative flex gap-3">
+              {/* Country Code Input */}
+              <div className="w-1/4 relative">
+                <input
+                  type="text"
+                  name="countryCode"
+                  autoComplete="off"
+                  placeholder="+91"
+                  value={formData.countryCode}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    // Allow only "+" followed by up to 4 digits
+                    if (/^\+?\d{0,4}$/.test(value)) {
+                      setFormData((prev) => ({ ...prev, countryCode: value }));
+                    }
+                  }}
+                  onBlur={() => handleBlur("countryCode")}
+                  className={`w-full text-center py-3 border-2 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none ${
+                    touched.countryCode && errors.countryCode
+                      ? "border-red-400"
+                      : "border-gray-300 focus:border-[#5d00c3]"
+                  } transition-all`}
+                />
+                {touched.countryCode && errors.countryCode && (
+                  <p className="text-red-500 text-sm mt-1 text-center">
+                    {errors.countryCode}
+                  </p>
+                )}
+              </div>
+
+              {/* Phone Number Input */}
+              <div className="w-3/4 relative">
+                <FiPhone className="absolute left-4 top-4 text-gray-500" />
+                <input
+                  type="tel"
+                  name="phone"
+                  autoComplete="off"
+                  placeholder="Your Phone Number"
+                  value={formData.phone}
+                  onChange={(e) => {
+                    const value = e.target.value.replace(/\D/g, ""); // Only numbers
+                    handleInputChange("phone", value);
+                  }}
+                  onBlur={() => handleBlur("phone")}
+                  className={`w-full pl-12 pr-4 py-3 border-2 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none ${
+                    touched.phone && errors.phone
+                      ? "border-red-400"
+                      : "border-gray-300 focus:border-[#5d00c3]"
+                  } transition-all`}
+                />
+                {touched.phone && errors.phone && (
+                  <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                )}
+              </div>
             </div>
 
-            {/* Message */}
             <div className="relative">
               <FiMessageSquare className="absolute left-4 top-4 text-gray-500" />
               <textarea
+                name="message"
                 placeholder="Your Message"
                 rows={4}
+                autoComplete="off"
                 value={formData.message}
                 onChange={(e) => handleInputChange("message", e.target.value)}
                 onBlur={() => handleBlur("message")}
@@ -247,7 +349,6 @@ const Contact = () => {
               )}
             </div>
 
-            {/* Submit Button */}
             <motion.button
               type="submit"
               disabled={!isFormValid || isSubmitting}
@@ -263,23 +364,13 @@ const Contact = () => {
               <FiSend className="w-5 h-5" />
             </motion.button>
 
-            {/* Status Messages */}
-            {status === "success" && (
-              <motion.p
-                className="text-green-600 text-center font-semibold mt-2"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-              >
-                Message sent successfully!
-              </motion.p>
-            )}
             {status === "error" && (
               <motion.p
                 className="text-red-600 text-center font-semibold mt-2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >
-                Please correct the errors above.
+                Please correct the errors above or try again later.
               </motion.p>
             )}
           </form>
