@@ -72,30 +72,52 @@ const HomepageView = () => {
 
         {/* Schema.org Structured Data (JSON-LD for Google Rich Results) */}
         <script type="application/ld+json">{`
-          {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "OptixDigitalAI",
-            "url": "${siteUrl}",
-            "logo": "${siteUrl}/favicon.png",
-            "sameAs": [
-              "https://www.linkedin.com/company/optixdigitalai",
-              "https://www.instagram.com/optixdigitalai",
-              "https://x.com/optixdigitalai"
-            ],
-            "description": "${description}",
-            "address": {
-              "@type": "PostalAddress",
-              "addressCountry": "IN"
-            },
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+91 7420807072",
-              "contactType": "customer service",
-              "areaServed": "Worldwide"
-            }
-          }
-        `}</script>
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "${siteUrl}#organization",
+    "name": "OptixDigitalAI",
+    "url": "${siteUrl}",
+    "logo": "${siteUrl}/favicon.png",
+    "description": "${description}",
+    "sameAs": [
+      "https://www.linkedin.com/company/optixdigitalai",
+      "https://www.instagram.com/optixdigitalai",
+      "https://x.com/optixdigitalai"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91 7420807072",
+        "contactType": "customer service",
+        "areaServed": "Worldwide",
+        "availableLanguage": ["English", "Hindi"]
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "${siteUrl}#website",
+    "url": "${siteUrl}",
+    "name": "OptixDigitalAI",
+    "inLanguage": "en",
+    "publisher": {
+      "@id": "${siteUrl}#organization"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "${siteUrl}/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+]
+`}</script>
       </Helmet>
 
       <ErrorBoundary>

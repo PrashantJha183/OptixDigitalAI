@@ -78,49 +78,72 @@ const PricingpageView = () => {
 
         {/* --- Schema.org Structured Data with ContactPoint & Breadcrumbs --- */}
         <script type="application/ld+json">{`
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "OptixDigitalAI Pricing Plans",
-    "url": "${canonicalUrl}",
-    "inLanguage": "en",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "OptixDigitalAI",
-      "url": "${siteUrl}",
-      "logo": "${siteUrl}/logo.png",
-      "description": "${description}",
-      "foundingDate": "2025",
-      "founders": [
-        { "@type": "Person", "name": "OptixDigitalAI Team" }
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91 7420807072",
-        "contactType": "customer support",
-        "availableLanguage": ["English","Hindi"]
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/optixdigitalai",
-        "https://www.instagram.com/optixdigitalai",
-        "https://x.com/optixdigitalai",
-        "https://www.facebook.com/optixdigitalai"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "IN"
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "OptixDigitalAI Pricing Plans",
+  "url": "${canonicalUrl}",
+  "inLanguage": "en",
+  "description": "${description}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "OptixDigitalAI",
+    "url": "${siteUrl}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "${siteUrl}/logo.png"
     },
-    "breadcrumb": {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "${siteUrl}" },
-        { "@type": "ListItem", "position": 2, "name": "About", "item": "${siteUrl}/about" },
-        { "@type": "ListItem", "position": 3, "name": "Services", "item": "${siteUrl}/services" },
-        { "@type": "ListItem", "position": 4, "name": "Pricing", "item": "${canonicalUrl}" }
-      ]
+    "foundingDate": "2025",
+    "founders": [
+      { "@type": "Person", "name": "OptixDigitalAI Team" }
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91 7420807072",
+      "contactType": "Customer Support",
+      "availableLanguage": ["English", "Hindi"]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/optixdigitalai",
+      "https://www.instagram.com/optixdigitalai",
+      "https://x.com/optixdigitalai",
+      "https://www.facebook.com/optixdigitalai"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
     }
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "${siteUrl}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "${siteUrl}/about"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Services",
+        "item": "${siteUrl}/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Pricing",
+        "item": "${canonicalUrl}"
+      }
+    ]
   }
+}
 `}</script>
       </Helmet>
 

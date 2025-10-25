@@ -83,58 +83,80 @@ const AboutpageView = () => {
 
         {/* --- Schema.org Structured Data --- */}
         <script type="application/ld+json">{`
-          {
-            "@context": "https://schema.org",
-            "@type": "AboutPage",
-            "name": "About OptixDigitalAI",
-            "url": "${canonicalUrl}",
-            "inLanguage": "en",
-            "mainEntity": {
-              "@type": "Organization",
-              "name": "OptixDigitalAI",
-              "url": "${siteUrl}",
-              "logo": "${siteUrl}/logo.png",
-              "description": "${description}",
-              "foundingDate": "2025",
-              "founders": [
-                { "@type": "Person", "name": "OptixDigitalAI Team" }
-              ],
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+91 7420807072",
-                "contactType": "customer support",
-                "availableLanguage": ["English", "Hindi"]
-              },
-              "sameAs": [
-                "https://www.linkedin.com/company/optixdigitalai",
-                "https://www.instagram.com/optixdigitalai",
-                "https://x.com/optixdigitalai",
-                "https://www.facebook.com/optixdigitalai"
-              ],
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "IN"
-              }
-            },
-            "breadcrumb": {
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                {
-                  "@type": "ListItem",
-                  "position": 1,
-                  "name": "Home",
-                  "item": "${siteUrl}"
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 2,
-                  "name": "About Us",
-                  "item": "${canonicalUrl}"
-                }
-              ]
-            }
-          }
-        `}</script>
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": "${canonicalUrl}#aboutpage",
+    "name": "About OptixDigitalAI",
+    "url": "${canonicalUrl}",
+    "inLanguage": "en",
+    "isPartOf": { "@id": "${siteUrl}#website" },
+    "mainEntity": { "@id": "${siteUrl}#organization" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "${siteUrl}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About Us",
+          "item": "${canonicalUrl}"
+        }
+      ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "${siteUrl}#organization",
+    "name": "OptixDigitalAI",
+    "url": "${siteUrl}",
+    "logo": "${siteUrl}/logo.png",
+    "description": "${description}",
+    "foundingDate": "2025",
+    "founders": [
+      { "@type": "Person", "name": "OptixDigitalAI Team" }
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91 7420807072",
+        "contactType": "customer support",
+        "availableLanguage": ["English", "Hindi"]
+      }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/optixdigitalai",
+      "https://www.instagram.com/optixdigitalai",
+      "https://x.com/optixdigitalai",
+      "https://www.facebook.com/optixdigitalai"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "${siteUrl}#website",
+    "url": "${siteUrl}",
+    "name": "OptixDigitalAI",
+    "publisher": { "@id": "${siteUrl}#organization" },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "${siteUrl}/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+]
+`}</script>
       </Helmet>
 
       {/* --- Actual Page Content --- */}

@@ -81,64 +81,70 @@ const ServicepageView = () => {
 
         {/* --- Schema.org Structured Data with ContactPoint & Breadcrumbs --- */}
         <script type="application/ld+json">{`
-          {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "OptixDigitalAI Services",
-            "url": "${canonicalUrl}",
-            "inLanguage": "en",
-            "provider": {
-              "@type": "Organization",
-              "name": "OptixDigitalAI",
-              "url": "${siteUrl}",
-              "logo": "${siteUrl}/logo.png",
-              "description": "${description}",
-              "foundingDate": "2025",
-              "founders": [
-                { "@type": "Person", "name": "OptixDigitalAI Team" }
-              ],
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+91 7420807072",
-                "contactType": "customer support",
-                "availableLanguage": ["English","Hindi"]
-              },
-              "sameAs": [
-                "https://www.linkedin.com/company/optixdigitalai",
-                "https://www.instagram.com/optixdigitalai",
-                "https://x.com/optixdigitalai",
-                "https://www.facebook.com/optixdigitalai"
-              ],
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "IN"
-              }
-            },
-            "areaServed": {
-              "@type": "Place",
-              "name": "Worldwide"
-            },
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Digital Services",
-              "itemListElement": [
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design & Development" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile App Development" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UI/UX Design" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Digital Marketing" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Automation Solutions" } }
-              ]
-            },
-            "breadcrumb": {
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "${siteUrl}" },
-                { "@type": "ListItem", "position": 2, "name": "About", "item": "${siteUrl}/about" },
-                { "@type": "ListItem", "position": 3, "name": "Services", "item": "${canonicalUrl}" }
-              ]
-            }
-          }
-        `}</script>
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "${canonicalUrl}#service",
+    "name": "OptixDigitalAI Services",
+    "url": "${canonicalUrl}",
+    "inLanguage": "en",
+    "provider": {
+      "@type": "Organization",
+      "@id": "${siteUrl}#organization",
+      "name": "OptixDigitalAI",
+      "url": "${siteUrl}",
+      "logo": "${siteUrl}/logo.png",
+      "description": "${description}",
+      "foundingDate": "2025-01-01",
+      "founders": [
+        { "@type": "Person", "name": "OptixDigitalAI Team" }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91 7420807072",
+        "contactType": "customer support",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/optixdigitalai",
+        "https://www.instagram.com/optixdigitalai",
+        "https://x.com/optixdigitalai",
+        "https://www.facebook.com/optixdigitalai"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      }
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Worldwide"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Digital Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design & Development" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile App Development" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UI/UX Design" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Digital Marketing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Automation Solutions" } }
+      ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "${canonicalUrl}#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "${siteUrl}" },
+      { "@type": "ListItem", "position": 2, "name": "About", "item": "${siteUrl}/about" },
+      { "@type": "ListItem", "position": 3, "name": "Services", "item": "${canonicalUrl}" }
+    ]
+  }
+]
+`}</script>
       </Helmet>
 
       {/* --- Page Content --- */}

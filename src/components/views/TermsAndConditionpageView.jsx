@@ -76,53 +76,58 @@ const TermsAndConditionpageView = () => {
 
         {/* --- Schema.org Structured Data --- */}
         <script type="application/ld+json">{`
-          {
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "OptixDigitalAI Terms and Conditions",
-            "url": "${canonicalUrl}",
-            "inLanguage": "en",
-            "mainEntity": {
-              "@type": "Organization",
-              "name": "OptixDigitalAI",
-              "url": "${siteUrl}",
-              "logo": "${siteUrl}/logo.png",
-              "description": "${description}",
-              "foundingDate": "2025",
-              "founders": [
-                { "@type": "Person", "name": "OptixDigitalAI Team" }
-              ],
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+91 7420807072",
-                "contactType": "Customer Support",
-                "availableLanguage": ["English","Hindi"]
-              },
-              "sameAs": [
-                "https://www.linkedin.com/company/optixdigitalai",
-                "https://www.instagram.com/optixdigitalai",
-                "https://x.com/optixdigitalai",
-                "https://www.facebook.com/optixdigitalai"
-              ],
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "IN"
-              }
-            },
-            "breadcrumb": {
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                 { "@type": "ListItem", "position": 1, "name": "Home", "item": "${siteUrl}" },
-                 { "@type": "ListItem", "position": 2, "name": "About", "item": "${siteUrl}/about" },
-                 { "@type": "ListItem", "position": 3, "name": "Services", "item": "${siteUrl}/services" },
-                 { "@type": "ListItem", "position": 4, "name": "Pricing", "item": "${siteUrl}/pricing" },
-                 { "@type": "ListItem", "position": 5, "name": "Contact", "item": "${siteUrl}/contact" },
-                 { "@type": "ListItem", "position": 6, "name": "Career", "item": "${siteUrl}/career" },
-                 { "@type": "ListItem", "position": 7, "name": "Terms & Conditions", "item": "${canonicalUrl}" }
-              ]
-            }
-          }
-        `}</script>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "OptixDigitalAI Terms and Conditions",
+      "url": "${canonicalUrl}",
+      "inLanguage": "en",
+      "description": "${description}"
+    },
+    {
+      "@type": "Organization",
+      "name": "OptixDigitalAI",
+      "url": "${siteUrl}",
+      "logo": "${siteUrl}/logo.png",
+      "description": "${description}",
+      "foundingDate": "2025",
+      "founders": [
+        { "@type": "Person", "name": "OptixDigitalAI Team" }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91 7420807072",
+        "contactType": "Customer Support",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/optixdigitalai",
+        "https://www.instagram.com/optixdigitalai",
+        "https://x.com/optixdigitalai",
+        "https://www.facebook.com/optixdigitalai"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "${siteUrl}" },
+        { "@type": "ListItem", "position": 2, "name": "About", "item": "${siteUrl}/about" },
+        { "@type": "ListItem", "position": 3, "name": "Services", "item": "${siteUrl}/services" },
+        { "@type": "ListItem", "position": 4, "name": "Pricing", "item": "${siteUrl}/pricing" },
+        { "@type": "ListItem", "position": 5, "name": "Contact", "item": "${siteUrl}/contact" },
+        { "@type": "ListItem", "position": 6, "name": "Career", "item": "${siteUrl}/career" },
+        { "@type": "ListItem", "position": 7, "name": "Terms & Conditions", "item": "${canonicalUrl}" }
+      ]
+    }
+  ]
+}
+`}</script>
       </Helmet>
 
       {/* --- Actual Page Content --- */}
