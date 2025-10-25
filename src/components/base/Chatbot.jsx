@@ -152,7 +152,12 @@ const faqData = [
   {
     question: "expected delivery",
     answer:
-      "Small projects: 2–7 days, medium: 2–6 weeks, large projects: 2–3 months. Zayra provides updates and ensures timely delivery.",
+      "Delivery time depends on project size and complexity. We'll share the estimated timeline when you submit your project details.",
+  },
+  {
+    question: "estimated delivery",
+    answer:
+      "Delivery time depends on project size and complexity. We'll share the estimated timeline when you submit your project details.",
   },
   {
     question: "delivery time",
@@ -659,8 +664,8 @@ const Chatbot = () => {
             <div className="flex-1 p-4 flex flex-col gap-2 overflow-y-auto max-h-96 md:max-h-[500px] scrollbar-none">
               {messages.length === 0 && (
                 <p className="text-gray-500 text-sm">
-                  Hi! Zayra here 💬 — Ask me anything about our services,
-                  prices, or projects.
+                  Hi! Zayra here Ask me anything about our services, prices, or
+                  projects.
                 </p>
               )}
               {messages.map((msg, idx) => (
@@ -669,7 +674,7 @@ const Chatbot = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.2 }}
-                  className={`p-2 rounded-md max-w-[80%] break-words flex items-start gap-2 ${
+                  className={`p-2 rounded-md max-w-[90%] break-words flex items-start gap-2 ${
                     msg.type === "user"
                       ? "bg-yellow-400 self-end text-black"
                       : "bg-gray-100 self-start text-gray-900"
