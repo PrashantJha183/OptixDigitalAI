@@ -216,7 +216,7 @@ const Footer = () => {
             {/* Social Icons */}
             <div className="flex space-x-4 mt-2">
               <a
-                href="https://www.facebook.com/optixdigitalai"
+                href="https://www.facebook.com/profile.php?id=61582048281375"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"

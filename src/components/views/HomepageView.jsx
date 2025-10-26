@@ -82,9 +82,8 @@ const HomepageView = () => {
     "logo": "${siteUrl}/favicon.png",
     "description": "${description}",
     "sameAs": [
-      "https://www.linkedin.com/company/optixdigitalai",
-      "https://www.instagram.com/optixdigitalai",
-      "https://x.com/optixdigitalai"
+     "https://www.facebook.com/optixdigitalai",
+          "https://www.instagram.com/optixdigitalai"
     ],
     "address": {
       "@type": "PostalAddress",

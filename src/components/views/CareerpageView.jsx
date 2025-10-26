@@ -104,10 +104,8 @@ const CareerpageView = () => {
       "availableLanguage": ["English","Hindi"]
     },
     "sameAs": [
-      "https://www.linkedin.com/company/optixdigitalai",
-      "https://www.instagram.com/optixdigitalai",
-      "https://x.com/optixdigitalai",
-      "https://www.facebook.com/optixdigitalai"
+   "https://www.facebook.com/profile.php?id=61582048281375",
+          "https://www.instagram.com/optixdigitalai"
     ],
     "address": {
       "@type": "PostalAddress",
