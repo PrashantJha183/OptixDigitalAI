@@ -594,15 +594,21 @@ const faqData = [
       "We offer design services including Logo Design, Graphic Design, UI/UX Design for web and mobile applications, and marketing materials.",
   },
 ];
-
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const messagesEndRef = useRef(null);
   const chatRef = useRef(null);
+  const clickLock = useRef(false); // ✅ Prevent race condition
 
-  const toggleChat = () => setIsOpen((prev) => !prev);
+  const toggleChat = () => {
+    setIsOpen((prev) => !prev);
+
+    // ✅ Lock click for a short time to avoid immediate re-trigger
+    clickLock.current = true;
+    setTimeout(() => (clickLock.current = false), 200);
+  };
 
   const handleSend = () => {
     if (!inputValue.trim()) return;
@@ -630,6 +636,9 @@ const Chatbot = () => {
 
   useEffect(() => {
     const handleClickOutside = (e) => {
+      // ✅ Ignore clicks during lock or on avatar button
+      if (clickLock.current) return;
+
       if (
         chatRef.current &&
         !chatRef.current.contains(e.target) &&
@@ -659,7 +668,7 @@ const Chatbot = () => {
       {/* Floating Zayra Avatar Button */}
       <motion.div
         onClick={toggleChat}
-        className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full shadow-lg cursor-pointer overflow-hidden bg-yellow-400"
+        className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full shadow-lg cursor-pointer overflow-hidden bg-yellow-400 zayra-avatar-btn"
         whileTap={{ scale: 0.9 }}
         whileHover={{ scale: 1.1 }}
       >
@@ -704,7 +713,7 @@ const Chatbot = () => {
             <div className="flex-1 p-4 flex flex-col gap-2 overflow-y-auto max-h-96 md:max-h-[500px] scrollbar-none">
               {messages.length === 0 && (
                 <p className="text-gray-500 text-sm">
-                  Hi! Zayra here Ask me anything about our services, prices, or
+                  Hi! Zayra here. Ask me anything about our services, prices, or
                   projects.
                 </p>
               )}
