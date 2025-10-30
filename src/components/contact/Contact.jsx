@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import ErrorBoundary from "../base/ErrorBoundary";
 import {
   FiMail,
@@ -7,18 +7,39 @@ import {
   FiMessageSquare,
   FiSend,
   FiPhone,
+  FiChevronDown,
 } from "react-icons/fi";
 import { debounce } from "lodash";
 
 const Contact = () => {
   const controls = useAnimation();
   const sectionRef = useRef(null);
+  // Ref for dropdown area
+  const serviceRef = useRef(null);
+
+  // Close dropdown when clicking outside (desktop + mobile)
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (serviceRef.current && !serviceRef.current.contains(event.target)) {
+        setServiceOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, []);
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     countryCode: "+91",
+    service: "",
     message: "",
   });
 
@@ -28,6 +49,21 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [serviceOpen, setServiceOpen] = useState(false);
+
+  const services = [
+    "Graphic Design",
+    "UI/UX Design",
+    "Logo Design",
+    "Consultation",
+    "Web Development",
+    "App Development",
+    "Digital Marketing & Social Media Management",
+    "Website Redesign & Revamp",
+    "App Redesign & Optimization",
+    "Graphic Design & Revamp",
+    "SEO",
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -52,38 +88,36 @@ const Contact = () => {
   const validate = useCallback(() => {
     const newErrors = {};
 
-    const nameTrimmed = formData.name.replace(/\s/g, ""); // remove all spaces
+    const nameTrimmed = formData.name.replace(/\s/g, "");
     const emailTrimmed = formData.email.trim();
     const phoneTrimmed = formData.phone.replace(/\s/g, "");
     const countryCodeTrimmed = formData.countryCode.trim();
     const messageTrimmed = formData.message.replace(/\s/g, "");
+    const serviceTrimmed = formData.service.trim();
 
-    // Name validation
     if (!nameTrimmed) newErrors.name = "Name is required.";
     else if (nameTrimmed.length < 3)
       newErrors.name = "Name must be at least 3 characters.";
     else if (nameTrimmed.length > 50)
       newErrors.name = "Name cannot exceed 50 characters.";
 
-    // Email validation
     if (!emailTrimmed) newErrors.email = "Email is required.";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailTrimmed))
       newErrors.email = "Enter a valid email address.";
 
-    // Phone validation
     if (!phoneTrimmed) newErrors.phone = "Phone number is required.";
     else if (!/^\d+$/.test(phoneTrimmed))
       newErrors.phone = "Phone number must contain digits only.";
     else if (phoneTrimmed.length < 6 || phoneTrimmed.length > 15)
       newErrors.phone = "Phone number must be between 6 and 15 digits.";
 
-    // Country code validation
     if (!countryCodeTrimmed)
       newErrors.countryCode = "Country code is required.";
     else if (!/^\+?\d{1,4}$/.test(countryCodeTrimmed))
       newErrors.countryCode = "Enter a valid country code (e.g., +91).";
 
-    // Message validation
+    if (!serviceTrimmed) newErrors.service = "Please select a service.";
+
     if (!messageTrimmed) newErrors.message = "Message cannot be empty.";
     else if (messageTrimmed.length < 10)
       newErrors.message = "Message must be at least 10 characters.";
@@ -117,6 +151,7 @@ const Contact = () => {
       email: true,
       phone: true,
       countryCode: true,
+      service: true,
       message: true,
     });
 
@@ -150,6 +185,7 @@ const Contact = () => {
           email: "",
           phone: "",
           countryCode: "+91",
+          service: "",
           message: "",
         });
         setTouched({});
@@ -177,9 +213,9 @@ const Contact = () => {
     <ErrorBoundary>
       {showPopup && (
         <motion.div
-          initial={{ opacity: 0, x: 100 }} // starts off to the right
-          animate={{ opacity: 1, x: 0 }} // slides in to center
-          exit={{ opacity: 0, x: 100 }} // slides out to the right (reverse of entrance)
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 100 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
           className="fixed top-6 right-6 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50"
         >
@@ -220,7 +256,7 @@ const Contact = () => {
         </motion.div>
 
         <motion.div
-          className="md:w-1/2 z-10 w-full max-w-lg"
+          className="md:w-1/2 z-10 w-full max-w-lg md:mt-8"
           initial="hidden"
           animate={controls}
           variants={fadeVariant}
@@ -283,7 +319,6 @@ const Contact = () => {
                   value={formData.countryCode}
                   onChange={(e) => {
                     const value = e.target.value;
-                    // Allow only "+" followed by up to 4 digits
                     if (/^\+?\d{0,4}$/.test(value)) {
                       setFormData((prev) => ({ ...prev, countryCode: value }));
                     }
@@ -312,7 +347,7 @@ const Contact = () => {
                   placeholder="Your Phone Number"
                   value={formData.phone}
                   onChange={(e) => {
-                    const value = e.target.value.replace(/\D/g, ""); // Only numbers
+                    const value = e.target.value.replace(/\D/g, "");
                     handleInputChange("phone", value);
                   }}
                   onBlur={() => handleBlur("phone")}
@@ -328,6 +363,60 @@ const Contact = () => {
               </div>
             </div>
 
+            {/* Service Dropdown */}
+            <div className="relative" ref={serviceRef}>
+              <button
+                type="button"
+                onClick={() => setServiceOpen((prev) => !prev)}
+                onBlur={() => handleBlur("service")}
+                className={`w-full text-left pl-4 pr-10 py-3 border-2 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none relative ${
+                  touched.service && errors.service
+                    ? "border-red-400"
+                    : "border-gray-300 focus:border-[#5d00c3]"
+                } transition-all`}
+              >
+                {formData.service || "Select a Service"}
+                <FiChevronDown
+                  className={`absolute right-4 top-4 text-gray-500 transition-transform duration-300 ${
+                    serviceOpen ? "rotate-180" : "rotate-0"
+                  }`}
+                />
+              </button>
+
+              <AnimatePresence>
+                {serviceOpen && (
+                  <motion.ul
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="absolute left-0 right-0 max-h-48 bg-white border border-gray-200 rounded-md mt-1 overflow-y-auto shadow-lg z-20 scroll-smooth no-scrollbar"
+                  >
+                    {services.map((service) => (
+                      <li
+                        key={service}
+                        onMouseDown={() => {
+                          handleInputChange("service", service);
+                          setServiceOpen(false);
+                        }}
+                        className="px-4 py-2 hover:bg-[#f5f0ff] cursor-pointer text-gray-800"
+                      >
+                        {service}
+                      </li>
+                    ))}
+                  </motion.ul>
+                )}
+              </AnimatePresence>
+
+              {touched.service && errors.service && (
+                <p className="text-red-500 text-sm mt-1">{errors.service}</p>
+              )}
+            </div>
+
+            {/* Hidden input to include selected service in FormData */}
+            <input type="hidden" name="service" value={formData.service} />
+
+            {/* Message textarea */}
             <div className="relative">
               <FiMessageSquare className="absolute left-4 top-4 text-gray-500" />
               <textarea
@@ -349,6 +438,7 @@ const Contact = () => {
               )}
             </div>
 
+            {/* Submit button */}
             <motion.button
               type="submit"
               disabled={!isFormValid || isSubmitting}

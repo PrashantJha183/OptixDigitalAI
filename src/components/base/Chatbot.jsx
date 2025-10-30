@@ -165,6 +165,24 @@ const faqData = [
       "Delivery time depends on project size and complexity. We'll share the estimated timeline when you submit your project details.",
   },
   {
+    question: "expected time",
+    answer:
+      "Delivery time depends on project size and complexity. We'll share the estimated timeline when you submit your project details.",
+  },
+
+  {
+    question: "estimated timeline",
+    answer:
+      "Zayra here! We provide a detailed project timeline with milestones and expected delivery dates for each stage.",
+  },
+
+  {
+    question: "expected timeline",
+    answer:
+      "Zayra here! We provide a detailed project timeline with milestones and expected delivery dates for each stage.",
+  },
+
+  {
     question: "timeline",
     answer:
       "Zayra here! We provide a detailed project timeline with milestones and expected delivery dates for each stage.",
@@ -582,6 +600,7 @@ const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const messagesEndRef = useRef(null);
+  const chatRef = useRef(null);
 
   const toggleChat = () => setIsOpen((prev) => !prev);
 
@@ -608,6 +627,26 @@ const Chatbot = () => {
 
     setInputValue("");
   };
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        chatRef.current &&
+        !chatRef.current.contains(e.target) &&
+        !e.target.closest(".zayra-avatar-btn")
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen]);
 
   useEffect(() => {
     if (messagesEndRef.current) {
@@ -644,6 +683,7 @@ const Chatbot = () => {
         {isOpen && (
           <motion.div
             key="chatbox"
+            ref={chatRef}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 30 }}
