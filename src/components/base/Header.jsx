@@ -11,7 +11,6 @@ const menuItems = [
   { name: "About", path: "/about" },
   { name: "Services", path: "/services" },
   { name: "Pricing", path: "/pricing" },
-  // { name: "Case Study", path: "/case-study" },
 ];
 
 const LogoSkeleton = () => (

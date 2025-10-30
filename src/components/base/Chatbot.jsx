@@ -600,12 +600,12 @@ const Chatbot = () => {
   const [inputValue, setInputValue] = useState("");
   const messagesEndRef = useRef(null);
   const chatRef = useRef(null);
-  const clickLock = useRef(false); // ✅ Prevent race condition
+  const clickLock = useRef(false); // Prevent race condition
 
   const toggleChat = () => {
     setIsOpen((prev) => !prev);
 
-    // ✅ Lock click for a short time to avoid immediate re-trigger
+    // Lock click for a short time to avoid immediate re-trigger
     clickLock.current = true;
     setTimeout(() => (clickLock.current = false), 200);
   };
@@ -636,7 +636,7 @@ const Chatbot = () => {
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      // ✅ Ignore clicks during lock or on avatar button
+      // Ignore clicks during lock or on avatar button
       if (clickLock.current) return;
 
       if (

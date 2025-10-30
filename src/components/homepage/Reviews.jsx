@@ -6,13 +6,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-/**
- * SEO + Performance Optimized Testimonial Section
- * - Semantic HTML (section, article)
- * - Lazy motion animations
- * - Accessible roles + aria
- */
-
 const testimonials = [
   {
     name: "Anita Sharma",
