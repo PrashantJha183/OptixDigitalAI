@@ -21,52 +21,60 @@ const Home = lazy(() =>
     default: () => null,
   }))
 );
-
 const About = lazy(() =>
   import("./components/views/AboutpageView").catch(() => ({
     default: () => null,
   }))
 );
-
 const Contact = lazy(() =>
   import("./components/views/ContactpageView").catch(() => ({
     default: () => null,
   }))
 );
-
 const Pricing = lazy(() =>
   import("./components/views/PricingpageView").catch(() => ({
     default: () => null,
   }))
 );
-
-const Service = lazy(() =>
-  import("./components/views/ServicepageView").catch(() => ({
+const Portfolio = lazy(() =>
+  import("./components/views/PortfoliopageView").catch(() => ({
     default: () => null,
   }))
 );
-
 const Terms = lazy(() =>
   import("./components/views/TermsAndConditionpageView").catch(() => ({
     default: () => null,
   }))
 );
-
 const Privacy = lazy(() =>
   import("./components/views/PrivacyPolicypageView").catch(() => ({
     default: () => null,
   }))
 );
-
 const Career = lazy(() =>
   import("./components/views/CareerpageView").catch(() => ({
     default: () => null,
   }))
 );
-
-// Chatbot (global)
 const Chatbot = lazy(() =>
   import("./components/views/ChatbotpageView").catch(() => ({
+    default: () => null,
+  }))
+);
+
+// Service Pages (single folder with 3 files)
+const Designing = lazy(() =>
+  import("./components/views/DesigningpageView").catch(() => ({
+    default: () => null,
+  }))
+);
+const Development = lazy(() =>
+  import("./components/service/Development/Development").catch(() => ({
+    default: () => null,
+  }))
+);
+const Marketing = lazy(() =>
+  import("./components/service/Marketing/Marketing").catch(() => ({
     default: () => null,
   }))
 );
@@ -82,6 +90,9 @@ const ScrollToTop = () => {
   return null;
 };
 
+//////////////////////////
+// AppContent Component
+//////////////////////////
 const AppContent = () => {
   return (
     <div className="cursor-grab">
@@ -106,7 +117,6 @@ const AppContent = () => {
                 </ErrorBoundary>
               }
             />
-
             <Route
               path="/about"
               element={
@@ -115,16 +125,14 @@ const AppContent = () => {
                 </ErrorBoundary>
               }
             />
-
             <Route
-              path="/services"
+              path="/portfolio"
               element={
                 <ErrorBoundary>
-                  <Service />
+                  <Portfolio />
                 </ErrorBoundary>
               }
             />
-
             <Route
               path="/contact"
               element={
@@ -133,7 +141,6 @@ const AppContent = () => {
                 </ErrorBoundary>
               }
             />
-
             <Route
               path="/pricing"
               element={
@@ -142,7 +149,6 @@ const AppContent = () => {
                 </ErrorBoundary>
               }
             />
-
             <Route
               path="/terms-and-conditions"
               element={
@@ -151,7 +157,6 @@ const AppContent = () => {
                 </ErrorBoundary>
               }
             />
-
             <Route
               path="/privacy-policy"
               element={
@@ -160,12 +165,37 @@ const AppContent = () => {
                 </ErrorBoundary>
               }
             />
-
             <Route
               path="/career"
               element={
                 <ErrorBoundary>
                   <Career />
+                </ErrorBoundary>
+              }
+            />
+
+            {/* Services Routes */}
+            <Route
+              path="/services/designing"
+              element={
+                <ErrorBoundary>
+                  <Designing />
+                </ErrorBoundary>
+              }
+            />
+            <Route
+              path="/services/development"
+              element={
+                <ErrorBoundary>
+                  <Development />
+                </ErrorBoundary>
+              }
+            />
+            <Route
+              path="/services/marketing"
+              element={
+                <ErrorBoundary>
+                  <Marketing />
                 </ErrorBoundary>
               }
             />

@@ -1,32 +1,24 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import ServiceHero from "../service/ServiceHero";
-import ServicesCards from "../service/ServicesCards";
-import ServiceContact from "../service/ServiceContact";
-import Gallery from "../service/Gallery";
+import PortfolioHero from "../portfolio/PortfolioHero";
+import PortfolioContact from "../portfolio/PortfolioContact";
+import Gallery from "../portfolio/Gallery";
 import ErrorBoundary from "../base/ErrorBoundary";
 
-const ServicepageView = () => {
+const PortfoliopageView = () => {
   const siteUrl = "https://optixdigitalai.com";
-  const pagePath = "/services";
+  const pagePath = "/portfolio";
   const canonicalUrl = `${siteUrl}${pagePath}`;
 
   const title =
-    "Digital Services by OptixDigitalAI | Web, App, Branding & Marketing Solutions";
+    "OptixDigitalAI Portfolio | Creative Web Design, App Development & Marketing Projects";
   const description =
-    "Explore OptixDigitalAI’s professional digital services — from website design, mobile app development, UI/UX, branding, SEO, AI solutions to full-scale digital marketing strategies for global growth.";
+    "Explore OptixDigitalAI’s portfolio — showcasing our best work in website design, app development, branding, and digital marketing. Discover real results and innovation behind our creative projects.";
   const keywords = `
-    OptixDigitalAI, about OptixDigitalAI, digital agency India, creative tech agency,
-    AI marketing agency, web development company, mobile app development, UI UX design,
-    software company India, global digital agency, SEO experts, social media marketing,
-    performance marketing, PPC advertising, creative branding, digital transformation,
-    AI-driven design, custom web design, eCommerce solutions, app developers, SaaS apps,
-    website optimization, digital consultancy, Optix Digital AI team, innovation agency,
-    brand strategy, content marketing, tech consultancy, cloud web apps, business growth,
-    OptixDigitalAI company, AI web agency, top marketing agency, design and technology,
-    data-driven marketing, responsive web apps, web design experts, full stack developers,
-    software engineers, startup solutions, B2B marketing, online business growth,
-    web app developers, UX research agency, branding experts, digital strategy, marketing intelligence
+    OptixDigitalAI portfolio, OptixDigitalAI projects, web design work, app development showcase,
+    branding portfolio, UI UX design, marketing campaigns, SEO success, creative agency India,
+    OptixDigitalAI case studies, website projects, app UI design, business growth marketing,
+    Optix Digital AI creative solutions, responsive websites, digital transformation work
   `;
   const image = `${siteUrl}/og-image.jpg`;
 
@@ -60,7 +52,7 @@ const ServicepageView = () => {
         <meta name="coverage" content="Worldwide" />
         <meta name="target" content="all" />
 
-        {/* --- Open Graph (Facebook, LinkedIn, WhatsApp) --- */}
+        {/* --- Open Graph --- */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={title} />
@@ -79,17 +71,17 @@ const ServicepageView = () => {
         <meta name="twitter:creator" content="@optixdigitalai" />
         <meta name="twitter:site" content="@optixdigitalai" />
 
-        {/* --- Schema.org Structured Data with ContactPoint & Breadcrumbs --- */}
+        {/* --- Schema.org Structured Data --- */}
         <script type="application/ld+json">{`
 [
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": "${canonicalUrl}#service",
-    "name": "OptixDigitalAI Services",
+    "@type": "CreativeWork",
+    "@id": "${canonicalUrl}#portfolio",
+    "name": "OptixDigitalAI Portfolio",
     "url": "${canonicalUrl}",
     "inLanguage": "en",
-    "provider": {
+    "creator": {
       "@type": "Organization",
       "@id": "${siteUrl}#organization",
       "name": "OptixDigitalAI",
@@ -107,29 +99,22 @@ const ServicepageView = () => {
         "availableLanguage": ["English", "Hindi"]
       },
       "sameAs": [
-       "https://www.facebook.com/profile.php?id=61582048281375",
-          "https://www.instagram.com/optixdigitalai"
+        "https://www.facebook.com/profile.php?id=61582048281375",
+        "https://www.instagram.com/optixdigitalai"
       ],
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "IN"
       }
     },
-    "areaServed": {
-      "@type": "Place",
-      "name": "Worldwide"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Digital Services",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design & Development" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile App Development" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UI/UX Design" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Digital Marketing" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Automation Solutions" } }
-      ]
-    }
+    "about": "Showcase of OptixDigitalAI’s design, development, and marketing projects.",
+    "genre": "Digital Portfolio",
+    "keywords": "portfolio, web design, app development, branding, digital marketing, OptixDigitalAI",
+    "hasPart": [
+      { "@type": "CreativeWork", "name": "Website Design Projects", "url": "${siteUrl}/services/designing" },
+      { "@type": "CreativeWork", "name": "App Development Projects", "url": "${siteUrl}/services/development" },
+      { "@type": "CreativeWork", "name": "Marketing Campaigns", "url": "${siteUrl}/services/marketing" }
+    ]
   },
   {
     "@context": "https://schema.org",
@@ -137,8 +122,10 @@ const ServicepageView = () => {
     "@id": "${canonicalUrl}#breadcrumb",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "${siteUrl}" },
-      { "@type": "ListItem", "position": 2, "name": "About", "item": "${siteUrl}/about" },
-      { "@type": "ListItem", "position": 3, "name": "Services", "item": "${canonicalUrl}" }
+      { "@type": "ListItem", "position": 3, "name": "Designing Services", "item": "${siteUrl}/services/designing" },
+      { "@type": "ListItem", "position": 4, "name": "Development Services", "item": "${siteUrl}/services/development" },
+      { "@type": "ListItem", "position": 5, "name": "Marketing Services", "item": "${siteUrl}/services/marketing" },
+      { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "${canonicalUrl}" },
     ]
   }
 ]
@@ -147,20 +134,18 @@ const ServicepageView = () => {
 
       {/* --- Page Content --- */}
       <ErrorBoundary>
-        <ServiceHero />
-      </ErrorBoundary>
-      <ErrorBoundary>
-        <ServicesCards />
+        <PortfolioHero />
       </ErrorBoundary>
 
       <ErrorBoundary>
         <Gallery />
       </ErrorBoundary>
+
       <ErrorBoundary>
-        <ServiceContact />
+        <PortfolioContact />
       </ErrorBoundary>
     </>
   );
 };
 
-export default ServicepageView;
+export default PortfoliopageView;

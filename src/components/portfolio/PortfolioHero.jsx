@@ -82,7 +82,7 @@ const FeatureItem = memo(({ icon: Icon, title, description }) => {
   );
 });
 
-const ServiceHero = () => {
+const PortfolioHero = () => {
   const features = [
     {
       icon: Brain,
@@ -227,4 +227,4 @@ const ServiceHero = () => {
   );
 };
 
-export default memo(ServiceHero);
+export default memo(PortfolioHero);

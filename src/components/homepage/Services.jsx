@@ -15,25 +15,25 @@ const services = [
     icon: <FaLaptopCode className="text-[#5d00c3] text-5xl" />,
     title: "Web Development",
     desc: "High-performance, responsive websites built with the latest technologies to elevate your digital presence.",
-    link: "/services",
+    link: "/services/development",
   },
   {
     icon: <FaMobileAlt className="text-[#5d00c3] text-5xl" />,
     title: "App Development",
     desc: "Beautifully crafted Android and iOS applications designed for seamless performance and user delight.",
-    link: "/services",
+    link: "/services/development",
   },
   {
     icon: <FaPalette className="text-[#5d00c3] text-5xl" />,
     title: "Graphic Design",
     desc: "Visually stunning and brand-driven designs that communicate, engage, and inspire your audience effectively.",
-    link: "/services",
+    link: "/services/designing",
   },
   {
     icon: <FaBullhorn className="text-[#5d00c3] text-5xl" />,
     title: "Digital Marketing",
     desc: "Data-driven marketing strategies that amplify reach, boost conversions, and deliver measurable ROI.",
-    link: "/services",
+    link: "/services/marketing",
   },
 ];
 

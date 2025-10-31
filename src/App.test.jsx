@@ -4,7 +4,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import AppContent from "./App";
 
-// Mock all lazy-loaded components
+// --- Mock all lazy-loaded components ---
 vi.mock("./components/base/Header", () => ({
   default: () => <div>Header</div>,
 }));
@@ -19,6 +19,18 @@ vi.mock("./components/views/AboutpageView", () => ({
 }));
 vi.mock("./components/views/ServicepageView", () => ({
   default: () => <div>Services</div>,
+}));
+vi.mock("./components/views/DesigningpageView", () => ({
+  default: () => <div>Designing</div>,
+}));
+vi.mock("./components/views/DevelopmentpageView", () => ({
+  default: () => <div>Development</div>,
+}));
+vi.mock("./components/views/MarketingpageView", () => ({
+  default: () => <div>Marketing</div>,
+}));
+vi.mock("./components/views/PortfoliopageView", () => ({
+  default: () => <div>Portfolio</div>,
 }));
 vi.mock("./components/views/ContactpageView", () => ({
   default: () => <div>Contact</div>,
@@ -39,12 +51,12 @@ vi.mock("./components/views/ChatbotpageView", () => ({
   default: () => <div>Chatbot</div>,
 }));
 
-// Helper: wrap App in Suspense
+// --- Helper function: wrap App in Suspense ---
 const renderWithSuspense = (ui) =>
   render(<Suspense fallback={<div>Loading...</div>}>{ui}</Suspense>);
 
-describe("AppContent", () => {
-  it("renders Header and Footer", async () => {
+describe("AppContent Routing & Layout", () => {
+  it("renders Header and Footer globally", async () => {
     renderWithSuspense(<AppContent />);
     await waitFor(() => expect(screen.getByText("Header")).toBeInTheDocument());
     await waitFor(() => expect(screen.getByText("Footer")).toBeInTheDocument());
@@ -61,11 +73,19 @@ describe("AppContent", () => {
     await waitFor(() => expect(screen.getByText("About")).toBeInTheDocument());
   });
 
-  it("renders Services page", async () => {
-    window.history.pushState({}, "", "/services");
+  it("renders Designing subpage", async () => {
+    window.history.pushState({}, "", "/services/designing");
     renderWithSuspense(<AppContent />);
     await waitFor(() =>
-      expect(screen.getByText("Services")).toBeInTheDocument()
+      expect(screen.getByText("Designing")).toBeInTheDocument()
+    );
+  });
+
+  it("renders Portfolio page", async () => {
+    window.history.pushState({}, "", "/portfolio");
+    renderWithSuspense(<AppContent />);
+    await waitFor(() =>
+      expect(screen.getByText("Portfolio")).toBeInTheDocument()
     );
   });
 

@@ -70,22 +70,22 @@ const Footer = () => {
       navigator.clipboard.writeText(email);
       setCopied(true);
       setTimeout(() => setCopied(false), 3500);
-      e.preventDefault(); // prevent mailto on desktop
+      e.preventDefault();
     }
   };
 
   const menuLinks = [
     { name: "About", to: "/about" },
-    { name: "Services", to: "/services" },
+    { name: "Portfolio", to: "/portfolio" },
     { name: "Pricing", to: "/pricing" },
     { name: "Career", to: "/career" },
   ];
 
   const serviceLinks = [
-    { name: "Web Devlopment", to: "/services" },
-    { name: "App Development", to: "/services" },
-    { name: "Digital Marketing", to: "/services" },
-    { name: "Graphic Designing", to: "/services" },
+    { name: "Web Devlopment", to: "/services/development" },
+    { name: "App Development", to: "/services/development" },
+    { name: "Digital Marketing", to: "/services/marketing" },
+    { name: "Graphic Designing", to: "/services/designing" },
   ];
 
   return (
@@ -232,6 +232,28 @@ const Footer = () => {
                 className="text-gray-400 hover:text-pink-500 transition"
               >
                 <FiInstagram className="w-6 h-6" />
+              </a>
+              <a
+                href="https://wa.me/917420807072"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="text-gray-400 hover:text-green-500 transition"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.8}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M16.862 13.487c-.267-.133-1.58-.78-1.826-.868-.247-.089-.427-.133-.607.133-.18.267-.7.868-.857 1.047-.157.178-.313.2-.58.067-.267-.133-1.126-.415-2.146-1.323-.794-.707-1.33-1.58-1.486-1.846-.157-.267-.017-.412.117-.545.12-.119.267-.313.4-.467.134-.156.179-.267.268-.445.089-.178.045-.333-.022-.467-.067-.133-.607-1.46-.833-2.006-.22-.533-.445-.46-.607-.468l-.52-.009c-.178 0-.467.067-.713.333-.246.267-.935.912-.935 2.226 0 1.314.958 2.583 1.09 2.761.133.178 1.883 2.874 4.562 4.028.638.275 1.135.44 1.523.562.64.203 1.222.174 1.683.106.513-.076 1.58-.647 1.804-1.272.223-.625.223-1.16.156-1.272-.067-.111-.247-.178-.514-.311zM12.002 2.004c-5.52 0-9.998 4.477-9.998 9.996 0 1.76.46 3.392 1.267 4.825L2 22l5.28-1.236a9.95 9.95 0 004.723 1.199c5.52 0 9.998-4.477 9.998-9.996 0-5.518-4.478-9.995-9.998-9.995z"
+                  />
+                </svg>
               </a>
             </div>
           </div>

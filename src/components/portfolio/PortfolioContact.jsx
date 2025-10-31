@@ -8,7 +8,7 @@ import Optix from "../../assets/Optix Low Opacity Logo.svg";
 // Updated line — use motion.create() instead of deprecated motion()
 const MotionLink = motion.create(Link);
 
-const ServiceContact = () => {
+const PortfolioContact = () => {
   const buttonControls = useAnimation();
 
   // Animate button on page load with smooth bouncy effect
@@ -67,4 +67,4 @@ const ServiceContact = () => {
   );
 };
 
-export default memo(ServiceContact);
+export default memo(PortfolioContact);
