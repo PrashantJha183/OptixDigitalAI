@@ -19,14 +19,37 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Services -->
+  <!-- Services: Designing -->
   <url>
-    <loc>https://optixdigitalai.com/services</loc>
+    <loc>https://optixdigitalai.com/services/designing</loc>
     <lastmod>2025-10-23</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
+  <!-- Services: Development -->
+  <url>
+    <loc>https://optixdigitalai.com/services/development</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Services: Marketing -->
+  <url>
+    <loc>https://optixdigitalai.com/services/marketing</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Portfolio -->
+  <url>
+    <loc>https://optixdigitalai.com/portfolio</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
   <!-- Pricing -->
   <url>
@@ -66,15 +89,4 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-
-  <!-- Blog (optional future route) -->
-  <!-- <url>
-    <loc>https://optixdigitalai.com/blog</loc>
-    <lastmod>2025-10-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url> -->
-
-  <!-- 404 page (excluded from indexing but listed for reference) -->
-  <!-- <url><loc>https://optixdigitalai.com/404</loc></url> -->
 </urlset>

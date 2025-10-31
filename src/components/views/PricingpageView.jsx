@@ -127,15 +127,13 @@ const PricingpageView = () => {
         "name": "About",
         "item": "${siteUrl}/about"
       },
+      { "@type": "ListItem", "position": 3, "name": "Designing Services", "item": "${siteUrl}/services/designing" },
+      { "@type": "ListItem", "position": 4, "name": "Development Services", "item": "${siteUrl}/services/development" },
+      { "@type": "ListItem", "position": 5, "name": "Marketing Services", "item": "${siteUrl}/services/marketing" },
+      { "@type": "ListItem", "position": 6, "name": "Pricing", "item": "${siteUrl}/portfolio" },
       {
         "@type": "ListItem",
-        "position": 3,
-        "name": "Services",
-        "item": "${siteUrl}/services"
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
+        "position": 7,
         "name": "Pricing",
         "item": "${canonicalUrl}"
       }

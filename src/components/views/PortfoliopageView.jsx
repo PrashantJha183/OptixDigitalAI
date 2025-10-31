@@ -122,10 +122,10 @@ const PortfoliopageView = () => {
     "@id": "${canonicalUrl}#breadcrumb",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "${siteUrl}" },
-      { "@type": "ListItem", "position": 3, "name": "Designing Services", "item": "${siteUrl}/services/designing" },
-      { "@type": "ListItem", "position": 4, "name": "Development Services", "item": "${siteUrl}/services/development" },
-      { "@type": "ListItem", "position": 5, "name": "Marketing Services", "item": "${siteUrl}/services/marketing" },
-      { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "${canonicalUrl}" },
+      { "@type": "ListItem", "position": 2, "name": "Designing Services", "item": "${siteUrl}/services/designing" },
+      { "@type": "ListItem", "position": 3, "name": "Development Services", "item": "${siteUrl}/services/development" },
+      { "@type": "ListItem", "position": 4, "name": "Marketing Services", "item": "${siteUrl}/services/marketing" },
+      { "@type": "ListItem", "position": 5, "name": "Portfolio", "item": "${canonicalUrl}" },
     ]
   }
 ]

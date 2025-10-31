@@ -116,11 +116,14 @@ const TermsAndConditionpageView = () => {
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "${siteUrl}" },
         { "@type": "ListItem", "position": 2, "name": "About", "item": "${siteUrl}/about" },
-        { "@type": "ListItem", "position": 3, "name": "Services", "item": "${siteUrl}/services" },
-        { "@type": "ListItem", "position": 4, "name": "Pricing", "item": "${siteUrl}/pricing" },
-        { "@type": "ListItem", "position": 5, "name": "Contact", "item": "${siteUrl}/contact" },
-        { "@type": "ListItem", "position": 6, "name": "Career", "item": "${siteUrl}/career" },
-        { "@type": "ListItem", "position": 7, "name": "Terms & Conditions", "item": "${canonicalUrl}" }
+     { "@type": "ListItem", "position": 3, "name": "Designing Services", "item": "${siteUrl}/services/designing" },
+      { "@type": "ListItem", "position": 4, "name": "Development Services", "item": "${siteUrl}/services/development" },
+      { "@type": "ListItem", "position": 5, "name": "Marketing Services", "item": "${siteUrl}/services/marketing" },
+      { "@type": "ListItem", "position": 6, "name": "Pricing", "item": "${siteUrl}/portfolio" },
+        { "@type": "ListItem", "position": 7, "name": "Pricing", "item": "${siteUrl}/pricing" },
+        { "@type": "ListItem", "position": 8, "name": "Contact", "item": "${siteUrl}/contact" },
+        { "@type": "ListItem", "position": 9, "name": "Career", "item": "${siteUrl}/career" },
+        { "@type": "ListItem", "position": 10, "name": "Terms & Conditions", "item": "${canonicalUrl}" }
       ]
     }
   ]
