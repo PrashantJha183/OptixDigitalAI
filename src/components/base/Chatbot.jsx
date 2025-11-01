@@ -160,6 +160,21 @@ const faqData = [
       "Delivery time depends on project size and complexity. We'll share the estimated timeline when you submit your project details.",
   },
   {
+    question: "duration",
+    answer:
+      "Delivery time depends on project size and complexity. We'll share the estimated timeline when you submit your project details.",
+  },
+   {
+    question: "durations",
+    answer:
+      "Delivery time depends on project size and complexity. We'll share the estimated timeline when you submit your project details.",
+  },
+  {
+    question: "time",
+    answer:
+      "Delivery time depends on project size and complexity. We'll share the estimated timeline when you submit your project details.",
+  },
+  {
     question: "delivery time",
     answer:
       "Delivery time depends on project size and complexity. We'll share the estimated timeline when you submit your project details.",
@@ -543,6 +558,12 @@ const faqData = [
 
   {
     question: "works",
+    answer:
+      "Our services range from Web Development, Mobile App Development, UI/UX Design, Graphic & Logo Design, Website & Mobile Redesign, to Digital Strategy and Consulting services, etc.",
+  },
+
+  {
+    question: "work",
     answer:
       "Our services range from Web Development, Mobile App Development, UI/UX Design, Graphic & Logo Design, Website & Mobile Redesign, to Digital Strategy and Consulting services, etc.",
   },
