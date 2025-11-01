@@ -506,33 +506,53 @@ const faqData = [
   {
     question: "services",
     answer:
-      "Zayra here! We provide a wide range of services including Web Development, Mobile App Development, UI/UX Design, Graphic & Logo Design, Website & Mobile Redesign, and Digital Consulting services.",
+      "Zayra here! We provide a wide range of services including Web Development, Mobile App Development, UI/UX Design, Graphic & Logo Design, Website & Mobile Redesign, and Digital Consulting services,etc.",
   },
   {
     question: "service",
     answer:
-      "Zayra confirms: Our services include Web Development, App Development, UI/UX Design, Graphic Designing, Logo Creation, Website & App Redesign, and Digital Strategy Consulting.",
+      "Zayra confirms: Our services include Web Development, App Development, UI/UX Design, Graphic Designing, Logo Creation, Website & App Redesign, and Digital Strategy Consulting, etc.",
   },
   {
     question: "services offered",
     answer:
-      "We offer a variety of services to help businesses grow digitally: Web Development, App Development, UI/UX Design, Logo & Graphic Design, Website & App Redesign, Digital Marketing, and Consulting.",
+      "We offer a variety of services to help businesses grow digitally: Web Development, App Development, UI/UX Design, Logo & Graphic Design, Website & App Redesign, Digital Marketing, and Consulting, etc.",
   },
   {
     question: "service offered",
     answer:
-      "Zayra says: Our services include full-stack Web Development, Mobile App Development, UI/UX Design, Logo & Graphic Design, Website & App Redesign, and Digital Consulting.",
+      "Zayra says: Our services include full-stack Web Development, Mobile App Development, UI/UX Design, Logo & Graphic Design, Website & App Redesign, and Digital Consulting, etc.",
   },
   {
     question: "type of services",
     answer:
-      "Zayra here! We provide multiple types of services: Web & Mobile Development, UI/UX Design, Logo & Graphic Design, Redesign Projects, Digital Marketing, and Business Consulting.",
+      "Zayra here! We provide multiple types of services: Web & Mobile Development, UI/UX Design, Logo & Graphic Design, Redesign Projects, Digital Marketing, and Business Consulting, etc.",
   },
+
   {
     question: "types of services",
     answer:
-      "Our services range from Web Development, Mobile App Development, UI/UX Design, Graphic & Logo Design, Website & Mobile Redesign, to Digital Strategy and Consulting services.",
+      "Our services range from Web Development, Mobile App Development, UI/UX Design, Graphic & Logo Design, Website & Mobile Redesign, to Digital Strategy and Consulting services, etc.",
   },
+
+  {
+    question: "types of works",
+    answer:
+      "Our services range from Web Development, Mobile App Development, UI/UX Design, Graphic & Logo Design, Website & Mobile Redesign, to Digital Strategy and Consulting services, etc.",
+  },
+
+  {
+    question: "works",
+    answer:
+      "Our services range from Web Development, Mobile App Development, UI/UX Design, Graphic & Logo Design, Website & Mobile Redesign, to Digital Strategy and Consulting services, etc.",
+  },
+
+  {
+    question: "works",
+    answer:
+      "Our services range from Web Development, Mobile App Development, UI/UX Design, Graphic & Logo Design, Website & Mobile Redesign, to Digital Strategy and Consulting services, etc.",
+  },
+
   {
     question: "what services do you offer",
     answer:

@@ -81,6 +81,14 @@ describe("AppContent Routing & Layout", () => {
     );
   });
 
+  it("renders Marketing subpage", async () => {
+    window.history.pushState({}, "", "/services/marketing");
+    renderWithSuspense(<AppContent />);
+    await waitFor(() =>
+      expect(screen.getByText("Marketing")).toBeInTheDocument()
+    );
+  });
+
   it("renders Portfolio page", async () => {
     window.history.pushState({}, "", "/portfolio");
     renderWithSuspense(<AppContent />);

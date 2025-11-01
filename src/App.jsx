@@ -5,10 +5,13 @@ import {
   Routes,
   Route,
   useLocation,
+  Link,
 } from "react-router-dom";
 import ErrorBoundary from "./components/base/ErrorBoundary";
 import SkeletonLoader from "./components/base/SkeletonLoader";
+import { motion } from "framer-motion";
 
+const MotionLink = motion.create(Link);
 // Lazy-load components with fallback
 const Header = lazy(() =>
   import("./components/base/Header").catch(() => ({ default: () => null }))
@@ -74,7 +77,7 @@ const Development = lazy(() =>
   }))
 );
 const Marketing = lazy(() =>
-  import("./components/service/Marketing/Marketing").catch(() => ({
+  import("./components/views/MarketingpageView").catch(() => ({
     default: () => null,
   }))
 );

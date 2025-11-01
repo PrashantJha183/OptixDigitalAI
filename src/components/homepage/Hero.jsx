@@ -118,7 +118,7 @@ const Hero = () => {
             dynamic websites that define your digital identity. Empowering
             brands with intelligent, future-ready solutions.
           </motion.p>
-          <Link to="/services">
+          <Link to="/contact">
             <motion.button
               className="mt-4 bg-transparent text-white font-semibold px-6 py-3 rounded-md border-2 border-white hover:bg-white hover:text-[#5d00c3] transition-all duration-300 inline-flex items-center space-x-3"
               aria-label="Get Started with OptixDigitalAI"
