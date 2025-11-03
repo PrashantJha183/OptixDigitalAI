@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml"
->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- Home -->
   <url>
     <loc>https://optixdigitalai.com/</loc>
     <lastmod>2025-11-03</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
@@ -15,7 +13,7 @@
   <url>
     <loc>https://optixdigitalai.com/about</loc>
     <lastmod>2025-11-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
@@ -23,7 +21,7 @@
   <url>
     <loc>https://optixdigitalai.com/services/designing</loc>
     <lastmod>2025-11-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
@@ -31,7 +29,7 @@
   <url>
     <loc>https://optixdigitalai.com/services/development</loc>
     <lastmod>2025-11-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
@@ -39,7 +37,7 @@
   <url>
     <loc>https://optixdigitalai.com/services/marketing</loc>
     <lastmod>2025-11-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
@@ -47,7 +45,7 @@
   <url>
     <loc>https://optixdigitalai.com/portfolio</loc>
     <lastmod>2025-11-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
 
@@ -55,7 +53,7 @@
   <url>
     <loc>https://optixdigitalai.com/pricing</loc>
     <lastmod>2025-11-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 
@@ -63,7 +61,7 @@
   <url>
     <loc>https://optixdigitalai.com/career</loc>
     <lastmod>2025-11-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
 
@@ -71,7 +69,7 @@
   <url>
     <loc>https://optixdigitalai.com/contact</loc>
     <lastmod>2025-11-03</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
@@ -79,14 +77,14 @@
   <url>
     <loc>https://optixdigitalai.com/terms-and-conditions</loc>
     <lastmod>2025-11-03</lastmod>
-    <changefreq>yearly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://optixdigitalai.com/privacy-policy</loc>
     <lastmod>2025-11-03</lastmod>
-    <changefreq>yearly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
 </urlset>
