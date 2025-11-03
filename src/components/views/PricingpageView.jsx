@@ -1,6 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import PricingHero from "../pricing/PricingHero";
 import Pricing from "../pricing/Pricing";
+import PricingContact from "../pricing/PricingContact";
 import ErrorBoundary from "../base/ErrorBoundary";
 
 const PricingpageView = () => {
@@ -144,8 +146,17 @@ const PricingpageView = () => {
       </Helmet>
 
       {/* --- Page Content --- */}
+
+      <ErrorBoundary>
+        <PricingHero />
+      </ErrorBoundary>
+
       <ErrorBoundary>
         <Pricing />
+      </ErrorBoundary>
+
+      <ErrorBoundary>
+        <PricingContact />
       </ErrorBoundary>
     </>
   );
