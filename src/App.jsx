@@ -72,7 +72,7 @@ const Designing = lazy(() =>
   }))
 );
 const Development = lazy(() =>
-  import("./components/service/Development/Development").catch(() => ({
+  import("./components/views/DevelopmentpageView").catch(() => ({
     default: () => null,
   }))
 );

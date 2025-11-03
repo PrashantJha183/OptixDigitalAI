@@ -69,6 +69,10 @@ body::-webkit-scrollbar {
   background-size: 200% 100%;
 }
 
+.development-hero-bg {
+  height: 70vh;
+}
+
 @media (min-width: 320px) and (max-width: 768px) {
   .review-main {
     height: 65vh;
@@ -77,6 +81,9 @@ body::-webkit-scrollbar {
   }
   .marketingservice {
     height: 200px;
+  }
+  .development-hero-bg {
+    height: 50vh;
   }
 }
 

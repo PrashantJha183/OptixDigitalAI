@@ -6,7 +6,7 @@
   <!-- Home -->
   <url>
     <loc>https://optixdigitalai.com/</loc>
-    <lastmod>2025-10-23</lastmod>
+    <lastmod>2025-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -14,7 +14,7 @@
   <!-- About Page -->
   <url>
     <loc>https://optixdigitalai.com/about</loc>
-    <lastmod>2025-10-23</lastmod>
+    <lastmod>2025-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -22,7 +22,7 @@
   <!-- Services: Designing -->
   <url>
     <loc>https://optixdigitalai.com/services/designing</loc>
-    <lastmod>2025-10-23</lastmod>
+    <lastmod>2025-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -30,7 +30,7 @@
   <!-- Services: Development -->
   <url>
     <loc>https://optixdigitalai.com/services/development</loc>
-    <lastmod>2025-10-23</lastmod>
+    <lastmod>2025-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -38,7 +38,7 @@
   <!-- Services: Marketing -->
   <url>
     <loc>https://optixdigitalai.com/services/marketing</loc>
-    <lastmod>2025-10-23</lastmod>
+    <lastmod>2025-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -46,7 +46,7 @@
   <!-- Portfolio -->
   <url>
     <loc>https://optixdigitalai.com/portfolio</loc>
-    <lastmod>2025-10-23</lastmod>
+    <lastmod>2025-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -54,7 +54,7 @@
   <!-- Pricing -->
   <url>
     <loc>https://optixdigitalai.com/pricing</loc>
-    <lastmod>2025-10-23</lastmod>
+    <lastmod>2025-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -62,7 +62,7 @@
   <!-- Career -->
   <url>
     <loc>https://optixdigitalai.com/career</loc>
-    <lastmod>2025-10-23</lastmod>
+    <lastmod>2025-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -70,7 +70,7 @@
   <!-- Contact -->
   <url>
     <loc>https://optixdigitalai.com/contact</loc>
-    <lastmod>2025-10-23</lastmod>
+    <lastmod>2025-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -78,14 +78,14 @@
   <!-- Legal Pages -->
   <url>
     <loc>https://optixdigitalai.com/terms-and-conditions</loc>
-    <lastmod>2025-10-23</lastmod>
+    <lastmod>2025-11-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://optixdigitalai.com/privacy-policy</loc>
-    <lastmod>2025-10-23</lastmod>
+    <lastmod>2025-11-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
