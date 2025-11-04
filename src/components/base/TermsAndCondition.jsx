@@ -14,6 +14,7 @@ import {
   Info,
   CheckCircle,
 } from "lucide-react";
+import { FaPaintBrush } from "react-icons/fa"; // 🎨 Added for General Service Notes section
 
 const Section = memo(({ icon: Icon, title, points, isLast }) => {
   const controls = useAnimation();
@@ -49,7 +50,6 @@ const Section = memo(({ icon: Icon, title, points, isLast }) => {
         initial={{ opacity: 0, y: 40, scale: 0.95 }}
         animate={controls}
         whileHover={{
-          //   scale: 1.02,
           transition: {
             type: "spring",
             stiffness: 120,
@@ -77,7 +77,7 @@ const Section = memo(({ icon: Icon, title, points, isLast }) => {
         </ul>
       </motion.section>
 
-      {/* horizontal separator line, skip if last section */}
+      {/* Separator */}
       {!isLast && (
         <div className="h-[2px] bg-gradient-to-r from-transparent via-[#5d00c3]/30 to-transparent my-8 w-full max-w-5xl mx-auto" />
       )}
@@ -143,6 +143,7 @@ const TermsAndConditions = () => {
         "No personal data is shared with third parties without explicit client consent.",
         "We follow ethical marketing and SEO practices in compliance with digital advertising regulations.",
         "Clients consent to usage of their data for service delivery and optimization purposes.",
+        "Marketing performance is influenced by various external factors such as algorithms, audience behavior, and competition; hence, specific outcomes cannot be guaranteed.",
       ],
     },
     {
@@ -164,6 +165,18 @@ const TermsAndConditions = () => {
       ],
     },
     {
+      icon: FaPaintBrush,
+      title: "General Service Notes",
+      points: [
+        "All services include responsive design and cross-platform compatibility to ensure seamless user experiences across all devices.",
+        "Custom features and premium design options are available upon request to enhance project functionality and aesthetics.",
+        "Each project includes documentation, testing, and deployment support to ensure long-term performance and maintainability.",
+        "Timelines and final quotations may vary based on client requirements, scope adjustments, and feedback response time.",
+        "Design and marketing services include brand strategy consultations, visual consistency audits, and post-launch support to maximize impact.",
+        "OptixDigitalAI follows modern design standards, accessibility guidelines, and ethical marketing practices across all creative and promotional deliverables.",
+      ],
+    },
+    {
       icon: Info,
       title: "Policy Updates & Contact",
       points: [
@@ -171,15 +184,6 @@ const TermsAndConditions = () => {
         "Any updates will be communicated through our website or official channels.",
         "For any questions, please contact us at support@optixdigitalai.com.",
         "By continuing to use our services after updates, you agree to the revised terms.",
-      ],
-    },
-    {
-      icon: ShieldCheck,
-      title: "Disclaimer & Legal Compliance",
-      points: [
-        "OptixDigitalAI provides services 'as is' and does not guarantee specific results.",
-        "Clients are responsible for ensuring their projects comply with applicable laws and regulations.",
-        "We are not responsible for damages caused by misuse or third-party dependencies.",
       ],
     },
     {
@@ -212,7 +216,7 @@ const TermsAndConditions = () => {
             icon={section.icon}
             title={section.title}
             points={section.points}
-            isLast={idx === sections.length - 1} // flag last section
+            isLast={idx === sections.length - 1}
           />
         ))}
       </div>

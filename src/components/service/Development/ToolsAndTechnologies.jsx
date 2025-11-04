@@ -55,7 +55,7 @@ const TechCard = memo(({ category, items, index }) => {
     Cloud:
       "We leverage leading cloud platforms to enhance reliability, scalability, and global reach while ensuring cost-efficient and secure deployment environments.",
     DevOps:
-      "Our DevOps practices streamline development, deployment, and monitoring — ensuring faster delivery, automation, and continuous improvement of digital solutions.",
+      "Our DevOps practices streamline development, deployment, and monitoring ensuring faster delivery, automation, and continuous improvement of digital solutions.",
     "Mobile Apps":
       "We develop intuitive, fast, and feature-rich mobile applications that deliver consistent performance and engaging user experiences across platforms.",
     CMS: "We create flexible, easy-to-manage, and scalable CMS solutions, enabling effortless content management with powerful customization and automation capabilities.",

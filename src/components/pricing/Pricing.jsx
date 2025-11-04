@@ -1,27 +1,28 @@
 // Pricing.jsx
-import React, { memo, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import React, { memo, useEffect, useState } from "react";
+import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { CheckCircle, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-import { FaShopify, FaWordpress, FaCode, FaMobileAlt } from "react-icons/fa";
+import {
+  FaShopify,
+  FaWordpress,
+  FaCode,
+  FaMobileAlt,
+  FaPaintBrush,
+  FaBullhorn,
+} from "react-icons/fa";
 
 // Single Pricing Card Component
 const PricingCard = memo(({ icon, title, price, features, reason }) => {
   const controls = useAnimation();
-  const { ref, inView } = useInView({
-    threshold: 0.3,
-    triggerOnce: false,
-  });
+  const { ref, inView } = useInView({ threshold: 0.3 });
 
   useEffect(() => {
     controls.start({
       opacity: inView ? 1 : 0,
       y: inView ? 0 : 30,
-      transition: {
-        duration: 0.4,
-        ease: "easeInOut",
-      },
+      transition: { duration: 0.4, ease: "easeInOut" },
     });
   }, [inView, controls]);
 
@@ -33,19 +34,15 @@ const PricingCard = memo(({ icon, title, price, features, reason }) => {
       whileHover={{ scale: 1.02 }}
       className="relative flex flex-col items-start p-4 md:p-6 bg-white shadow-md rounded-xl border-2 border-[#5d00c3] transition-all duration-300"
     >
-      {/* === Wrapped logo, title, price, and button inside bordered box === */}
+      {/* === Header box === */}
       <div className="w-full border border-[#5d00c3] rounded-lg p-4 mb-6 text-center text-white bg-[#5d00c3]">
-        <div className="text-[white] text-5xl mb-4 flex justify-center">
-          {icon}
-        </div>
-        <h3 className="text-2xl md:text-3xl font-bold mb-2 text-[white]">
-          {title}
-        </h3>
-        <p className="text-lg font-semibold text-[white] mb-4">
-          Pricing: <span className="text-[white]">{price}</span>
-          <hr className="mt-4" />
+        <div className="text-5xl mb-4 flex justify-center">{icon}</div>
+        <h3 className="text-2xl md:text-3xl font-bold mb-2">{title}</h3>
+        <p className="text-lg font-semibold mb-2">
+          Pricing: <span>{price}</span>
+          <sup className="text-yellow-300 ml-1">*</sup>
         </p>
-
+        <hr className="my-3 border-yellow-300/40" />
         <p className="text-sm md:text-base italic font-medium mb-4 text-yellow-300">
           {reason}
         </p>
@@ -58,14 +55,14 @@ const PricingCard = memo(({ icon, title, price, features, reason }) => {
         </Link>
       </div>
 
-      {/* === Properly aligned features === */}
+      {/* === Features list === */}
       <ul className="text-gray-700 text-base md:text-lg space-y-3 w-full">
         {features.map((feature, i) => (
           <li key={i} className="flex items-start gap-3 leading-snug text-left">
             <div className="flex-shrink-0 pt-1">
               <CheckCircle className="text-[#5d00c3] w-5 h-5" />
             </div>
-            <span className="flex-1">{feature}</span>
+            <span>{feature}</span>
           </li>
         ))}
       </ul>
@@ -75,7 +72,10 @@ const PricingCard = memo(({ icon, title, price, features, reason }) => {
 
 // Main Pricing Section
 const Pricing = () => {
-  const services = [
+  const [activeTab, setActiveTab] = useState("development");
+
+  // === Development Services ===
+  const developmentServices = [
     {
       icon: <FaShopify />,
       title: "Shopify Development",
@@ -113,7 +113,9 @@ const Pricing = () => {
       reason: "Stand out with a fully custom-built website made just for you!",
       features: [
         "Fully customized website development",
-        "Frontend built using Monstag for modern UI & performance",
+        "Frontend built using React.js for modern UI & performance",
+        "Backend infrastructure using Node.js, Express.js, and PHP",
+        "Databases: MongoDB, MySQL, PostgreSQL for reliability and scalability",
         "Responsive design for all devices",
         "Contact and inquiry form integration",
         "SEO-friendly structure & clean code",
@@ -138,49 +140,99 @@ const Pricing = () => {
     },
   ];
 
+  // === Design & Marketing Services ===
+  const designServices = [
+    {
+      icon: <FaPaintBrush />,
+      title: "UI/UX Design",
+      price: "₹10,000 (Basic Package)",
+      reason: "Design that’s not just beautiful — it converts!",
+      features: [
+        "Custom UI/UX design using Figma & Adobe XD",
+        "User flow and wireframe creation",
+        "Responsive layout design for all devices",
+        "Brand-focused visual design",
+        "Prototype testing & iteration",
+        "Delivery of design assets and style guide",
+      ],
+    },
+    {
+      icon: <FaBullhorn />,
+      title: "Digital Marketing",
+      price: "₹12,000 (Basic Package)",
+      reason: "Grow your brand visibility with data-driven marketing!",
+      features: [
+        "Social media strategy and content design",
+        "SEO optimization and keyword research",
+        "Google Ads and Meta Ads setup",
+        "Email marketing and automation",
+        "Analytics tracking & monthly reports",
+        "Content marketing & engagement strategies",
+      ],
+    },
+  ];
+
+  const services =
+    activeTab === "development" ? developmentServices : designServices;
+
   return (
     <section
       className="relative py-16 md:py-24 px-6 md:px-12 bg-white m-4 rounded-md shadow-lg new-font overflow-hidden"
       aria-labelledby="pricing-heading"
     >
       <div className="max-w-6xl mx-auto text-center relative z-10">
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
-          {services.map((service, idx) => (
-            <PricingCard
-              key={idx}
-              icon={service.icon}
-              title={service.title}
-              price={service.price}
-              features={service.features}
-              reason={service.reason}
-            />
-          ))}
+        {/* Toggle Buttons */}
+        <div className="flex justify-center mb-10 space-x-4">
+          <button
+            onClick={() => setActiveTab("development")}
+            className={`px-6 py-2 font-semibold rounded-lg border-2 transition-all duration-300 ${
+              activeTab === "development"
+                ? "bg-[#5d00c3] text-white border-[#5d00c3]"
+                : "text-[#5d00c3] border-[#5d00c3] hover:bg-[#5d00c3] hover:text-white"
+            }`}
+          >
+            Development
+          </button>
+          <button
+            onClick={() => setActiveTab("design")}
+            className={`px-6 py-2 font-semibold rounded-lg border-2 transition-all duration-300 ${
+              activeTab === "design"
+                ? "bg-[#5d00c3] text-white border-[#5d00c3]"
+                : "text-[#5d00c3] border-[#5d00c3] hover:bg-[#5d00c3] hover:text-white"
+            }`}
+          >
+            Design & Marketing
+          </button>
         </div>
 
-        {/* Additional Notes Section */}
-        <div className="mt-12 text-gray-800 text-lg leading-relaxed bg-white bg-opacity-90 rounded-lg p-6 shadow-sm">
-          <h3 className="text-[#5d00c3] font-bold text-2xl mb-4">
-            Additional Notes
-          </h3>
-          <ul className="space-y-2 text-left">
-            <li>
-              • All services include responsive design & cross-platform
-              compatibility.
-            </li>
-            <li>
-              • Custom features and premium design options available on request.
-            </li>
-            <li>
-              • Each project includes documentation, testing, and deployment
-              support.
-            </li>
-            <li>
-              • Timelines and final quotes may vary based on client
-              requirements.
-            </li>
-          </ul>
-        </div>
+        {/* Animated Pricing Cards */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16"
+          >
+            {services.map((service, idx) => (
+              <PricingCard key={idx} {...service} />
+            ))}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Note under section */}
+        <p className="mt-10 text-gray-600 text-sm italic text-center">
+          * Final pricing and delivery timelines may vary based on specific
+          project requirements. Please refer to our{" "}
+          <Link
+            to="/terms-and-conditions"
+            className="text-[#5d00c3] hover:underline"
+          >
+            Terms & Conditions
+          </Link>{" "}
+          for complete details.
+        </p>
       </div>
     </section>
   );

@@ -97,7 +97,7 @@ const DesigningHero = () => {
         <strong className="font-semibold text-yellow-400">
           OptixDigitalAI
         </strong>
-        , design meets innovation — blending creativity with smart, AI-driven
+        , design meets innovation blending creativity with smart, AI-driven
         digital experiences.
       </motion.p>
 
