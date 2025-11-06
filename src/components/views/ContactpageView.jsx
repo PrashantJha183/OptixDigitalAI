@@ -11,20 +11,44 @@ const ContactpageView = () => {
   const title =
     "Contact OptixDigitalAI | Get in Touch with Our Digital Experts";
   const description =
-    "Reach out to OptixDigitalAI — a leading creative digital agency offering web development, app design, branding, SEO, and AI-powered marketing solutions. Contact us to grow your business digitally.";
+    "Get in touch with OptixDigitalAI Pune’s leading creative digital agency specializing in web development, app design, branding, SEO, and AI-driven marketing. Contact our expert team in India to discuss your project, request a quote, or start your digital transformation today.";
+
   const keywords = `
-    OptixDigitalAI, about OptixDigitalAI, digital agency India, creative tech agency,
-    AI marketing agency, web development company, mobile app development, UI UX design,
-    software company India, global digital agency, SEO experts, social media marketing,
-    performance marketing, PPC advertising, creative branding, digital transformation,
-    AI-driven design, custom web design, eCommerce solutions, app developers, SaaS apps,
-    website optimization, digital consultancy, Optix Digital AI team, innovation agency,
-    brand strategy, content marketing, tech consultancy, cloud web apps, business growth,
-    OptixDigitalAI company, AI web agency, top marketing agency, design and technology,
-    data-driven marketing, responsive web apps, web design experts, full stack developers,
-    software engineers, startup solutions, B2B marketing, online business growth,
-    web app developers, UX research agency, branding experts, digital strategy, marketing intelligence
-  `;
+OptixDigitalAI contact, contact OptixDigitalAI, contact Optix Digital AI, OptixDigitalAI Pune contact,
+OptixDigitalAI India contact, get in touch with OptixDigitalAI, reach OptixDigitalAI team,
+OptixDigitalAI phone number, OptixDigitalAI email address, OptixDigitalAI office address,
+OptixDigitalAI customer support, OptixDigitalAI helpdesk, OptixDigitalAI business inquiries,
+contact web development company Pune, contact app development company India,
+contact digital agency Pune, contact creative agency India, IT company contact Pune,
+software development company contact India, OptixDigitalAI support Pune,
+OptixDigitalAI technical support, OptixDigitalAI customer care Pune, client support OptixDigitalAI,
+project consultation OptixDigitalAI, business collaboration Pune, startup partnership Pune,
+digital consultancy contact Pune, AI web agency contact India, UI UX design contact Pune,
+branding agency contact India, marketing agency contact Pune, SEO agency contact India,
+performance marketing contact Pune, PPC agency contact India, creative studio Pune contact,
+contact OptixDigitalAI for website design, contact for app development Pune,
+request a project quote OptixDigitalAI, book consultation OptixDigitalAI,
+start a project with OptixDigitalAI, partner with OptixDigitalAI, collaborate with OptixDigitalAI,
+hire OptixDigitalAI, hire web developers Pune, hire designers India,
+hire digital marketers Pune, hire SEO specialists India, hire branding experts Pune,
+contact OptixDigitalAI sales, OptixDigitalAI marketing inquiries, OptixDigitalAI client partnerships,
+OptixDigitalAI business proposal, OptixDigitalAI feedback, OptixDigitalAI contact form,
+connect with OptixDigitalAI team Pune, contact Optix Digital AI India,
+creative technology agency contact Pune, global digital agency contact India,
+digital growth consultation Pune, tech consultancy contact Pune,
+website inquiry Pune, mobile app inquiry India, startup digital agency contact Pune,
+digital marketing contact Pune, branding contact Pune, social media marketing contact India,
+AI automation contact Pune, SaaS product consultation India, software consultation Pune,
+enterprise solutions contact Pune, innovation agency contact India,
+OptixDigitalAI chatbot support, OptixDigitalAI Pune office, OptixDigitalAI location,
+digital agency Pune contact details, IT company Pune contact details,
+contact OptixDigitalAI India office, connect with web experts Pune,
+connect with design team Pune, contact OptixDigitalAI for partnership,
+business collaboration India, global business inquiries OptixDigitalAI,
+digital strategy contact Pune, AI-driven marketing contact Pune,
+OptixDigitalAI new project contact, contact for quotation Pune, OptixDigitalAI official contact
+`;
+
   const image = `${siteUrl}/og-image.jpg`;
 
   return (
@@ -38,7 +62,7 @@ const ContactpageView = () => {
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <meta name="author" content="OptixDigitalAI" />
         <meta name="language" content="en" />
-        <meta name="revisit-after" content="7 days" />
+        <meta name="revisit-after" content="1 day" />
         <meta name="distribution" content="global" />
         <meta name="rating" content="general" />
 
@@ -96,7 +120,7 @@ const ContactpageView = () => {
         "@type": "ContactPoint",
         "telephone": "+91 7420807072",
         "contactType": "customer support",
-        "availableLanguage": ["English","Hindi"]
+        "availableLanguage": ["English"]
       },
       "sameAs": [
        "https://www.facebook.com/profile.php?id=61582048281375",

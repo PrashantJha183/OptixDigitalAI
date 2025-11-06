@@ -12,20 +12,68 @@ const HomepageView = () => {
   const title =
     "OptixDigitalAI — Creative Tech Agency | Web, App & Digital Solutions";
   const description =
-    "OptixDigitalAI is a next-gen creative tech agency offering AI-powered web design, mobile app development, digital marketing, and branding solutions to help businesses grow globally.";
+    "OptixDigitalAI delivers high-performance web and mobile app development along with expert digital marketing services in Pune, India, and worldwide. From scalable full-stack solutions to social media marketing, Google Ads, Meta Ads, and SEO we help brands grow through technology and creativity.";
+
   const keywords = `
-    OptixDigitalAI, about OptixDigitalAI, digital agency India, creative tech agency,
-    AI marketing agency, web development company, mobile app development, UI UX design,
-    software company India, global digital agency, SEO experts, social media marketing,
-    performance marketing, PPC advertising, creative branding, digital transformation,
-    AI-driven design, custom web design, eCommerce solutions, app developers, SaaS apps,
-    website optimization, digital consultancy, Optix Digital AI team, innovation agency,
-    brand strategy, content marketing, tech consultancy, cloud web apps, business growth,
-    OptixDigitalAI company, AI web agency, top marketing agency, design and technology,
-    data-driven marketing, responsive web apps, web design experts, full stack developers,
-    software engineers, startup solutions, B2B marketing, online business growth,
-    web app developers, UX research agency, branding experts, digital strategy, marketing intelligence
-  `;
+OptixDigitalAI development, OptixDigitalAI web development, OptixDigitalAI app development,
+web development company Pune, web development company India, full stack development agency,
+React developers Pune, Node.js developers India, frontend development company Pune,
+backend development services India, custom web app development Pune,
+mobile app development Pune, cross-platform app development India, React Native developers Pune,
+Flutter app development India, Next.js development Pune, scalable web apps India,
+enterprise software development Pune, SaaS app development India, ecommerce development Pune,
+cloud application development India, API integration services Pune, database management India,
+DevOps company Pune, CI/CD pipeline setup India, AWS development Pune,
+Azure app development India, modern web architecture Pune, secure software development India,
+custom software solutions Pune, digital transformation development India,
+PWA development Pune, technology consulting India, AI-powered development Pune,
+automation solutions India, business web apps Pune, product engineering India,
+UI UX integrated development Pune, responsive web apps India, CMS development Pune,
+WordPress development India, Shopify development Pune, MERN stack developers India,
+MEAN stack development Pune, Laravel developers India, Python developers Pune,
+Django development India, cloud-based web apps Pune, mobile solutions India,
+enterprise mobile app Pune, web portal development India, application modernization Pune,
+full stack engineers India, software company Pune, custom CRM development India,
+ERP development Pune, B2B web solutions India, startup development partner Pune,
+MVP development India, SaaS platform Pune, real-time app development India,
+database optimization Pune, performance tuning India, OptixDigitalAI software engineers,
+top development company Pune, technology agency India, AI integration services Pune,
+IoT app development India, blockchain solutions Pune, API-first development India,
+cloud hosting Pune, scalable infrastructure India, serverless app development Pune,
+web performance optimization India, OptixDigitalAI coding experts,
+modern web technology Pune, app design and development India,
+secure mobile app Pune, UX-driven development India, top developers Pune,
+custom backend architecture India, agile development Pune, software innovation India,
+app deployment Pune, code optimization India, digital product engineering Pune,
+OptixDigitalAI Pune developers, OptixDigitalAI India tech team, global development agency India,
+technology-driven web solutions Pune,
+
+-- Digital Marketing & Social Media --
+digital marketing services Pune, social media marketing Pune, SMM agency India,
+Google Ads management Pune, Meta Ads experts India, Facebook Ads agency Pune,
+Instagram marketing Pune, performance marketing Pune, PPC campaigns India,
+Google Ads optimization Pune, YouTube marketing India, LinkedIn marketing Pune,
+social media strategy India, content marketing Pune, digital brand growth India,
+paid advertising Pune, SEO services India, SEO company Pune, keyword optimization Pune,
+on-page SEO India, off-page SEO Pune, local SEO experts Pune, SEM agency India,
+Google Partner agency Pune, marketing automation Pune, remarketing campaigns India,
+retargeting ads Pune, influencer marketing Pune, brand awareness campaigns India,
+marketing analytics Pune, conversion optimization India, landing page optimization Pune,
+email marketing Pune, CRM marketing India, lead generation Pune, ROI marketing India,
+digital media buying Pune, social ads management India, campaign reporting Pune,
+marketing intelligence India, digital growth partner Pune, business advertising India,
+creative social media Pune, ad creatives Pune, content design Pune, video marketing Pune,
+reel ads optimization India, brand engagement Pune, omnichannel marketing India,
+cross-platform ad campaigns Pune, B2B digital marketing India, ecommerce marketing Pune,
+Google Search Ads Pune, Google Display Ads India, Meta ad campaigns Pune,
+creative content marketing India, OptixDigitalAI digital marketing team Pune,
+best social media agency Pune, digital marketing Pune India, AI-driven marketing solutions India,
+OptixDigitalAI Meta Ads, OptixDigitalAI Google Ads, digital consultancy Pune, ad strategy India,
+social media optimization Pune, paid media strategy India, content planning Pune,
+campaign performance India, ROI-driven campaigns Pune, influencer collaboration India,
+OptixDigitalAI marketing experts, OptixDigitalAI ad management Pune
+`;
+
   const image = `${siteUrl}/og-image.jpg`; // Replace with your actual OG image path
 
   return (
@@ -40,7 +88,7 @@ const HomepageView = () => {
         <meta name="robots" content="index, follow" />
         <meta name="author" content="OptixDigitalAI" />
         <meta name="language" content="en" />
-        <meta name="revisit-after" content="7 days" />
+        <meta name="revisit-after" content="1 day" />
 
         {/* Open Graph (Facebook / LinkedIn / WhatsApp) */}
         <meta property="og:type" content="website" />
@@ -95,7 +143,7 @@ const HomepageView = () => {
         "telephone": "+91 7420807072",
         "contactType": "customer service",
         "areaServed": "Worldwide",
-        "availableLanguage": ["English", "Hindi"]
+        "availableLanguage": ["English"]
       }
     ]
   },

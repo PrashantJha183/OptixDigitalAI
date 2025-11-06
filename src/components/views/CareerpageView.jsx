@@ -13,21 +13,43 @@ const CareerpageView = () => {
   const title =
     "Join OptixDigitalAI | Careers & Job Opportunities in Digital Tech";
   const description =
-    "Explore career opportunities at OptixDigitalAI — a global creative technology agency. Join our team of experts in web development, mobile apps, branding, AI solutions, and digital marketing to innovate and grow your career.";
+    "Join OptixDigitalAI a leading creative technology and AI-driven digital agency based in Pune, India. Explore exciting career opportunities in web development, app design, branding, AI innovation, and digital marketing. Grow your career with a global team shaping the future of technology and creativity.";
+
   const keywords = `
-    OptixDigitalAI, about OptixDigitalAI, digital agency India, creative tech agency,
-    AI marketing agency, web development company, mobile app development, UI UX design,
-    software company India, global digital agency, SEO experts, social media marketing,
-    performance marketing, PPC advertising, creative branding, digital transformation,
-    AI-driven design, custom web design, eCommerce solutions, app developers, SaaS apps,
-    website optimization, digital consultancy, Optix Digital AI team, innovation agency,
-    brand strategy, content marketing, tech consultancy, cloud web apps, business growth,
-    OptixDigitalAI company, AI web agency, top marketing agency, design and technology,
-    data-driven marketing, responsive web apps, web design experts, full stack developers,
-    software engineers, startup solutions, B2B marketing, online business growth,
-    web app developers, UX research agency, branding experts, digital strategy, marketing intelligence
-  `;
-  const image = `${siteUrl}/assets/career-og.jpg`;
+OptixDigitalAI careers, OptixDigitalAI jobs, OptixDigitalAI hiring, careers at Optix Digital AI,
+OptixDigitalAI Pune jobs, digital agency hiring Pune, work with OptixDigitalAI, join Optix Digital AI team,
+career growth at OptixDigitalAI, software company careers India, creative technology agency jobs,
+web development jobs Pune, web designer jobs Pune, front end developer Pune, back end developer jobs Pune,
+React developer Pune, Next.js developer Pune, Node.js developer Pune, full stack developer Pune,
+UI UX designer Pune, UX researcher Pune, product designer jobs Pune, creative designer Pune,
+motion graphics jobs Pune, video editor Pune, branding agency careers Pune, graphic designer jobs Pune,
+marketing agency jobs Pune, digital marketing jobs India, SEO executive Pune, PPC expert Pune,
+social media marketing jobs Pune, content writer jobs Pune, content strategist Pune,
+performance marketing jobs Pune, AI engineer jobs India, AI developer Pune, AI automation jobs,
+machine learning engineer Pune, AI-powered marketing roles, data analyst Pune, data engineer Pune,
+software engineer Pune, software tester Pune, QA engineer Pune, automation tester jobs Pune,
+DevOps engineer Pune, cloud engineer Pune, AWS developer Pune, SaaS developer Pune,
+WordPress developer Pune, Shopify developer Pune, eCommerce developer Pune, app developer Pune,
+React Native developer Pune, Flutter developer Pune, mobile developer Pune, iOS developer Pune,
+Android developer Pune, technology jobs Pune, IT company hiring Pune, tech jobs India,
+remote tech jobs India, work from home tech jobs Pune, software internship Pune,
+design internship Pune, marketing internship Pune, OptixDigitalAI internship, fresher jobs Pune,
+fresher hiring India, startup jobs Pune, innovation-driven careers, career in AI and technology,
+business development executive Pune, client relationship manager jobs, project manager Pune,
+digital strategist jobs Pune, marketing executive Pune, HR executive Pune, recruiter Pune,
+talent acquisition Pune, business analyst Pune, SaaS solutions careers, UX researcher India,
+UI UX design jobs India, creative jobs Pune, creative technologist Pune, OptixDigitalAI team Pune,
+OptixDigitalAI opportunities, global career opportunities, work culture OptixDigitalAI,
+innovation careers Pune, top tech company Pune, AI-driven career India, web app developer Pune,
+cloud web apps Pune, app design agency careers, UI UX studio Pune, digital consultancy Pune,
+digital transformation jobs India, design and development careers Pune, digital growth jobs,
+product management Pune, startup accelerator Pune, tech innovation Pune, creative thinkers Pune,
+enterprise app development Pune, data-driven design Pune, next-gen digital careers,
+AI automation engineer Pune, future-ready careers Pune, innovation lab Pune, creative professionals Pune,
+global digital agency hiring, tech opportunity Pune, business growth careers Pune, Optix Digital AI Pune careers
+`;
+
+  const image = `${siteUrl}/og-image.jpg`;
 
   return (
     <>
@@ -40,7 +62,7 @@ const CareerpageView = () => {
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <meta name="author" content="OptixDigitalAI" />
         <meta name="language" content="en" />
-        <meta name="revisit-after" content="7 days" />
+        <meta name="revisit-after" content="1 day" />
         <meta name="distribution" content="global" />
         <meta name="rating" content="general" />
 
@@ -101,7 +123,7 @@ const CareerpageView = () => {
       "@type": "ContactPoint",
       "telephone": "+91 7420807072",
       "contactType": "HR / Recruitment",
-      "availableLanguage": ["English","Hindi"]
+      "availableLanguage": ["English"]
     },
     "sameAs": [
    "https://www.facebook.com/profile.php?id=61582048281375",

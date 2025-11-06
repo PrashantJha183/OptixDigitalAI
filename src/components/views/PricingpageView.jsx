@@ -13,20 +13,44 @@ const PricingpageView = () => {
   const title =
     "Pricing Plans | OptixDigitalAI – Affordable Web, App, and Digital Marketing Solutions";
   const description =
-    "Discover OptixDigitalAI’s flexible pricing plans for web development, mobile apps, branding, SEO, and AI-powered digital marketing solutions. Choose a plan that fits your business growth.";
+    "Explore OptixDigitalAI’s transparent and flexible pricing plans for web development, mobile app design, branding, SEO, and AI-powered digital marketing. Get custom packages tailored to your business goals from startups to enterprises in India and worldwide.";
+
   const keywords = `
-    OptixDigitalAI, about OptixDigitalAI, digital agency India, creative tech agency,
-    AI marketing agency, web development company, mobile app development, UI UX design,
-    software company India, global digital agency, SEO experts, social media marketing,
-    performance marketing, PPC advertising, creative branding, digital transformation,
-    AI-driven design, custom web design, eCommerce solutions, app developers, SaaS apps,
-    website optimization, digital consultancy, Optix Digital AI team, innovation agency,
-    brand strategy, content marketing, tech consultancy, cloud web apps, business growth,
-    OptixDigitalAI company, AI web agency, top marketing agency, design and technology,
-    data-driven marketing, responsive web apps, web design experts, full stack developers,
-    software engineers, startup solutions, B2B marketing, online business growth,
-    web app developers, UX research agency, branding experts, digital strategy, marketing intelligence
-  `;
+OptixDigitalAI pricing, OptixDigitalAI pricing plans, OptixDigitalAI packages,
+OptixDigitalAI cost, digital agency pricing India, web development pricing India,
+website design packages Pune, mobile app development cost Pune,
+branding services pricing India, SEO packages Pune, social media marketing cost India,
+AI marketing pricing, AI-powered digital marketing packages India,
+OptixDigitalAI plan comparison, website cost Pune, app development cost India,
+custom website pricing, ecommerce development packages Pune,
+UI UX design pricing India, digital marketing plans India, PPC campaign cost,
+performance marketing pricing Pune, creative agency packages India,
+full stack development pricing, software development cost India,
+OptixDigitalAI website pricing, OptixDigitalAI development rates,
+OptixDigitalAI SEO pricing, digital agency packages Pune,
+branding and logo design pricing India, content marketing plans Pune,
+AI solutions pricing India, automation and analytics packages Pune,
+startup website cost India, business website plans Pune,
+B2B marketing packages India, SaaS app development pricing,
+custom web app pricing India, mobile app design packages Pune,
+OptixDigitalAI service cost, digital consultancy pricing India,
+marketing intelligence packages, tech consultancy plans Pune,
+OptixDigitalAI global pricing, international service rates India,
+creative web solutions pricing Pune, enterprise website cost India,
+marketing and advertising packages India, OptixDigitalAI quote,
+request pricing OptixDigitalAI, affordable digital marketing India,
+OptixDigitalAI pricing Pune, hire OptixDigitalAI, cost of website design India,
+custom plan OptixDigitalAI, web design company pricing India,
+top digital agency India pricing, creative tech agency Pune pricing,
+digital transformation packages India, AI web agency cost,
+data-driven marketing pricing Pune, responsive web apps pricing,
+software engineers cost India, branding experts pricing Pune,
+OptixDigitalAI affordable plans, online business growth pricing,
+B2B digital pricing India, creative solutions pricing Pune,
+OptixDigitalAI transparent pricing, OptixDigitalAI rate plans,
+OptixDigitalAI cost calculator, OptixDigitalAI development estimate
+`;
+
   const image = `${siteUrl}/og-image.jpg`;
 
   return (
@@ -40,7 +64,7 @@ const PricingpageView = () => {
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <meta name="author" content="OptixDigitalAI" />
         <meta name="language" content="en" />
-        <meta name="revisit-after" content="7 days" />
+        <meta name="revisit-after" content="1 day" />
         <meta name="distribution" content="global" />
         <meta name="rating" content="general" />
 
@@ -103,7 +127,7 @@ const PricingpageView = () => {
       "@type": "ContactPoint",
       "telephone": "+91 7420807072",
       "contactType": "Customer Support",
-      "availableLanguage": ["English", "Hindi"]
+      "availableLanguage": ["English"]
     },
     "sameAs": [
      "https://www.facebook.com/profile.php?id=61582048281375",

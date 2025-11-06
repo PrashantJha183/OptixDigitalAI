@@ -11,7 +11,7 @@ const PrivacyPolicypageView = () => {
 
   const title = "Privacy Policy | OptixDigitalAI";
   const description =
-    "Read the Privacy Policy of OptixDigitalAI — a global creative technology agency providing web development, mobile apps, branding, SEO, and AI-powered digital marketing solutions.";
+    "Read the Privacy Policy of OptixDigitalAI a global creative technology agency providing web development, mobile apps, branding, SEO, and AI-powered digital marketing solutions.";
   const keywords = `
     OptixDigitalAI, about OptixDigitalAI, digital agency India, creative tech agency,
     AI marketing agency, web development company, mobile app development, UI UX design,
@@ -38,7 +38,7 @@ const PrivacyPolicypageView = () => {
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <meta name="author" content="OptixDigitalAI" />
         <meta name="language" content="en" />
-        <meta name="revisit-after" content="7 days" />
+        <meta name="revisit-after" content="1 day" />
         <meta name="distribution" content="global" />
         <meta name="rating" content="general" />
 

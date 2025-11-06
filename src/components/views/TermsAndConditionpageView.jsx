@@ -11,20 +11,33 @@ const TermsAndConditionpageView = () => {
 
   const title = "Terms and Conditions | OptixDigitalAI";
   const description =
-    "Read the Terms and Conditions of OptixDigitalAI — a global creative technology agency providing web development, mobile apps, branding, SEO, and AI-powered digital marketing solutions.";
+    "Review OptixDigitalAI’s Terms and Conditions outlining the policies, user responsibilities, and legal guidelines governing the use of our web development, app design, branding, SEO, and AI-powered digital marketing services in India and globally.";
+
   const keywords = `
-    OptixDigitalAI, about OptixDigitalAI, digital agency India, creative tech agency,
-    AI marketing agency, web development company, mobile app development, UI UX design,
-    software company India, global digital agency, SEO experts, social media marketing,
-    performance marketing, PPC advertising, creative branding, digital transformation,
-    AI-driven design, custom web design, eCommerce solutions, app developers, SaaS apps,
-    website optimization, digital consultancy, Optix Digital AI team, innovation agency,
-    brand strategy, content marketing, tech consultancy, cloud web apps, business growth,
-    OptixDigitalAI company, AI web agency, top marketing agency, design and technology,
-    data-driven marketing, responsive web apps, web design experts, full stack developers,
-    software engineers, startup solutions, B2B marketing, online business growth,
-    web app developers, UX research agency, branding experts, digital strategy, marketing intelligence
-  `;
+OptixDigitalAI terms and conditions, OptixDigitalAI policies, OptixDigitalAI legal notice,
+OptixDigitalAI user agreement, OptixDigitalAI privacy terms, OptixDigitalAI terms of service,
+digital agency terms India, creative tech agency legal policy, web development terms Pune,
+app development terms India, SEO services terms, marketing agency disclaimer,
+OptixDigitalAI usage policy, website terms and conditions India, software company legal India,
+OptixDigitalAI agreement, OptixDigitalAI disclaimer, AI marketing terms India,
+OptixDigitalAI service policy, OptixDigitalAI website legal, online business policy India,
+creative agency Pune terms, OptixDigitalAI compliance, OptixDigitalAI company policies,
+OptixDigitalAI user rights, OptixDigitalAI customer policy, OptixDigitalAI site usage rules,
+OptixDigitalAI legal compliance, AI agency India terms, web design company terms,
+OptixDigitalAI legal document, website terms Pune, OptixDigitalAI India legal,
+OptixDigitalAI information policy, OptixDigitalAI service terms and conditions,
+OptixDigitalAI liability policy, OptixDigitalAI intellectual property terms,
+digital agency service agreement India, online marketing terms Pune,
+OptixDigitalAI platform policy, global digital agency legal terms,
+OptixDigitalAI content policy, OptixDigitalAI fair use policy, OptixDigitalAI company terms,
+OptixDigitalAI data policy, OptixDigitalAI rights reserved, OptixDigitalAI legal framework,
+OptixDigitalAI website disclaimer, OptixDigitalAI global terms, web development contract terms,
+OptixDigitalAI website usage policy, creative tech agency legal document,
+OptixDigitalAI Pune terms and conditions, OptixDigitalAI global compliance,
+digital marketing company terms India, OptixDigitalAI professional policies,
+OptixDigitalAI official terms, software development legal India
+`;
+
   const image = `${siteUrl}/og-image.jpg`;
 
   return (
@@ -38,7 +51,7 @@ const TermsAndConditionpageView = () => {
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <meta name="author" content="OptixDigitalAI" />
         <meta name="language" content="en" />
-        <meta name="revisit-after" content="7 days" />
+        <meta name="revisit-after" content="1 day" />
         <meta name="distribution" content="global" />
         <meta name="rating" content="general" />
 
@@ -100,7 +113,7 @@ const TermsAndConditionpageView = () => {
         "@type": "ContactPoint",
         "telephone": "+91 7420807072",
         "contactType": "Customer Support",
-        "availableLanguage": ["English", "Hindi"]
+        "availableLanguage": ["English"]
       },
       "sameAs": [
        "https://www.facebook.com/profile.php?id=61582048281375",

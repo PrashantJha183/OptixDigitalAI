@@ -14,13 +14,43 @@ export default function DevelopmentpageView() {
 
   const title = "Full-Stack Web & App Development Services | OptixDigitalAI";
   const description =
-    "OptixDigitalAI provides professional full-stack web and mobile app development services using modern technologies. We specialize in scalable, secure, and high-performing solutions tailored to your business needs.";
+    "OptixDigitalAI offers cutting-edge full-stack web and mobile app development services in Pune, India, and globally. We build scalable, secure, and high-performing digital solutions using modern technologies like React, Node.js, Next.js, and cloud infrastructure to empower business growth.";
+
   const keywords = `
-    web development services, app development, full stack development, React developer India,
-    Node.js development, backend development, frontend development, OptixDigitalAI developers,
-    mobile app development, cloud development, DevOps, scalable web apps, ecommerce development,
-    custom software development, progressive web apps, technology solutions
-  `;
+OptixDigitalAI development, OptixDigitalAI web development, OptixDigitalAI app development,
+web development company Pune, web development company India, full stack development agency,
+React developers Pune, Node.js developers India, frontend development company Pune,
+backend development services India, custom web app development Pune,
+mobile app development Pune, cross-platform app development India, React Native developers Pune,
+Flutter app development India, Next.js development Pune, scalable web apps India,
+enterprise software development Pune, SaaS app development India, ecommerce development Pune,
+cloud application development India, API integration services Pune, database management India,
+DevOps company Pune, CI/CD pipeline setup India, AWS development Pune,
+Azure app development India, modern web architecture Pune, secure software development India,
+custom software solutions Pune, digital transformation development India,
+PWA (Progressive Web App) development Pune, technology consulting India,
+AI-powered development Pune, automation solutions India, business web apps Pune,
+product engineering India, UI UX integrated development Pune, responsive web apps India,
+CMS development Pune, WordPress development India, Shopify development Pune,
+MERN stack developers India, MEAN stack development Pune, Laravel developers India,
+Python developers Pune, Django development India, cloud-based web apps Pune,
+mobile solutions India, enterprise mobile app Pune, web portal development India,
+application modernization Pune, full stack engineers India, software company Pune,
+custom CRM development India, ERP development Pune, B2B web solutions India,
+startup development partner Pune, MVP development India, SaaS platform Pune,
+real-time app development India, database optimization Pune, performance tuning India,
+OptixDigitalAI software engineers, top development company Pune, technology agency India,
+AI integration services Pune, IoT app development India, blockchain solutions Pune,
+API-first development India, cloud hosting Pune, scalable infrastructure India,
+serverless app development Pune, web performance optimization India,
+OptixDigitalAI coding experts, modern web technology Pune, app design and development India,
+secure mobile app Pune, UX-driven development India, top developers Pune,
+custom backend architecture India, agile development Pune, software innovation India,
+app deployment Pune, code optimization India, digital product engineering Pune,
+OptixDigitalAI Pune developers, OptixDigitalAI India tech team, app development company Pune,
+global development agency India, technology-driven web solutions Pune
+`;
+
   const image = `${siteUrl}/og-image.jpg`;
 
   return (
@@ -34,7 +64,7 @@ export default function DevelopmentpageView() {
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <meta name="author" content="OptixDigitalAI" />
         <meta name="language" content="en" />
-        <meta name="revisit-after" content="7 days" />
+        <meta name="revisit-after" content="1 day" />
         <meta name="distribution" content="global" />
         <meta name="rating" content="general" />
 
@@ -90,7 +120,7 @@ export default function DevelopmentpageView() {
         "@type": "ContactPoint",
         "telephone": "+91 7420807072",
         "contactType": "customer support",
-        "availableLanguage": ["English", "Hindi"]
+        "availableLanguage": ["English"]
       },
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61582048281375",

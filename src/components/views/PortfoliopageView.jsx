@@ -13,13 +13,43 @@ const PortfoliopageView = () => {
   const title =
     "OptixDigitalAI Portfolio | Creative Web Design, App Development & Marketing Projects";
   const description =
-    "Explore OptixDigitalAI’s portfolio — showcasing our best work in website design, app development, branding, and digital marketing. Discover real results and innovation behind our creative projects.";
-  const keywords = `
-    OptixDigitalAI portfolio, OptixDigitalAI projects, web design work, app development showcase,
-    branding portfolio, UI UX design, marketing campaigns, SEO success, creative agency India,
-    OptixDigitalAI case studies, website projects, app UI design, business growth marketing,
-    Optix Digital AI creative solutions, responsive websites, digital transformation work
-  `;
+  "Discover OptixDigitalAI’s portfolio a showcase of innovative web design, mobile app development, branding, and digital marketing projects. Explore how our creative solutions and technology deliver measurable business success across India and worldwide.";
+
+const keywords = `
+OptixDigitalAI portfolio, OptixDigitalAI projects, OptixDigitalAI case studies,
+creative portfolio OptixDigitalAI, OptixDigitalAI work samples, agency portfolio Pune,
+digital agency portfolio India, web design portfolio Pune, app development portfolio India,
+branding portfolio Pune, digital marketing case studies India, UI UX design showcase Pune,
+website design examples India, responsive website portfolio Pune,
+mobile app UI design Pune, app UX design India, custom web app portfolio Pune,
+software development projects India, ecommerce website showcase Pune,
+creative design work India, marketing campaign results Pune, SEO success stories India,
+branding and identity design Pune, social media campaign showcase India,
+OptixDigitalAI creative showcase, OptixDigitalAI past work, OptixDigitalAI design samples,
+digital transformation case studies Pune, business growth portfolio India,
+tech innovation showcase Pune, global digital projects OptixDigitalAI,
+award-winning designs India, top creative agency portfolio Pune,
+OptixDigitalAI client projects, startup project showcase India,
+B2B marketing case studies Pune, OptixDigitalAI product design portfolio,
+corporate website projects India, marketing performance case studies Pune,
+logo design portfolio India, brand identity showcase Pune, rebranding examples India,
+UX case studies Pune, UI redesign portfolio India, landing page design samples Pune,
+mobile-first web projects India, AI web design case studies Pune,
+cross-platform app portfolio India, full stack development showcase Pune,
+PWA portfolio India, modern web app design Pune, creative digital solutions India,
+OptixDigitalAI innovations, OptixDigitalAI achievements, project success stories Pune,
+enterprise app development India, Shopify project showcase Pune,
+WordPress portfolio India, SaaS app design Pune, technology case studies India,
+marketing impact portfolio Pune, creative tech agency projects India,
+data-driven results OptixDigitalAI, client success OptixDigitalAI,
+OptixDigitalAI global clients, OptixDigitalAI Pune office projects,
+OptixDigitalAI design excellence, OptixDigitalAI web apps, OptixDigitalAI app solutions,
+OptixDigitalAI creative agency India, digital agency India portfolio, 
+top creative work India, OptixDigitalAI experience, professional portfolio Pune,
+client results India, OptixDigitalAI success portfolio, leading digital agency projects Pune,
+creative showcase India, best portfolio agency Pune, OptixDigitalAI innovation work
+`;
+
   const image = `${siteUrl}/og-image.jpg`;
 
   return (
@@ -33,7 +63,7 @@ const PortfoliopageView = () => {
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <meta name="author" content="OptixDigitalAI" />
         <meta name="language" content="en" />
-        <meta name="revisit-after" content="7 days" />
+        <meta name="revisit-after" content="1 day" />
         <meta name="distribution" content="global" />
         <meta name="rating" content="general" />
 
@@ -96,7 +126,7 @@ const PortfoliopageView = () => {
         "@type": "ContactPoint",
         "telephone": "+91 7420807072",
         "contactType": "customer support",
-        "availableLanguage": ["English", "Hindi"]
+        "availableLanguage": ["English"]
       },
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61582048281375",

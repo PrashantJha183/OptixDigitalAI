@@ -14,12 +14,51 @@ export default function MarketingpageView() {
   const title =
     "Digital Marketing & SEO Services | Boost Your Online Presence | OptixDigitalAI";
   const description =
-    "Grow your brand visibility and conversions with OptixDigitalAI’s data-driven digital marketing, SEO, content strategy, and social media management services. Drive real results with our experts today.";
+    "Boost your brand awareness and conversions with OptixDigitalAI a results-driven digital marketing agency in Pune, India. We specialize in SEO, Google Ads, Meta Ads, content marketing, social media strategy, and performance marketing to grow your business locally and globally.";
+
   const keywords = `
-    digital marketing services, SEO agency India, content marketing, social media marketing,
-    online advertising, PPC campaigns, brand visibility, OptixDigitalAI marketing,
-    growth strategy, digital branding, website traffic boost, local SEO, marketing automation
-  `;
+OptixDigitalAI marketing, OptixDigitalAI digital marketing, OptixDigitalAI Pune marketing,
+digital marketing agency Pune, digital marketing company India, online marketing experts,
+SEO agency Pune, SEO company India, search engine optimization Pune, Google ranking experts,
+local SEO Pune, on-page SEO India, off-page SEO Pune, technical SEO experts,
+content marketing Pune, content writing agency India, blog strategy Pune, website content SEO India,
+performance marketing Pune, PPC agency India, Google Ads company Pune, PPC campaign optimization India,
+Meta Ads Pune, Facebook Ads management India, Instagram marketing Pune, Instagram Ads India,
+social media marketing Pune, social media agency India, SMM experts Pune,
+social media management Pune, social content creation India, social strategy Pune,
+LinkedIn marketing India, YouTube marketing Pune, influencer marketing Pune, digital campaigns India,
+Google Search Ads Pune, Google Display Ads India, remarketing campaigns Pune,
+lead generation marketing India, conversion rate optimization Pune, CRO experts India,
+brand awareness campaigns Pune, brand growth strategy India, creative marketing Pune,
+email marketing Pune, drip campaigns India, marketing automation Pune, HubSpot experts India,
+CRM marketing Pune, retargeting ads India, paid media strategy Pune, Google Tag Manager setup India,
+Google Analytics 4 experts Pune, GA4 tracking India, data-driven marketing Pune,
+marketing intelligence India, performance tracking Pune, ad campaign reporting India,
+ROI marketing Pune, growth marketing India, startup marketing Pune, business promotion India,
+digital ad creatives Pune, video marketing India, reel ads Pune, content optimization India,
+website traffic growth Pune, keyword strategy India, SEO audit Pune, SEM company India,
+Google Partner agency Pune, ad budget optimization India, competitor research Pune,
+market analysis India, brand positioning Pune, creative branding India,
+marketing consultancy Pune, digital growth partner India, online business promotion Pune,
+B2B marketing Pune, B2C marketing India, ecommerce marketing Pune, Shopify marketing India,
+WordPress marketing Pune, local business advertising India, small business marketing Pune,
+corporate digital marketing India, enterprise marketing Pune, cross-platform ad campaigns India,
+integrated marketing Pune, omnichannel marketing India, influencer collaborations Pune,
+social brand engagement India, OptixDigitalAI SEO experts, OptixDigitalAI Google Ads,
+OptixDigitalAI Meta Ads, OptixDigitalAI performance marketing, marketing automation tools Pune,
+OptixDigitalAI content strategy, digital PR India, press release marketing Pune,
+online reputation management Pune, ORM agency India, marketing funnel strategy Pune,
+lead nurturing India, ad retargeting Pune, creative content writing India,
+visual marketing Pune, brand storytelling India, campaign strategy Pune, 
+ROI-driven advertising India, growth hacking Pune, top marketing agency India,
+AI-powered marketing Pune, smart ad optimization India, marketing analytics Pune,
+OptixDigitalAI digital team Pune, OptixDigitalAI growth experts India, 
+marketing intelligence Pune, next-gen digital marketing India, social media campaigns Pune,
+ads strategy India, marketing dashboard Pune, PPC remarketing India, 
+creative marketing company Pune, online branding India, marketing success Pune,
+best digital marketing company Pune, online growth agency India
+`;
+
   const image = `${siteUrl}/og-image.jpg`;
 
   return (
@@ -33,7 +72,7 @@ export default function MarketingpageView() {
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <meta name="author" content="OptixDigitalAI" />
         <meta name="language" content="en" />
-        <meta name="revisit-after" content="7 days" />
+        <meta name="revisit-after" content="1 day" />
         <meta name="distribution" content="global" />
         <meta name="rating" content="general" />
 

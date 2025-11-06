@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiSend } from "react-icons/fi";
-import ZayraAvatar from "../../assets/generated-image.png";
+import ZayraAvatar from "../../assets/zayra.png";
 
 const faqData = [
   {
