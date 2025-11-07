@@ -5,7 +5,7 @@ This document outlines the technical architecture, tools, and libraries used thr
 
 ---
 
-## ⚙️ Core Tech Stack
+## Core Tech Stack
 
 | Category               | Technology / Library                                                                            | Purpose                                                             |
 | ---------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
@@ -22,7 +22,7 @@ This document outlines the technical architecture, tools, and libraries used thr
 
 ---
 
-## 🧩 Supporting Libraries & Tools
+## Supporting Libraries & Tools
 
 - **AnimatePresence** (Framer Motion) – for mounting/unmounting transitions
 - **Intersection Observer API** – triggers animations and lazy loads on scroll
@@ -32,7 +32,7 @@ This document outlines the technical architecture, tools, and libraries used thr
 
 ---
 
-## 🧠 Design & UX
+## Design & UX
 
 - **Component-driven layout** — modular, reusable, and easily maintainable UI components
 - **Responsive-first design** — optimized for mobile, tablet, and desktop
@@ -42,7 +42,7 @@ This document outlines the technical architecture, tools, and libraries used thr
 
 ---
 
-## 🚀 Performance Optimization
+## Performance Optimization
 
 - **Vite Dev Server** — hot module replacement (HMR) for instant feedback
 - **Code Splitting** — automatic by Vite and React lazy loading
@@ -52,7 +52,7 @@ This document outlines the technical architecture, tools, and libraries used thr
 
 ---
 
-## 🧪 Testing Ecosystem
+## Testing Ecosystem
 
 | Type                   | Tool                                                  | Purpose                                               |
 | ---------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
@@ -68,7 +68,7 @@ Includes:
 
 ---
 
-## 🛠️ Deployment & Hosting
+## Deployment & Hosting
 
 - **Hosting:** Netlify (optimized for static React/Vite projects)
 - **Continuous Deployment:** Auto-builds on each commit via GitHub integration
@@ -77,7 +77,7 @@ Includes:
 
 ---
 
-## 🔍 SEO & Analytics
+## SEO & Analytics
 
 - SEO-optimized meta tags and Open Graph (OG) data
 - Clean URL routing structure for better indexing
@@ -86,7 +86,7 @@ Includes:
 
 ---
 
-## 💬 Development Philosophy
+## Development Philosophy
 
 > “Design with purpose. Build with precision. Deliver with impact.”
 
@@ -238,6 +238,6 @@ npm run test:e2e
 This project is proprietary and maintained by **OptixDigitalAI**.
 All rights reserved © 2025 OptixDigitalAI
 
-```
+
 
 ```
