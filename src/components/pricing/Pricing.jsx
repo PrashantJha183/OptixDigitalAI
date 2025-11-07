@@ -1,4 +1,4 @@
-// Pricing.jsx
+// ...rest of your imports
 import React, { memo, useEffect, useState } from "react";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -11,6 +11,11 @@ import {
   FaMobileAlt,
   FaPaintBrush,
   FaBullhorn,
+  FaSearch,
+  FaExternalLinkAlt,
+  FaFacebook,
+  FaGoogle,
+  FaInstagram,
 } from "react-icons/fa";
 
 // Single Pricing Card Component
@@ -38,14 +43,18 @@ const PricingCard = memo(({ icon, title, price, features, reason }) => {
       <div className="w-full border border-[#5d00c3] rounded-lg p-4 mb-6 text-center text-white bg-[#5d00c3]">
         <div className="text-5xl mb-4 flex justify-center">{icon}</div>
         <h3 className="text-2xl md:text-3xl font-bold mb-2">{title}</h3>
-        <p className="text-lg font-semibold mb-2">
-          Pricing: <span>{price}</span>
-          <sup className="text-yellow-300 ml-1">*</sup>
-        </p>
+        {price && (
+          <p className="text-lg font-semibold mb-2">
+            Pricing: <span>{price}</span>
+            <sup className="text-yellow-300 ml-1">*</sup>
+          </p>
+        )}
         <hr className="my-3 border-yellow-300/40" />
-        <p className="text-sm md:text-base italic font-medium mb-4 text-yellow-300">
-          {reason}
-        </p>
+        {reason && (
+          <p className="text-sm md:text-base italic font-medium mb-4 text-yellow-300">
+            {reason}
+          </p>
+        )}
 
         <Link
           to="/contact"
@@ -73,6 +82,18 @@ const PricingCard = memo(({ icon, title, price, features, reason }) => {
 // Main Pricing Section
 const Pricing = () => {
   const [activeTab, setActiveTab] = useState("development");
+  const [showCopyMessage, setShowCopyMessage] = useState(false);
+
+  const handleEmailClick = () => {
+    const email = "support@optixdigitalai.com";
+    if (navigator.userAgent.includes("Mobi")) {
+      window.location.href = `mailto:${email}`;
+    } else {
+      navigator.clipboard.writeText(email);
+      setShowCopyMessage(true);
+      setTimeout(() => setShowCopyMessage(false), 5000);
+    }
+  };
 
   // === Development Services ===
   const developmentServices = [
@@ -138,10 +159,39 @@ const Pricing = () => {
         "JWT-based security and role-based access control",
       ],
     },
+    {
+      icon: <FaSearch />,
+      title: "On-Page SEO",
+      price: "₹10,000",
+      reason: "Optimize your website pages to rank higher on search engines!",
+      features: [
+        "Keyword research & meta tag optimization",
+        "Header tags, ALT tags & image optimization",
+        "Internal linking strategy",
+        "Content structure & readability improvements",
+        "Page speed & mobile performance optimization",
+      ],
+    },
   ];
 
-  // === Design & Marketing Services ===
+  // Center the On-Page SEO card
+  // Inside Pricing component, replace developmentServicesGrid with:
+
+  const developmentServicesGrid = [
+    developmentServices[0],
+    developmentServices[1],
+    developmentServices[2],
+    developmentServices[3],
+    <div
+      key="seo-card"
+      className="col-span-1 md:col-span-2 flex justify-center"
+    >
+      <PricingCard {...developmentServices[4]} />
+    </div>,
+  ];
+
   const designServices = [
+    // Original cards
     {
       icon: <FaPaintBrush />,
       title: "UI/UX Design",
@@ -170,10 +220,63 @@ const Pricing = () => {
         "Content marketing & engagement strategies",
       ],
     },
+    {
+      icon: <FaExternalLinkAlt />,
+      title: "Off-Page SEO",
+      price: "₹10,000",
+      reason:
+        "Boost your website authority and traffic through external strategies!",
+      features: [
+        "Backlink building & guest posting",
+        "Social bookmarking & forum engagement",
+        "Local business listings & citations",
+        "Influencer outreach and PR strategies",
+        "Brand mentions & authority building",
+      ],
+    },
+
+    // New separate cards
+    {
+      icon: <FaFacebook />,
+      title: "Social Media Management",
+      price: "₹10,000",
+      reason: "Manage and grow your social presence professionally!",
+      features: [
+        "Content creation & scheduling for Facebook, Instagram, LinkedIn, X/Twitter",
+        "Community engagement & follower growth",
+        "Performance tracking & monthly reports",
+        "Strategy optimization based on insights",
+      ],
+    },
+    {
+      icon: <FaGoogle />,
+      title: "Google Ads Management",
+      price: "₹10,000",
+      reason: "Reach your audience with targeted Google ad campaigns!",
+      features: [
+        "Dedicated team support: Google Ads Executive, Graphic Designer, Copywriter, with WhatsApp collaboration",
+        "Campaign setup & strategy: account setup/overhaul, keyword research, bidding strategy, audience targeting",
+        "Ad creation & optimization: Search Ads, Performance Max, Display, Dynamic Search Ads, ad extensions, retargeting",
+        "Performance tracking & analytics: Google Analytics integration, conversion tracking, CPC/CPA optimization, monthly ROAS reporting",
+        "Ongoing support & consultation: budget management (up to ₹100,000), monthly performance reviews, phone/chat/email support",
+      ],
+    },
+    {
+      icon: <FaInstagram />,
+      title: "Meta Ads Management",
+      price: "₹10,000",
+      reason: "Run effective Facebook & Instagram advertising campaigns!",
+      features: [
+        "Ad creation & targeting strategy",
+        "Campaign management for Meta Ads",
+        "Conversion tracking & performance reporting",
+        "Optimizations to maximize ROI",
+      ],
+    },
   ];
 
   const services =
-    activeTab === "development" ? developmentServices : designServices;
+    activeTab === "development" ? developmentServicesGrid : designServices;
 
   return (
     <section
@@ -215,9 +318,13 @@ const Pricing = () => {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16"
           >
-            {services.map((service, idx) => (
-              <PricingCard key={idx} {...service} />
-            ))}
+            {services.map((service, idx) =>
+              React.isValidElement(service) ? (
+                service
+              ) : (
+                <PricingCard key={idx} {...service} />
+              )
+            )}
           </motion.div>
         </AnimatePresence>
 
@@ -233,6 +340,21 @@ const Pricing = () => {
           </Link>{" "}
           for complete details.
         </p>
+
+        {/* Additional Contact Statement */}
+        <p
+          onClick={handleEmailClick}
+          className="mt-2 text-gray-600 text-sm italic text-center cursor-pointer hover:text-[#5d00c3] underline"
+        >
+          For more details, kindly contact us at support@optixdigitalai.com
+        </p>
+
+        {/* Popup message */}
+        {showCopyMessage && (
+          <div className="fixed top-5 right-5 bg-[#5d00c3] text-white px-4 py-2 rounded shadow-lg z-50 transition-opacity duration-300">
+            Email copied to clipboard!
+          </div>
+        )}
       </div>
     </section>
   );
