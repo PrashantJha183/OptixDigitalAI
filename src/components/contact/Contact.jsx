@@ -63,6 +63,7 @@ const Contact = () => {
     "App Redesign & Optimization",
     "Graphic Design & Revamp",
     "SEO",
+    "Other",
   ];
 
   useEffect(() => {

@@ -18,12 +18,16 @@ import {
   FaCode,
   FaGithub,
   FaShopify,
+  FaGoogle,
+  FaSearch,
 } from "react-icons/fa";
 import {
   SiMongodb,
   SiNextdotjs,
   SiFirebase,
   SiKubernetes,
+  // SiSemrush,
+  SiGoogleanalytics,
 } from "react-icons/si";
 
 /* ===========================
@@ -44,7 +48,6 @@ const TechCard = memo(({ category, items, index }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: false, threshold: 0.3 });
 
-  // Professional category descriptions
   const descriptions = {
     Frontend:
       "We craft visually engaging, responsive, and high-performance user interfaces using modern frontend technologies that ensure seamless experiences across all devices.",
@@ -59,6 +62,8 @@ const TechCard = memo(({ category, items, index }) => {
     "Mobile Apps":
       "We develop intuitive, fast, and feature-rich mobile applications that deliver consistent performance and engaging user experiences across platforms.",
     CMS: "We create flexible, easy-to-manage, and scalable CMS solutions, enabling effortless content management with powerful customization and automation capabilities.",
+    "SEO Optimization":
+      "We boost online visibility and drive organic traffic through advanced SEO strategies, including keyword optimization, analytics tracking, and technical audits for lasting growth.",
   };
 
   return (
@@ -167,6 +172,15 @@ const ToolsAndTechnologies = () => {
         { name: "Custom CMS", icon: <FaCode /> },
       ],
     },
+    {
+      category: "SEO Optimization",
+      items: [
+        { name: "Google Search Console", icon: <FaGoogle /> },
+        { name: "Google Analytics", icon: <SiGoogleanalytics /> },
+        // { name: "SEMRush", icon: <SiSemrush /> },
+        { name: "Keyword Research", icon: <FaSearch /> },
+      ],
+    },
   ];
 
   return (
@@ -200,13 +214,8 @@ const ToolsAndTechnologies = () => {
         ) : (
           // --- Grid Layout (Desktop)
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-8 justify-items-center scrollbar-hide">
-            {techData.map((data, idx) => (
-              <div
-                key={idx}
-                className={`w-full flex justify-center ${
-                  idx === techData.length - 1 ? "md:col-span-3" : ""
-                }`}
-              >
+            {techData.slice(0, techData.length - 2).map((data, idx) => (
+              <div key={idx} className="w-full flex justify-center">
                 <TechCard
                   category={data.category}
                   items={data.items}
@@ -214,6 +223,18 @@ const ToolsAndTechnologies = () => {
                 />
               </div>
             ))}
+
+            {/* Last two cards centered */}
+            <div className="md:col-span-3 flex justify-center gap-10 flex-wrap">
+              {techData.slice(-2).map((data, idx) => (
+                <TechCard
+                  key={idx + techData.length - 2}
+                  category={data.category}
+                  items={data.items}
+                  index={idx + techData.length - 2}
+                />
+              ))}
+            </div>
           </div>
         )}
       </div>
