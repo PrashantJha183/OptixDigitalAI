@@ -96,9 +96,9 @@ const ServicesWeOffer = () => {
     ],
     col3: [
       {
-        title: "Content Marketing",
+        title: "SEO Optimization",
         description:
-          "Create valuable, consistent, and engaging content that attracts and retains your target audience while strengthening your brand voice.",
+          "Boost your website's visibility with on-page and off-page SEO strategies, including link building, content optimization, and keyword research.",
         icon: <FaLaptopCode />,
       },
     ],
