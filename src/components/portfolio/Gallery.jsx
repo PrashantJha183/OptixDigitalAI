@@ -178,27 +178,33 @@ const Gallery = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col md:flex-row justify-center items-stretch w-full gap-6 md:gap-4 lg:gap-6 xl:gap-8"
+            className="flex flex-col lg:flex-row justify-center items-stretch w-full gap-6 md:gap-8 lg:gap-10"
           >
-            <Suspense
-              fallback={
-                <div className="w-full flex justify-center items-center py-20">
-                  <div className="w-16 h-16 border-4 border-[#5d00c3] border-t-transparent rounded-full" />
-                </div>
-              }
-            >
-              <Rivaaraluxe />
-            </Suspense>
+            {/* Rivaaraluxe */}
+            <div className="w-full lg:w-1/2 flex justify-center">
+              <Suspense
+                fallback={
+                  <div className="w-full flex justify-center items-center py-20">
+                    <div className="w-16 h-16 border-4 border-[#5d00c3] border-t-transparent rounded-full" />
+                  </div>
+                }
+              >
+                <Rivaaraluxe />
+              </Suspense>
+            </div>
 
-            <Suspense
-              fallback={
-                <div className="w-full flex justify-center items-center py-20">
-                  <div className="w-16 h-16 border-4 border-[#5d00c3] border-t-transparent rounded-full" />
-                </div>
-              }
-            >
-              <Diva />
-            </Suspense>
+            {/* Diva Deluxe */}
+            <div className="w-full lg:w-1/2 flex justify-center">
+              <Suspense
+                fallback={
+                  <div className="w-full flex justify-center items-center py-20">
+                    <div className="w-16 h-16 border-4 border-[#5d00c3] border-t-transparent rounded-full" />
+                  </div>
+                }
+              >
+                <Diva />
+              </Suspense>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
