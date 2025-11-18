@@ -1,4 +1,4 @@
-// App.jsx
+// App.jsx 
 import React, { memo, Suspense, lazy } from "react";
 import {
   BrowserRouter as Router,
